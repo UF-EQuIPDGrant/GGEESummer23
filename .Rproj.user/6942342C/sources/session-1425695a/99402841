@@ -1,11 +1,11 @@
 {
     "id": "99402841",
-    "path": null,
-    "project_path": null,
+    "path": "~/Documents/GitHub/GGEESummer23/Demographics.R",
+    "project_path": "Demographics.R",
     "type": "r_source",
-    "hash": "0",
+    "hash": "2249397867",
     "contents": "",
-    "dirty": true,
+    "dirty": false,
     "created": 1693407737645.0,
     "source_on_save": false,
     "relative_order": 1,
@@ -13,15 +13,15 @@
         "tempName": "Untitled1",
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "3,0",
-        "scrollLine": "0"
+        "cursorPosition": "51,0",
+        "scrollLine": "14"
     },
     "folds": "",
-    "lastKnownWriteTime": 0,
-    "encoding": "",
+    "lastKnownWriteTime": 1693413433,
+    "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1693407811054,
+    "last_content_update": 1693413433691,
     "read_only": false,
     "read_only_alternatives": []
 }
