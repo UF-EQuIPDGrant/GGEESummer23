@@ -1,0 +1,17 @@
+##Demographics Analysis
+##
+##
+
+
+
+
+library(tidyverse)
+library(tidytext)
+library(dplyr)
+library(readr)
+library(tidyr)
+library(writexl)
+library(readxl)
+library(textdata)
+library(ggplot2)
+library(scales)
