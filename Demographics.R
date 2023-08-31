@@ -22,6 +22,7 @@ GGEE_23_Pre0 <- read_excel("Data/GGEE_23_PreSurvey.xlsx", sheet = 1)
 GGEE_23_Pre <-filter(GGEE_23_Pre0, Finished == "True")
 #View(GGEE_23_Pre)
 
+#################################################################################
 ##Age Distribution
 age <-  select(GGEE_23_Pre, Age, Program)
 age2 <- age|>
@@ -47,7 +48,7 @@ ggplot(age3, aes(x=Age, y = n, fill= Program))+
   ylab("Number of Students")
 
 ggsave(
-  filename = "GGEE Summer 2023 Age_Both.png",
+  filename = "GGEE_23_Summer_Age_Both.png",
   plot = last_plot(),
   device = "png",
   path = "/Users/kristadulany/Documents/GitHub/GGEESummer23/Graphs/Demographics",
@@ -78,7 +79,7 @@ ggplot(age_intro, aes(x=Age, y = n))+
   ylab("Number of Students")
 
 ggsave(
-  filename = "GGEE Summer 2023 Age_Intro.png",
+  filename = "GGEE_23_Summer_Age_Intro.png",
   plot = last_plot(),
   device = "png",
   path = "/Users/kristadulany/Documents/GitHub/GGEESummer23/Graphs/Demographics",
@@ -110,7 +111,7 @@ ggplot(age_adv, aes(x=Age, y = n))+
   ylab("Number of Students")
 
 ggsave(
-  filename = "GGEE Summer 2023 Age_Adv.png",
+  filename = "GGEE_23_Summer_Age_Adv.png",
   plot = last_plot(),
   device = "png",
   path = "/Users/kristadulany/Documents/GitHub/GGEESummer23/Graphs/Demographics",
@@ -123,7 +124,7 @@ ggsave(
   bg = NULL)
 
 
-#---------------------------------------------------------------------
+#################################################################################
 ##District Participation in Research
 
 ##District Both
@@ -151,7 +152,7 @@ ggplot(district3, aes(x=District, y = n, fill= Program))+
   ylab("Number of Students")
 
 ggsave(
-  filename = "GGEE Summer 2023 District_Both.png",
+  filename = "GGEE_23_Summer_District_Both.png",
   plot = last_plot(),
   device = "png",
   path = "/Users/kristadulany/Documents/GitHub/GGEESummer23/Graphs/Demographics",
@@ -185,7 +186,7 @@ ggplot(district_intro, aes(x=District, y = n))+
   ylab("Number of Students")
 
 ggsave(
-  filename = "GGEE Summer 2023 District_Intro.png",
+  filename = "GGEE_23_Summer_District_Intro.png",
   plot = last_plot(),
   device = "png",
   path = "/Users/kristadulany/Documents/GitHub/GGEESummer23/Graphs/Demographics",
@@ -218,7 +219,7 @@ ggplot(district_adv, aes(x=District, y = n))+
   ylab("Number of Students")
 
 ggsave(
-  filename = "GGEE Summer 2023 District_Adv.png",
+  filename = "GGEE_23_Summer_District_Adv.png",
   plot = last_plot(),
   device = "png",
   path = "/Users/kristadulany/Documents/GitHub/GGEESummer23/Graphs/Demographics",
@@ -231,7 +232,7 @@ ggsave(
   bg = NULL)
 
 
-#---------------------------------------------------------------------
+#################################################################################
 ##Grade Level in Research
 
 ##GRADE LEVEL BOTH
@@ -260,7 +261,7 @@ ggplot(grade3, aes(x=Grade, y = n, fill= Program))+
   ylab("Number of Students")
 
 ggsave(
-  filename = "GGEE Summer 2023 Grade_Both.png",
+  filename = "GGEE_23_Summer_Grade_Both.png",
   plot = last_plot(),
   device = "png",
   path = "/Users/kristadulany/Documents/GitHub/GGEESummer23/Graphs/Demographics",
@@ -294,7 +295,7 @@ ggplot(grade_intro, aes(x=Grade, y = n))+
   ylab("Number of Students")
 
 ggsave(
-  filename = "GGEE Summer 2023 Grade_Intro.png",
+  filename = "GGEE_23_Summer_Grade_Intro.png",
   plot = last_plot(),
   device = "png",
   path = "/Users/kristadulany/Documents/GitHub/GGEESummer23/Graphs/Demographics",
@@ -327,7 +328,7 @@ ggplot(grade_adv, aes(x=Grade, y = n))+
   ylab("Number of Students")
 
 ggsave(
-  filename = "GGEE Summer 2023 Grade_Adv.png",
+  filename = "GGEE_23_Summer_Grade_Adv.png",
   plot = last_plot(),
   device = "png",
   path = "/Users/kristadulany/Documents/GitHub/GGEESummer23/Graphs/Demographics",
@@ -341,7 +342,7 @@ ggsave(
 
 
 
-#---------------------------------------------------------------------
+#################################################################################
 ##Gender in Research
 
 ##GENDER BOTH
@@ -369,7 +370,7 @@ ggplot(gender3, aes(x=Gender, y = n, fill= Program))+
   ylab("Number of Students")
 
 ggsave(
-  filename = "GGEE Summer 2023 Gender_Both.png",
+  filename = "GGEE_23_Summer_Gender_Both.png",
   plot = last_plot(),
   device = "png",
   path = "/Users/kristadulany/Documents/GitHub/GGEESummer23/Graphs/Demographics",
@@ -402,7 +403,7 @@ ggplot(gender_intro, aes(x=Gender, y = n))+
   ylab("Number of Students")
 
 ggsave(
-  filename = "GGEE Summer 2023 Gender_Intro.png",
+  filename = "GGEE_23_Summer_Gender_Intro.png",
   plot = last_plot(),
   device = "png",
   path = "/Users/kristadulany/Documents/GitHub/GGEESummer23/Graphs/Demographics",
@@ -435,7 +436,7 @@ ggplot(gender_adv, aes(x=Gender, y = n))+
   ylab("Number of Students")
 
 ggsave(
-  filename = "GGEE Summer 2023 Gender_Adv.png",
+  filename = "GGEE_23_Summer_Gender_Adv.png",
   plot = last_plot(),
   device = "png",
   path = "/Users/kristadulany/Documents/GitHub/GGEESummer23/Graphs/Demographics",
@@ -482,8 +483,7 @@ ggsave(
 #  bg = NULL)
 
 
-
-
+#################################################################################
 #Gender PIE Chart - BOTH
 
 gender_pie <- gender|>
@@ -512,7 +512,7 @@ ggplot(gender_pie, aes(x="", y=n, fill=Gender)) +
   
 
 ggsave(
-  filename = "GGEE Summer 2023 Gender_PIE_Both.png",
+  filename = "GGEE_23_Summer_Gender_PIE_Both.png",
   plot = last_plot(),
   device = "png",
   path = "/Users/kristadulany/Documents/GitHub/GGEESummer23/Graphs/Demographics",
@@ -553,7 +553,7 @@ ggplot(gender_pie_intro, aes(x="", y=n, fill=Gender)) +
   theme(legend.position = c(1, .5))
 
 ggsave(
-  filename = "GGEE Summer 2023 Gender_PIE_Intro.png",
+  filename = "GGEE_23_Summer_Gender_PIE_Intro.png",
   plot = last_plot(),
   device = "png",
   path = "/Users/kristadulany/Documents/GitHub/GGEESummer23/Graphs/Demographics",
@@ -594,7 +594,7 @@ ggplot(gender_pie_adv, aes(x="", y=n, fill=Gender)) +
   theme(legend.position = c(1, .5))
 
 ggsave(
-  filename = "GGEE Summer 2023 Gender_PIE_Adv.png",
+  filename = "GGEE_23_Summer_Gender_PIE_Adv.png",
   plot = last_plot(),
   device = "png",
   path = "/Users/kristadulany/Documents/GitHub/GGEESummer23/Graphs/Demographics",
