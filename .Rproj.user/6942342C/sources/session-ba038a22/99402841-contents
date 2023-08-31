@@ -28,7 +28,7 @@ age2 <- age|>
   count(Age, Program)
 age3 <- na.omit(age2)
 
-age_n <- 6+39+1+70+19+62+6+44+5+1
+age_n <- 6+39+1+66+7+55+3+41+5+1
 age_n
 
 #AGE BOTH Programs
@@ -50,7 +50,7 @@ ggsave(
   filename = "GGEE Summer 2023 Age_Both.png",
   plot = last_plot(),
   device = "png",
-  path = "/Users/kristadulany/Documents/GitHub/GGEESummer23/Graphs",
+  path = "/Users/kristadulany/Documents/GitHub/GGEESummer23/Graphs/Demographics",
   scale = 2,
   width = 6,
   height = 4,
@@ -62,7 +62,7 @@ ggsave(
 #AGE INTRO Programs
 age_intro <- filter(age3, Program == "Introductory - 1st Year with GGEE")
 
-age_intro_n <- 6+39+1+70+62+44+5+1
+age_intro_n <- 6+39+66+55+41+5+1
 age_intro_n
 
 ggplot(age_intro, aes(x=Age, y = n))+
@@ -81,7 +81,7 @@ ggsave(
   filename = "GGEE Summer 2023 Age_Intro.png",
   plot = last_plot(),
   device = "png",
-  path = "/Users/kristadulany/Documents/GitHub/GGEESummer23/Graphs",
+  path = "/Users/kristadulany/Documents/GitHub/GGEESummer23/Graphs/Demographics",
   scale = 2,
   width = 6,
   height = 4,
@@ -94,7 +94,7 @@ ggsave(
 #AGE ADVANCED Programs
 age_adv <- filter(age3, Program == "Advanced - 2nd Year with GGEE")
 
-age_adv_n <- 1+19+6
+age_adv_n <- 1+7+3
 age_adv_n
 
 ggplot(age_adv, aes(x=Age, y = n))+
@@ -105,7 +105,7 @@ ggplot(age_adv, aes(x=Age, y = n))+
   theme(axis.text.y = element_text(colour = "black"))+
   ggtitle("GGEE Advanced Summer Program 2023 Age Distribution")+
   theme(plot.title = element_text(hjust = 0.5))+
-  scale_y_continuous(expand = c(0, 0), limits = c(0, 25), n.breaks=5)+
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 10), n.breaks=10)+
   xlab("Student Age (Years)")+
   ylab("Number of Students")
 
@@ -113,7 +113,7 @@ ggsave(
   filename = "GGEE Summer 2023 Age_Adv.png",
   plot = last_plot(),
   device = "png",
-  path = "/Users/kristadulany/Documents/GitHub/GGEESummer23/Graphs",
+  path = "/Users/kristadulany/Documents/GitHub/GGEESummer23/Graphs/Demographics",
   scale = 2,
   width = 6,
   height = 4,
@@ -133,7 +133,7 @@ district2 <- district|>
   count(District, Program)
 district3 <- na.omit(district2)
 
-district_n <- 1+10+15+9+35+36+36+92+18+6
+district_n <- 10+14+8+36+36+35+80+4+6
 district_n
 
 ggplot(district3, aes(x=District, y = n, fill= Program))+
@@ -145,7 +145,7 @@ ggplot(district3, aes(x=District, y = n, fill= Program))+
   theme(axis.text.y = element_text(colour = "black"))+
   ggtitle("GGEE Summer Program 2023 District Distribution")+
   theme(plot.title = element_text(hjust = 0.5))+
-  scale_y_continuous(expand = c(0, 0), limits = c(0, 95), n.breaks=20)+
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 85), n.breaks=20)+
   scale_fill_brewer(guide = guide_legend(reverse = TRUE),palette = "Blues")+
   xlab("District")+
   ylab("Number of Students")
@@ -154,7 +154,7 @@ ggsave(
   filename = "GGEE Summer 2023 District_Both.png",
   plot = last_plot(),
   device = "png",
-  path = "/Users/kristadulany/Documents/GitHub/GGEESummer23/Graphs",
+  path = "/Users/kristadulany/Documents/GitHub/GGEESummer23/Graphs/Demographics",
   scale = 2,
   width = 6,
   height = 4,
@@ -169,7 +169,7 @@ ggsave(
 
 district_intro <- filter(district3, Program == "Introductory - 1st Year with GGEE")
 
-district_intro_n <- 1+10+15+35+36+36+92+6
+district_intro_n <- 10+14+36+36+35+80+6
 district_intro_n
 
 ggplot(district_intro, aes(x=District, y = n))+
@@ -180,7 +180,7 @@ ggplot(district_intro, aes(x=District, y = n))+
   theme(axis.text.y = element_text(colour = "black"))+
   ggtitle("GGEE Introductory Summer Program 2023 District Distribution")+
   theme(plot.title = element_text(hjust = 0.5))+
-  scale_y_continuous(expand = c(0, 0), limits = c(0, 95), n.breaks=20)+
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 85), n.breaks=20)+
   xlab("District")+
   ylab("Number of Students")
 
@@ -188,7 +188,7 @@ ggsave(
   filename = "GGEE Summer 2023 District_Intro.png",
   plot = last_plot(),
   device = "png",
-  path = "/Users/kristadulany/Documents/GitHub/GGEESummer23/Graphs",
+  path = "/Users/kristadulany/Documents/GitHub/GGEESummer23/Graphs/Demographics",
   scale = 2,
   width = 6,
   height = 4,
@@ -202,7 +202,7 @@ ggsave(
 
 district_adv <- filter(district3, Program == "Advanced - 2nd Year with GGEE")
 
-district_adv_n <- 9+18
+district_adv_n <- 8+4
 district_adv_n
 
 ggplot(district_adv, aes(x=District, y = n))+
@@ -213,7 +213,7 @@ ggplot(district_adv, aes(x=District, y = n))+
   theme(axis.text.y = element_text(colour = "black"))+
   ggtitle("GGEE Advanced Summer Program 2023 District Distribution")+
   theme(plot.title = element_text(hjust = 0.5))+
-  scale_y_continuous(expand = c(0, 0), limits = c(0, 25), n.breaks=5)+
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 10), n.breaks=10)+
   xlab("District")+
   ylab("Number of Students")
 
@@ -221,7 +221,7 @@ ggsave(
   filename = "GGEE Summer 2023 District_Adv.png",
   plot = last_plot(),
   device = "png",
-  path = "/Users/kristadulany/Documents/GitHub/GGEESummer23/Graphs",
+  path = "/Users/kristadulany/Documents/GitHub/GGEESummer23/Graphs/Demographics",
   scale = 2,
   width = 6,
   height = 4,
@@ -241,7 +241,7 @@ grade2 <- grade|>
   count(Grade, Program)
 grade3 <- na.omit(grade2)
 
-grade_n <- 1+5+38+5+70+14+68+7+49
+grade_n <- 1+5+37+2+66+4+62+5+46
 grade_n
 
 ggplot(grade3, aes(x=Grade, y = n, fill= Program))+
@@ -263,7 +263,7 @@ ggsave(
   filename = "GGEE Summer 2023 Grade_Both.png",
   plot = last_plot(),
   device = "png",
-  path = "/Users/kristadulany/Documents/GitHub/GGEESummer23/Graphs",
+  path = "/Users/kristadulany/Documents/GitHub/GGEESummer23/Graphs/Demographics",
   scale = 2,
   width = 6,
   height = 4,
@@ -277,7 +277,7 @@ ggsave(
 
 grade_intro <- filter(grade3, Program == "Introductory - 1st Year with GGEE")
 
-grade_intro_n <- 5+38+70+68+49
+grade_intro_n <- 5+37+66+62+46
 grade_intro_n
 
 ggplot(grade_intro, aes(x=Grade, y = n))+
@@ -297,7 +297,7 @@ ggsave(
   filename = "GGEE Summer 2023 Grade_Intro.png",
   plot = last_plot(),
   device = "png",
-  path = "/Users/kristadulany/Documents/GitHub/GGEESummer23/Graphs",
+  path = "/Users/kristadulany/Documents/GitHub/GGEESummer23/Graphs/Demographics",
   scale = 2,
   width = 6,
   height = 4,
@@ -310,7 +310,7 @@ ggsave(
 
 grade_adv <- filter(grade3, Program == "Advanced - 2nd Year with GGEE")
 
-grade_adv_n <- 1+5+14+7
+grade_adv_n <- 1+2+4+5
 grade_adv_n
 
 ggplot(grade_adv, aes(x=Grade, y = n))+
@@ -321,7 +321,7 @@ ggplot(grade_adv, aes(x=Grade, y = n))+
   theme(axis.text.y = element_text(colour = "black"))+
   ggtitle("GGEE Advanced Summer Programs 2023 Grade Level")+
   theme(plot.title = element_text(hjust = 0.5))+
-  scale_y_continuous(expand = c(0, 0), limits = c(0, 25), n.breaks=5)+
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 10), n.breaks=10)+
   scale_x_discrete(name ="Grade Level", 
                    limits=c("6th Grade","7th Grade","8th Grade","9th Grade","10th Grade"))+
   ylab("Number of Students")
@@ -330,7 +330,7 @@ ggsave(
   filename = "GGEE Summer 2023 Grade_Adv.png",
   plot = last_plot(),
   device = "png",
-  path = "/Users/kristadulany/Documents/GitHub/GGEESummer23/Graphs",
+  path = "/Users/kristadulany/Documents/GitHub/GGEESummer23/Graphs/Demographics",
   scale = 2,
   width = 6,
   height = 4,
@@ -338,8 +338,6 @@ ggsave(
   dpi = 300,
   limitsize = TRUE,
   bg = NULL)
-
-
 
 
 
@@ -353,7 +351,7 @@ gender2 <- gender|>
   count(Gender, Program)
 gender3 <- na.omit(gender2)
 
-gender_n <- 5+49+21+169+1+6+5
+gender_n <- 4+48+7+156+1+6+5
 gender_n
 
 ggplot(gender3, aes(x=Gender, y = n, fill= Program))+
@@ -365,7 +363,7 @@ ggplot(gender3, aes(x=Gender, y = n, fill= Program))+
   theme(axis.text.y = element_text(colour = "black"))+
   ggtitle("GGEE Summer Programs 2023 Genders")+
   theme(plot.title = element_text(hjust = 0.5))+
-  scale_y_continuous(expand = c(0, 0), limits = c(0, 170), n.breaks=20)+
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 160), n.breaks=20)+
   scale_fill_brewer(guide = guide_legend(reverse = TRUE),palette = "Blues")+
   xlab("Gender")+
   ylab("Number of Students")
@@ -374,7 +372,7 @@ ggsave(
   filename = "GGEE Summer 2023 Gender_Both.png",
   plot = last_plot(),
   device = "png",
-  path = "/Users/kristadulany/Documents/GitHub/GGEESummer23/Graphs",
+  path = "/Users/kristadulany/Documents/GitHub/GGEESummer23/Graphs/Demographics",
   scale = 2,
   width = 6,
   height = 4,
@@ -388,7 +386,7 @@ ggsave(
 
 gender_intro <- filter(gender3, Program == "Introductory - 1st Year with GGEE")
 
-gender_intro_n <- 49+169+6+5
+gender_intro_n <- 48+156+6+5
 gender_intro_n
 
 ggplot(gender_intro, aes(x=Gender, y = n))+
@@ -407,7 +405,7 @@ ggsave(
   filename = "GGEE Summer 2023 Gender_Intro.png",
   plot = last_plot(),
   device = "png",
-  path = "/Users/kristadulany/Documents/GitHub/GGEESummer23/Graphs",
+  path = "/Users/kristadulany/Documents/GitHub/GGEESummer23/Graphs/Demographics",
   scale = 2,
   width = 6,
   height = 4,
@@ -421,7 +419,7 @@ ggsave(
 
 gender_adv <- filter(gender3, Program == "Advanced - 2nd Year with GGEE")
 
-gender_adv_n <- 5+21+1
+gender_adv_n <- 4+7+1
 gender_adv_n
 
 ggplot(gender_adv, aes(x=Gender, y = n))+
@@ -432,7 +430,7 @@ ggplot(gender_adv, aes(x=Gender, y = n))+
   theme(axis.text.y = element_text(colour = "black"))+
   ggtitle("GGEE Advanced Summer Programs 2023 Genders")+
   theme(plot.title = element_text(hjust = 0.5))+
-  scale_y_continuous(expand = c(0, 0), limits = c(0, 25), n.breaks=5)+
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 10), n.breaks=10)+
   xlab("Gender")+
   ylab("Number of Students")
 
@@ -440,7 +438,7 @@ ggsave(
   filename = "GGEE Summer 2023 Gender_Adv.png",
   plot = last_plot(),
   device = "png",
-  path = "/Users/kristadulany/Documents/GitHub/GGEESummer23/Graphs",
+  path = "/Users/kristadulany/Documents/GitHub/GGEESummer23/Graphs/Demographics",
   scale = 2,
   width = 6,
   height = 4,
@@ -474,7 +472,7 @@ ggsave(
 #  filename = "GGEE Summer 2023 Gender.png",
 #  plot = last_plot(),
 #  device = "png",
-#  path = "/Users/kristadulany/Documents/GitHub/GGEESummer23/Graphs",
+#  path = "/Users/kristadulany/Documents/GitHub/GGEESummer23/Graphs/Demographics",
 #  scale = 2,
 #  width = 6,
 #  height = 4,
@@ -492,7 +490,7 @@ gender_pie <- gender|>
   count(Gender)|>
   na.omit(gender)
 
-gender_pie_n <- 56+191+7+5
+gender_pie_n <- 4+48+7+156+1+6+5
 
 df2 <- gender_pie%>% 
   mutate(csum = rev(cumsum(rev(n))), 
@@ -508,7 +506,7 @@ ggplot(gender_pie, aes(x="", y=n, fill=Gender)) +
   ggtitle("GGEE Summer 2023 Gender Distribution")+
   theme(plot.title = element_text(hjust = 0.5, vjust = .5))+
   geom_label_repel(data = df2,
-                   aes(y = pos, label = paste0(round(n/259*100, digits=1), "%")),
+                   aes(y = pos, label = paste0(round(n/gender_pie_n*100, digits=1), "%")),
                    size = 4.5, nudge_x = 1, show.legend = FALSE)+
   theme(legend.position = c(1, .5))
   
@@ -517,7 +515,7 @@ ggsave(
   filename = "GGEE Summer 2023 Gender_PIE_Both.png",
   plot = last_plot(),
   device = "png",
-  path = "/Users/kristadulany/Documents/GitHub/GGEESummer23/Graphs",
+  path = "/Users/kristadulany/Documents/GitHub/GGEESummer23/Graphs/Demographics",
   scale = 2,
   width = 6,
   height = 4,
@@ -534,7 +532,7 @@ gender_pie_intro <- gender_pie0|>
   count(Gender)|>
   na.omit(gender_pie0)
 
-gender_pie_intro_n <- 49+169+6+5
+gender_pie_intro_n <- 48+156+6+5
 
 df_in <- gender_pie_intro%>% 
   mutate(csum = rev(cumsum(rev(n))), 
@@ -550,7 +548,7 @@ ggplot(gender_pie_intro, aes(x="", y=n, fill=Gender)) +
   ggtitle("GGEE Introductory Summer 2023 Gender Distribution")+
   theme(plot.title = element_text(hjust = 0.5, vjust = .5))+
   geom_label_repel(data = df_in,
-                   aes(y = pos, label = paste0(round(n/229*100, digits=1), "%")),
+                   aes(y = pos, label = paste0(round(n/gender_pie_intro_n*100, digits=1), "%")),
                    size = 4.5, nudge_x = 1, show.legend = FALSE)+
   theme(legend.position = c(1, .5))
 
@@ -558,7 +556,7 @@ ggsave(
   filename = "GGEE Summer 2023 Gender_PIE_Intro.png",
   plot = last_plot(),
   device = "png",
-  path = "/Users/kristadulany/Documents/GitHub/GGEESummer23/Graphs",
+  path = "/Users/kristadulany/Documents/GitHub/GGEESummer23/Graphs/Demographics",
   scale = 2,
   width = 6,
   height = 4,
@@ -575,7 +573,7 @@ gender_pie_adv <- gender_pie1|>
   count(Gender)|>
   na.omit(gender_pie1)
 
-gender_pie_adv_n <- 5+21+1
+gender_pie_adv_n <-  4+7+1
 
 df_adv <- gender_pie_adv%>% 
   mutate(csum = rev(cumsum(rev(n))), 
@@ -591,7 +589,7 @@ ggplot(gender_pie_adv, aes(x="", y=n, fill=Gender)) +
   ggtitle("GGEE Advanced Summer 2023 Gender Distribution")+
   theme(plot.title = element_text(hjust = 0.5, vjust = .5))+
   geom_label_repel(data = df_adv,
-                   aes(y = pos, label = paste0(round(n/27*100, digits=1), "%")),
+                   aes(y = pos, label = paste0(round(n/gender_pie_adv_n*100, digits=1), "%")),
                    size = 4.5, nudge_x = 1, show.legend = FALSE)+
   theme(legend.position = c(1, .5))
 
@@ -599,7 +597,7 @@ ggsave(
   filename = "GGEE Summer 2023 Gender_PIE_Adv.png",
   plot = last_plot(),
   device = "png",
-  path = "/Users/kristadulany/Documents/GitHub/GGEESummer23/Graphs",
+  path = "/Users/kristadulany/Documents/GitHub/GGEESummer23/Graphs/Demographics",
   scale = 2,
   width = 6,
   height = 4,
