@@ -120,20 +120,20 @@ Q1Omit <- na.omit(Q1SresSel)
 
 
 #no remove words
-Q1Srestidy<-unnest_tokens(Q1Omit, word, Experience_Type)
+#Q1Srestidy<-unnest_tokens(Q1Omit, word, Experience_Type)
 
-Q1Sresclean<-anti_join(Q1Srestidy, stop_words)
+#Q1Sresclean<-anti_join(Q1Srestidy, stop_words)
 
-Q1Sres_counts <- count(Q1Sresclean, word, sort = TRUE)
+#Q1Sres_counts <- count(Q1Sresclean, word, sort = TRUE)
 
-wordcloud2(Q1Sres_counts)
+#wordcloud2(Q1Sres_counts)
 
 
 #remove words
 
 remove_words <-data.frame("word"= c("coded", "program", "6th", "5th", "3rd", "4th", "7th", "0","1","10","	
 1st", "27","null", "NA", "na", "coding", "ive", "that's", "code", "grade", "2", "	
-2015", "2021", "2022", "30", "3rd", "50", "6", "9", "90", "experience", "learned", "called", "candy", "chapman", "forgot", "floor", "lake", "taught", "parents", "taking", "stuff", "simple", "east"))
+2015", "2021", "2022", "30", "3rd", "50", "6", "9", "90", "experience", "learned", "called", "candy", "chapman", "forgot", "floor", "lake", "taught", "parents", "taking", "stuff", "simple", "east", "hart"))
 
 Q1Srestidy<-unnest_tokens(Q1Omit, word, Experience_Type)
 
