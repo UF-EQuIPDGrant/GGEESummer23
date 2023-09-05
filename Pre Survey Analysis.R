@@ -18,7 +18,8 @@ library(ggplot2)
 library(scales)
 library(ggrepel)
 library(wordcloud2)
-library(htmlwidgets) 
+library(htmlwidgets)
+library(webshot)
 install.packages("webshot")
 webshot::install_phantomjs()
 
@@ -117,31 +118,65 @@ plot(likert(summary = df), plot.percent.neutral=FALSE, legend.position="right")
 Q1Sres <- read_excel("Data/GGEE_23_PreSurvey.xlsx", sheet = 1)
 Q1SresSel<- select(Q1Sres, Response_ID, Experience_Type)
 Q1Omit <- na.omit(Q1SresSel)
+Omit <- as_tibble(Q1Omit)
 
+
+##Make correct spelling function
+library(hunspell)
+library(purrr)
+
+correct_spelling <- function(input) {
+  output <- case_when(
+    # any manual corrections
+    input == 'license' ~ 'licence',
+    # check and (if required) correct spelling
+    !hunspell_check(input, dictionary('en_GB')) ~
+      hunspell_suggest(input, dictionary('en_GB')) %>%
+      # get first suggestion, or NA if suggestions list is empty
+      map(1, .default = NA) %>%
+      unlist(),
+    TRUE ~ input # if word is correct
+  )
+  # if input incorrectly spelled but no suggestions, return input word
+  ifelse(is.na(output), input, output) }
 
 #no remove words
 #Q1Srestidy<-unnest_tokens(Q1Omit, word, Experience_Type)
-
 #Q1Sresclean<-anti_join(Q1Srestidy, stop_words)
-
 #Q1Sres_counts <- count(Q1Sresclean, word, sort = TRUE)
-
 #wordcloud2(Q1Sres_counts)
 
 
+######################################################################################
 #remove words
-
 remove_words <-data.frame("word"= c("coded", "program", "6th", "5th", "3rd", "4th", "7th", "0","1","10","	
 1st", "27","null", "NA", "na", "coding", "ive", "that's", "code", "grade", "2", "	
 2015", "2021", "2022", "30", "3rd", "50", "6", "9", "90", "experience", "learned", "called", "candy", "chapman", "forgot", "floor", "lake", "taught", "parents", "taking", "stuff", "simple", "east", "hart"))
 
-Q1Srestidy<-unnest_tokens(Q1Omit, word, Experience_Type)
+Q1Srestidy<-unnest_tokens(Omit, word, Experience_Type, to_lower = FALSE)
 
 Q1Sres_remove<- anti_join(Q1Srestidy,remove_words) #remove repeat words
 
 Q1Sresclean<-anti_join(Q1Sres_remove, stop_words)
+words <- filter(Q1Sresclean, "word" )
 
-Q1Sres_counts <- count(Q1Sresclean, word, sort = TRUE)
+
+Q1Sres_counts <- words %>%
+  rename(original = words) %>%
+  group_by(original) %>%
+  summarise(count = n()) %>%
+  ungroup() %>% # so we can mutate word
+  mutate(suggestion = correct_spelling(original)) %>%
+  filter(suggestion != original)
+
+
+
+
+
+
+
+
+#Q1Sres_counts <- count(Q1Sresclean, word, sort = TRUE)
 
 Q1results <- filter(Q1Sres_counts, n > 1)
 
@@ -152,7 +187,7 @@ color <- colorRampPalette(brewer.pal(9,"Blues")[3:7])(color_range_number)[factor
 
 hw <-wordcloud2(Q1results, color=color, size=2)
 
-
+hw
 ##Export Word Cloud
 
 #hw <- wordcloud2(Q1results,size = 3)
