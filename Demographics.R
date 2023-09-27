@@ -1,7 +1,7 @@
 ---
 #title: Demographics Analysis
 #author: Krista Dulany Chisholm
-#date: August 30, 2023
+#date: September 27, 2023
 ---
 
 install.packages("ggrepel")
@@ -24,16 +24,157 @@ GGEE_23_Pre <-filter(GGEE_23_Pre0, Finished == "True")
 
 #################################################################################
 ##Age Distribution
+#################################################################################
+
+###############
+####AGE PIE####
+###############
+#age <-  select(GGEE_23_Pre, Age, Program)
+age <- select(GGEE_23_Pre, Age, Program)|>
+        count(Age, Program)|>
+        na.omit(age)
+
+###AGE ALL###
+
+age_all <- select(GGEE_23_Pre, Age, Program)|>
+  count(Age)|>
+  na.omit(age)
+
+
+age_n <- 1+6+3+6+34+60+49+39+5+1
+age_n
+
+df_age_all <- age_all%>% 
+  mutate(csum = rev(cumsum(rev(n))), 
+         pos = n/2 + lead(csum, 1),
+         pos = if_else(is.na(pos), n/2, pos))
+
+
+ggplot(age_all, aes(x="", y=n, fill=Age)) +
+  geom_bar(stat="identity", width=1, color="black") +
+  coord_polar("y", start=0)+
+  theme_void()+
+  scale_fill_brewer(guide = guide_legend(reverse = TRUE),palette = "Blues")+
+  ggtitle("GGEE Summer 2023 Age Distribution")+
+  theme(plot.title = element_text(hjust = 0.5, vjust = .5))+
+  geom_label_repel(data = df_age_all,
+                   aes(y = pos, label = paste0(round(n/age_n*100, digits=1), "%")),
+                   size = 4.5, nudge_x = 1, show.legend = FALSE)+
+  theme(legend.position = c(1, .5))
+
+
+ggsave(
+  filename = "GGEE_23_Summer_Pie_Age_ALL.png",
+  plot = last_plot(),
+  device = "png",
+  path = "/Users/kristachisholm/Documents/GitHub/GGEESummer23/Graphs/Demographics_092723",
+  scale = 2,
+  width = 6,
+  height = 4,
+  units = c("in"),
+  dpi = 300,
+  limitsize = TRUE,
+  bg = NULL)
+
+
+###AGE INTRO###
+
+age_intro <- filter(age, Program == "Introductory - 1st Year with GGEE")
+
+age_intro_n <- 6+34+60+49+39+5+1
+age_intro_n
+
+df_age_intro <- age_intro%>% 
+  mutate(csum = rev(cumsum(rev(n))), 
+         pos = n/2 + lead(csum, 1),
+         pos = if_else(is.na(pos), n/2, pos))
+
+
+ggplot(age_intro, aes(x="", y=n, fill=Age)) +
+  geom_bar(stat="identity", width=1, color="black") +
+  coord_polar("y", start=0)+
+  theme_void()+
+  scale_fill_brewer(guide = guide_legend(reverse = TRUE),palette = "Blues")+
+  ggtitle("GGEE Summer 2023 Age Distribution of the Introductory Program")+
+  theme(plot.title = element_text(hjust = 0.5, vjust = .5))+
+  geom_label_repel(data = df_age_intro,
+                   aes(y = pos, label = paste0(round(n/age_intro_n*100, digits=1), "%")),
+                   size = 4.5, nudge_x = 1, show.legend = FALSE)+
+  theme(legend.position = c(1, .5))
+
+
+ggsave(
+  filename = "GGEE_23_Summer_Pie_Age_INTRO.png",
+  plot = last_plot(),
+  device = "png",
+  path = "/Users/kristachisholm/Documents/GitHub/GGEESummer23/Graphs/Demographics_092723",
+  scale = 2,
+  width = 6,
+  height = 4,
+  units = c("in"),
+  dpi = 300,
+  limitsize = TRUE,
+  bg = NULL)
+
+
+###AGE ADVANCED###
+
+age_adv <- filter(age, Program == "Advanced - 2nd Year with GGEE")
+
+age_adv_n <- 1+6+3
+age_adv_n
+
+df_age_adv <- age_adv%>% 
+  mutate(csum = rev(cumsum(rev(n))), 
+         pos = n/2 + lead(csum, 1),
+         pos = if_else(is.na(pos), n/2, pos))
+
+
+ggplot(age_adv, aes(x="", y=n, fill=Age)) +
+  geom_bar(stat="identity", width=1, color="black") +
+  coord_polar("y", start=0)+
+  theme_void()+
+  scale_fill_brewer(guide = guide_legend(reverse = TRUE),palette = "Blues")+
+  ggtitle("GGEE Summer 2023 Age Distribution of the Advanced Program")+
+  theme(plot.title = element_text(hjust = 0.5, vjust = .5))+
+  geom_label_repel(data = df_age_adv,
+                   aes(y = pos, label = paste0(round(n/age_adv_n*100, digits=1), "%")),
+                   size = 4.5, nudge_x = 1, show.legend = FALSE)+
+  theme(legend.position = c(1, .5))
+
+
+ggsave(
+  filename = "GGEE_23_Summer_Pie_Age_ADV.png",
+  plot = last_plot(),
+  device = "png",
+  path = "/Users/kristachisholm/Documents/GitHub/GGEESummer23/Graphs/Demographics_092723",
+  scale = 2,
+  width = 6,
+  height = 4,
+  units = c("in"),
+  dpi = 300,
+  limitsize = TRUE,
+  bg = NULL)
+
+
+
+
+
+
+#################################
+##BAR PLOTS AGE##################
+#################################
+
 age <-  select(GGEE_23_Pre, Age, Program)
 age2 <- age|>
   count(Age, Program)
 age3 <- na.omit(age2)
 
-age_n <- 6+39+1+66+7+55+3+41+5+1
+age_n <- 1+6+3+6+34+60+49+39+5+1
 age_n
 
-#AGE BOTH Programs
-ggplot(age3, aes(x=Age, y = n, fill= Program))+
+#BARPLOT AGE BOTH Programs
+#ggplot(age3, aes(x=Age, y = n, fill= Program))+
   geom_bar(position= position_dodge(),stat="identity",
            colour='black', size=.3) +
   theme_classic()+
@@ -60,13 +201,13 @@ ggsave(
   limitsize = TRUE,
   bg = NULL)
 
-#AGE INTRO Programs
+#BAR PLOT AGE INTRO Programs
 age_intro <- filter(age3, Program == "Introductory - 1st Year with GGEE")
 
-age_intro_n <- 6+39+66+55+41+5+1
+age_intro_n <- 6+34+60+49+39+5+1
 age_intro_n
 
-ggplot(age_intro, aes(x=Age, y = n))+
+#ggplot(age_intro, aes(x=Age, y = n))+
   geom_bar(position= position_dodge(),stat="identity", fill= "#9ECAE2", colour='black', size=.3) +
   theme_classic()+
   theme(legend.position = c(0.8, 0.8))+
@@ -92,13 +233,13 @@ ggsave(
   bg = NULL)
 
 
-#AGE ADVANCED Programs
+#BAR PLOT AGE ADVANCED Programs
 age_adv <- filter(age3, Program == "Advanced - 2nd Year with GGEE")
 
-age_adv_n <- 1+7+3
+age_adv_n <- 1+6+3
 age_adv_n
 
-ggplot(age_adv, aes(x=Age, y = n))+
+#ggplot(age_adv, aes(x=Age, y = n))+
   geom_bar(position= position_dodge(),stat="identity", fill= "#DDEBF7", colour='black', size=.3) +
   theme_classic()+
   theme(legend.position = c(0.8, 0.8))+
@@ -124,10 +265,149 @@ ggsave(
   bg = NULL)
 
 
-#################################################################################
-##District Participation in Research
 
-##District Both
+
+
+
+#################################################################################
+##District Participation in Research##
+#################################################################################
+
+district <- select(GGEE_23_Pre, District, Program)|>
+            count(District, Program) |>
+            na.omit(district)
+
+district_n <- 6+4+10+11+35+35+31+66+6
+district_n
+
+###DISTRICT ALL###
+
+district_all <- select(GGEE_23_Pre, District, Program)|>
+  count(District)|>
+  na.omit(age)
+
+
+district_n_all <- 10+11+41+35+31+66+10
+district_n_all
+
+df_district_all <- district_all%>% 
+  mutate(csum = rev(cumsum(rev(n))), 
+         pos = n/2 + lead(csum, 1),
+         pos = if_else(is.na(pos), n/2, pos))
+
+
+ggplot(district_all, aes(x="", y=n, fill=District)) +
+  geom_bar(stat="identity", width=1, color="black") +
+  coord_polar("y", start=0)+
+  theme_void()+
+  scale_fill_brewer(guide = guide_legend(reverse = TRUE),palette = "Blues")+
+  ggtitle("GGEE Summer 2023 District Distribution")+
+  theme(plot.title = element_text(hjust = 0.5, vjust = .5))+
+  geom_label_repel(data = df_district_all,
+                   aes(y = pos, label = paste0(round(n/district_n_all*100, digits=1), "%")),
+                   size = 4.5, nudge_x = 1, show.legend = FALSE)+
+  theme(legend.position = c(1.05, .5))
+
+
+ggsave(
+  filename = "GGEE_23_Summer_Pie_District_ALL.png",
+  plot = last_plot(),
+  device = "png",
+  path = "/Users/kristachisholm/Documents/GitHub/GGEESummer23/Graphs/Demographics_092723",
+  scale = 2,
+  width = 6,
+  height = 4,
+  units = c("in"),
+  dpi = 300,
+  limitsize = TRUE,
+  bg = NULL)
+
+
+###DISTRICT INTRO###
+
+district_intro <- filter(district, Program == "Introductory - 1st Year with GGEE")
+
+district_intro_n <- 10+11+35+35+31+66+6
+district_intro_n
+
+df_district_intro <- district_intro%>% 
+  mutate(csum = rev(cumsum(rev(n))), 
+         pos = n/2 + lead(csum, 1),
+         pos = if_else(is.na(pos), n/2, pos))
+
+ggplot(district_intro, aes(x="", y=n, fill=District)) +
+  geom_bar(stat="identity", width=1, color="black") +
+  coord_polar("y", start=0)+
+  theme_void()+
+  scale_fill_brewer(guide = guide_legend(reverse = TRUE),palette = "Blues")+
+  ggtitle("GGEE Summer 2023 District Distribution for Introductory Programs")+
+  theme(plot.title = element_text(hjust = 0.5, vjust = .5))+
+  geom_label_repel(data = df_district_intro,
+                   aes(y = pos, label = paste0(round(n/district_intro_n*100, digits=1), "%")),
+                   size = 4.5, nudge_x = 1, show.legend = FALSE)+
+  theme(legend.position = c(1, .5))
+
+
+ggsave(
+  filename = "GGEE_23_Summer_Pie_District_INTRO.png",
+  plot = last_plot(),
+  device = "png",
+  path = "/Users/kristachisholm/Documents/GitHub/GGEESummer23/Graphs/Demographics_092723",
+  scale = 2,
+  width = 6,
+  height = 4,
+  units = c("in"),
+  dpi = 300,
+  limitsize = TRUE,
+  bg = NULL)
+
+
+
+###DISTRICT ADVANCED###
+
+district_adv <- filter(district, Program == "Advanced - 2nd Year with GGEE")
+
+district_adv_n <- 6+4
+district_adv_n
+
+df_district_adv <- district_adv %>% 
+  mutate(csum = rev(cumsum(rev(n))), 
+         pos = n/2 + lead(csum, 1),
+         pos = if_else(is.na(pos), n/2, pos))
+
+ggplot(district_adv, aes(x="", y=n, fill=District)) +
+  geom_bar(stat="identity", width=1, color="black") +
+  coord_polar("y", start=0)+
+  theme_void()+
+  scale_fill_brewer(guide = guide_legend(reverse = TRUE),palette = "Blues")+
+  ggtitle("GGEE Summer 2023 District Distribution for Advanced Programs")+
+  theme(plot.title = element_text(hjust = 0.5, vjust = .5))+
+  geom_label_repel(data = df_district_adv,
+                   aes(y = pos, label = paste0(round(n/district_adv_n*100, digits=1), "%")),
+                   size = 4.5, nudge_x = 1, show.legend = FALSE)+
+  theme(legend.position = c(1.05, .5))
+
+
+ggsave(
+  filename = "GGEE_23_Summer_Pie_District_ADV.png",
+  plot = last_plot(),
+  device = "png",
+  path = "/Users/kristachisholm/Documents/GitHub/GGEESummer23/Graphs/Demographics_092723",
+  scale = 2,
+  width = 6,
+  height = 4,
+  units = c("in"),
+  dpi = 300,
+  limitsize = TRUE,
+  bg = NULL)
+
+
+
+#################################
+##BAR PLOTS DISTRICT ##################
+#################################
+
+##BAR PLOT District Both
 
 district <-  select(GGEE_23_Pre, District, Program)
 district2 <- district|>
@@ -166,7 +446,7 @@ ggsave(
 
 
 
-##DISTRICT INTRO
+##BAR PLOT DISTRICT INTRO
 
 district_intro <- filter(district3, Program == "Introductory - 1st Year with GGEE")
 
@@ -199,7 +479,7 @@ ggsave(
   bg = NULL)
 
 
-##DISTRICT ADV
+##BAR PLOT DISTRICT ADV
 
 district_adv <- filter(district3, Program == "Advanced - 2nd Year with GGEE")
 
@@ -232,10 +512,153 @@ ggsave(
   bg = NULL)
 
 
-#################################################################################
-##Grade Level in Research
 
-##GRADE LEVEL BOTH
+
+
+
+#################################################################################
+##Grade Level in Research##
+#################################################################################
+
+#######################
+####GRADE LEVEL PIE####
+#######################
+
+grade <- select(GGEE_23_Pre, Grade, Program)|>
+  count(Grade, Program)|>
+  na.omit(grade)
+
+graden <- 2+4+4+5+32+60+53+44 
+
+###GRADE LEVEL ALL###
+
+grade_all <- select(GGEE_23_Pre, Grade, Program)|>
+  count(Grade)|>
+  na.omit(grade)
+
+grade_n <- 5+32+62+57+48
+grade_n
+
+df_grade_all <- grade_all%>% 
+  mutate(csum = rev(cumsum(rev(n))), 
+         pos = n/2 + lead(csum, 1),
+         pos = if_else(is.na(pos), n/2, pos))
+
+
+ggplot(grade_all, aes(x="", y=n, fill=Grade)) +
+  geom_bar(stat="identity", width=1, color="black") +
+  coord_polar("y", start=0)+
+  theme_void()+
+  scale_fill_brewer(guide = guide_legend(reverse = TRUE),palette = "Blues")+
+  ggtitle("GGEE Summer 2023 Grade Distribution")+
+  theme(plot.title = element_text(hjust = 0.5, vjust = .5))+
+  geom_label_repel(data = df_grade_all,
+                   aes(y = pos, label = paste0(round(n/grade_n*100, digits=1), "%")),
+                   size = 4.5, nudge_x = 1, show.legend = FALSE)+
+  theme(legend.position = c(1, .5))
+
+
+ggsave(
+  filename = "GGEE_23_Summer_Pie_Grade_ALL.png",
+  plot = last_plot(),
+  device = "png",
+  path = "/Users/kristachisholm/Documents/GitHub/GGEESummer23/Graphs/Demographics_092723",
+  scale = 2,
+  width = 6,
+  height = 4,
+  units = c("in"),
+  dpi = 300,
+  limitsize = TRUE,
+  bg = NULL)
+
+
+###GRADE LEVEL INTRO###
+
+grade_intro <- filter(grade, Program == "Introductory - 1st Year with GGEE")
+
+grade_intro_n <- 5+32+60+53+44 
+grade_intro_n
+
+df_grade_intro <- grade_intro%>% 
+  mutate(csum = rev(cumsum(rev(n))), 
+         pos = n/2 + lead(csum, 1),
+         pos = if_else(is.na(pos), n/2, pos))
+
+
+ggplot(grade_intro, aes(x="", y=n, fill=Grade)) +
+  geom_bar(stat="identity", width=1, color="black") +
+  coord_polar("y", start=0)+
+  theme_void()+
+  scale_fill_brewer(guide = guide_legend(reverse = TRUE),palette = "Blues")+
+  ggtitle("GGEE Summer 2023 Grade Level Distribution of the Introductory Program")+
+  theme(plot.title = element_text(hjust = 0.5, vjust = .5))+
+  geom_label_repel(data = df_grade_intro,
+                   aes(y = pos, label = paste0(round(n/grade_intro_n*100, digits=1), "%")),
+                   size = 4.5, nudge_x = 1, show.legend = FALSE)+
+  theme(legend.position = c(1, .5))
+
+
+ggsave(
+  filename = "GGEE_23_Summer_Pie_Grade_INTRO.png",
+  plot = last_plot(),
+  device = "png",
+  path = "/Users/kristachisholm/Documents/GitHub/GGEESummer23/Graphs/Demographics_092723",
+  scale = 2,
+  width = 6,
+  height = 4,
+  units = c("in"),
+  dpi = 300,
+  limitsize = TRUE,
+  bg = NULL)
+
+
+###GRADE LEVEL ADVANCED###
+
+grade_adv <- filter(grade, Program == "Advanced - 2nd Year with GGEE")
+
+grade_adv_n <- 2+4+4
+grade_adv_n
+
+df_grade_adv <- grade_adv %>% 
+  mutate(csum = rev(cumsum(rev(n))), 
+         pos = n/2 + lead(csum, 1),
+         pos = if_else(is.na(pos), n/2, pos))
+
+
+ggplot(grade_adv, aes(x="", y=n, fill=Grade)) +
+  geom_bar(stat="identity", width=1, color="black") +
+  coord_polar("y", start=0)+
+  theme_void()+
+  scale_fill_brewer(guide = guide_legend(reverse = TRUE),palette = "Blues")+
+  ggtitle("GGEE Summer 2023 Grade Level Distribution of the Advanced Program")+
+  theme(plot.title = element_text(hjust = 0.5, vjust = .5))+
+  geom_label_repel(data = df_grade_adv,
+                   aes(y = pos, label = paste0(round(n/grade_adv_n*100, digits=1), "%")),
+                   size = 4.5, nudge_x = 1, show.legend = FALSE)+
+  theme(legend.position = c(1, .5))
+
+
+ggsave(
+  filename = "GGEE_23_Summer_Pie_Grade_ADV.png",
+  plot = last_plot(),
+  device = "png",
+  path = "/Users/kristachisholm/Documents/GitHub/GGEESummer23/Graphs/Demographics_092723",
+  scale = 2,
+  width = 6,
+  height = 4,
+  units = c("in"),
+  dpi = 300,
+  limitsize = TRUE,
+  bg = NULL)
+
+
+
+
+###########################################
+##BAR PLOTS GRADE LEVEL  ##################
+###########################################
+
+##BAR PLOT GRADE LEVEL BOTH
 
 grade <-  select(GGEE_23_Pre, Grade, Program)
 grade2 <- grade|>
@@ -274,7 +697,7 @@ ggsave(
   bg = NULL)
 
 
-##GRADE INTRO
+##BAR PLOT GRADE INTRO
 
 grade_intro <- filter(grade3, Program == "Introductory - 1st Year with GGEE")
 
@@ -307,7 +730,7 @@ ggsave(
   limitsize = TRUE,
   bg = NULL)
 
-##GRADE ADVANCED
+##BAR PLOT GRADE ADVANCED
 
 grade_adv <- filter(grade3, Program == "Advanced - 2nd Year with GGEE")
 
@@ -344,8 +767,147 @@ ggsave(
 
 #################################################################################
 ##Gender in Research
+#################################################################################
 
-##GENDER BOTH
+##################
+####GENDER PIE####
+##################
+
+gender <- select(GGEE_23_Pre, Gender, Program)|>
+  count(Gender, Program)|>
+  na.omit(gender)
+
+gendern <- 4+5+1+45+140+6+3
+
+###GENDER ALL###
+
+gender_all <- select(GGEE_23_Pre, Gender, Program)|>
+  count(Gender)|>
+  na.omit(gender)
+
+gender_n <- 49+145+6+4
+gender_n
+
+df_gender_all <- gender_all%>% 
+  mutate(csum = rev(cumsum(rev(n))), 
+         pos = n/2 + lead(csum, 1),
+         pos = if_else(is.na(pos), n/2, pos))
+
+
+ggplot(gender_all, aes(x="", y=n, fill=Gender)) +
+  geom_bar(stat="identity", width=1, color="black") +
+  coord_polar("y", start=0)+
+  theme_void()+
+  scale_fill_brewer(guide = guide_legend(reverse = FALSE),palette = "Blues")+
+  ggtitle("GGEE Summer 2023 Gender Distribution")+
+  theme(plot.title = element_text(hjust = 0.5, vjust = .5))+
+  geom_label_repel(data = df_gender_all,
+                   aes(y = pos, label = paste0(round(n/gender_n*100, digits=1), "%")),
+                   size = 4.5, nudge_x = 1, show.legend = FALSE)+
+  theme(legend.position = c(1, .5))
+
+
+ggsave(
+  filename = "GGEE_23_Summer_Pie_Gender_ALL.png",
+  plot = last_plot(),
+  device = "png",
+  path = "/Users/kristachisholm/Documents/GitHub/GGEESummer23/Graphs/Demographics_092723",
+  scale = 2,
+  width = 6,
+  height = 4,
+  units = c("in"),
+  dpi = 300,
+  limitsize = TRUE,
+  bg = NULL)
+
+
+###GENDER INTRO###
+
+gender_intro <- filter(gender, Program == "Introductory - 1st Year with GGEE")
+
+gender_intro_n <- 5+32+60+53+44 
+gender_intro_n
+
+df_gender_intro <- gender_intro%>% 
+  mutate(csum = rev(cumsum(rev(n))), 
+         pos = n/2 + lead(csum, 1),
+         pos = if_else(is.na(pos), n/2, pos))
+
+
+ggplot(gender_intro, aes(x="", y=n, fill=Gender)) +
+  geom_bar(stat="identity", width=1, color="black") +
+  coord_polar("y", start=0)+
+  theme_void()+
+  scale_fill_brewer(guide = guide_legend(reverse = FALSE),palette = "Blues")+
+  ggtitle("GGEE Summer 2023 Gender Distribution of the Introductory Program")+
+  theme(plot.title = element_text(hjust = 0.5, vjust = .5))+
+  geom_label_repel(data = df_gender_intro,
+                   aes(y = pos, label = paste0(round(n/gender_intro_n*100, digits=1), "%")),
+                   size = 4.5, nudge_x = 1, show.legend = FALSE)+
+  theme(legend.position = c(1, .5))
+
+
+ggsave(
+  filename = "GGEE_23_Summer_Pie_Gender_INTRO.png",
+  plot = last_plot(),
+  device = "png",
+  path = "/Users/kristachisholm/Documents/GitHub/GGEESummer23/Graphs/Demographics_092723",
+  scale = 2,
+  width = 6,
+  height = 4,
+  units = c("in"),
+  dpi = 300,
+  limitsize = TRUE,
+  bg = NULL)
+
+
+###GENDER ADVANCED###
+
+gender_adv <- filter(gender, Program == "Advanced - 2nd Year with GGEE")
+
+gender_adv_n <- 4+5+1
+gender_adv_n
+
+df_gender_adv <- gender_adv %>% 
+  mutate(csum = rev(cumsum(rev(n))), 
+         pos = n/2 + lead(csum, 1),
+         pos = if_else(is.na(pos), n/2, pos))
+
+
+ggplot(gender_adv, aes(x="", y=n, fill=Gender)) +
+  geom_bar(stat="identity", width=1, color="black") +
+  coord_polar("y", start=0)+
+  theme_void()+
+  scale_fill_brewer(guide = guide_legend(reverse = FALSE),palette = "Blues")+
+  ggtitle("GGEE Summer 2023 Gender Distribution of the Advanced Program")+
+  theme(plot.title = element_text(hjust = 0.5, vjust = .5))+
+  geom_label_repel(data = df_gender_adv,
+                   aes(y = pos, label = paste0(round(n/gender_adv_n*100, digits=1), "%")),
+                   size = 4.5, nudge_x = 1, show.legend = FALSE)+
+  theme(legend.position = c(1, .5))
+
+
+ggsave(
+  filename = "GGEE_23_Summer_Pie_Gender_ADV.png",
+  plot = last_plot(),
+  device = "png",
+  path = "/Users/kristachisholm/Documents/GitHub/GGEESummer23/Graphs/Demographics_092723",
+  scale = 2,
+  width = 6,
+  height = 4,
+  units = c("in"),
+  dpi = 300,
+  limitsize = TRUE,
+  bg = NULL)
+
+
+
+
+###########################################
+##BAR PLOTS GENDER  #######################
+###########################################
+
+##BAR PLOT GENDER BOTH
 
 gender <-  select(GGEE_23_Pre, Gender, Program)
 gender2 <- gender|>
@@ -383,7 +945,7 @@ ggsave(
   bg = NULL)
 
 
-##GENDER INTRO
+##BAR PLOT GENDER INTRO
 
 gender_intro <- filter(gender3, Program == "Introductory - 1st Year with GGEE")
 
@@ -416,7 +978,7 @@ ggsave(
   bg = NULL)
 
 
-##GENDER ADV
+##BAR PLOT GENDER ADV
 
 gender_adv <- filter(gender3, Program == "Advanced - 2nd Year with GGEE")
 
@@ -483,9 +1045,7 @@ ggsave(
 #  bg = NULL)
 
 
-#################################################################################
-#Gender PIE Chart - BOTH
-
+##OLD Gender Pie Chart Both
 gender_pie <- gender|>
   count(Gender)|>
   na.omit(gender)
@@ -526,7 +1086,7 @@ ggsave(
 
 
 
-#Gender PIE Chart - INTRO
+#OLD Gender PIE Chart - INTRO
 gender_pie0 <- filter(gender, Program == "Introductory - 1st Year with GGEE")
 gender_pie_intro <- gender_pie0|>
   count(Gender)|>
@@ -567,7 +1127,7 @@ ggsave(
 
 
 
-#Gender PIE Chart - ADV
+#OLD Gender PIE Chart - ADV
 gender_pie1 <- filter(gender, Program == "Advanced - 2nd Year with GGEE")
 gender_pie_adv <- gender_pie1|>
   count(Gender)|>
