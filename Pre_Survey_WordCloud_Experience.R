@@ -14,10 +14,9 @@ library(writexl)
 library(readxl)
 library(textdata)
 library(ggplot2)
-library(scales)
 
 
-GGEE_23_PreSurvey <- read_excel("Data/GGEE_23_PreSurvey.xlsx")
+GGEE_23_PreSurvey <- read_excel("Documents/GitHub/GGEESummer23/Data/GGEE_23_PreSurvey.xlsx")
 #View(GGEE_23_PreSurvey)
 
 Experience<- select(GGEE_23_PreSurvey, ResponseID, ExperienceType)
