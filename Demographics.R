@@ -300,7 +300,7 @@ ggplot(district_all, aes(x="", y=n, fill=District)) +
   geom_bar(stat="identity", width=1, color="black") +
   coord_polar("y", start=0)+
   theme_void()+
-  scale_fill_brewer(guide = guide_legend(reverse = TRUE),palette = "Blues")+
+  scale_fill_brewer(guide = guide_legend(reverse = FALSE),palette = "Blues")+
   ggtitle("GGEE Summer 2023 District Distribution")+
   theme(plot.title = element_text(hjust = 0.5, vjust = .5))+
   geom_label_repel(data = df_district_all,
@@ -339,7 +339,7 @@ ggplot(district_intro, aes(x="", y=n, fill=District)) +
   geom_bar(stat="identity", width=1, color="black") +
   coord_polar("y", start=0)+
   theme_void()+
-  scale_fill_brewer(guide = guide_legend(reverse = TRUE),palette = "Blues")+
+  scale_fill_brewer(guide = guide_legend(reverse = FALSE),palette = "Blues")+
   ggtitle("GGEE Summer 2023 District Distribution for Introductory Programs")+
   theme(plot.title = element_text(hjust = 0.5, vjust = .5))+
   geom_label_repel(data = df_district_intro,
@@ -379,7 +379,7 @@ ggplot(district_adv, aes(x="", y=n, fill=District)) +
   geom_bar(stat="identity", width=1, color="black") +
   coord_polar("y", start=0)+
   theme_void()+
-  scale_fill_brewer(guide = guide_legend(reverse = TRUE),palette = "Blues")+
+  scale_fill_brewer(guide = guide_legend(reverse = FALSE),palette = "Blues")+
   ggtitle("GGEE Summer 2023 District Distribution for Advanced Programs")+
   theme(plot.title = element_text(hjust = 0.5, vjust = .5))+
   geom_label_repel(data = df_district_adv,

@@ -24,106 +24,20 @@ install.packages("webshot")
 webshot::install_phantomjs()
 
 
-####################################################################################################################
-
-
-install.packages("HH")
-install.packages("lattice")
-
-library(psych)
-library(likert)
-library(HH)
-library(ggplot2)
-
-
-pre_survey <- read_excel("Data/GGEE_23_PreSurvey.xlsx", sheet = 1)
-
-graph1<-likert(Item~., pre_survey, ReferenceZero=3, ylab = "Statement", xlab = "Percentage", main = list("End of Day: Student Sentiments", x=unit(.62, "npc")), auto.key = list(columns = 2, reverse.rows = T))
-
-graph1
-
-##png("/Users/kristadulany/Documents/GitHub/GGEE/Data/Graph1.png",
-# height=720, width=1080)
-##graph1
-##dev.off()
-
-###MAKE DATA FRAME BY HAND
-Item <- c("I felt confident when completeing today's camp activites", "I enjoyed completing today's camp activities", "I find today's camp activties difficult")
-
-Strongly_Disagree <-c(1.42, 1.42, 23.49)
-Somewhat_Disagree <- c(0.71, 1.42, 22.42)
-Neither <- c(4.96, 3.90, 22.06)
-Somewhat_Agree <- c(27.66, 23.05, 25.98)
-Strongly_Agree <- c(65.25, 70.21, 6.05)
-
-df <- data.frame(Item, Strongly_Disagree, Somewhat_Disagree, Neither, Somewhat_Agree, Strongly_Agree)
-view(df)
-
-plot(likert(summary = df), plot.percent.neutral=FALSE, legend.position="right")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 #################################################################################
-##WORD CLOUD - PREVIOUS EXPERIENCE
+####WORD CLOUD - PREVIOUS EXPERIENCE####
+#################################################################################
+
 
 Q1Sres <- read_excel("Data/GGEE_23_PreSurvey.xlsx", sheet = 1)
-Q1SresSel<- select(Q1Sres, Response_ID, Experience_Type)
+Q1SresSel<- select(Q1Sres, ResponseID, ExperienceType)
 Q1Omit <- na.omit(Q1SresSel)
-Omit <- as_tibble(Q1Omit)
+Omit_1 <- as_tibble(Q1Omit)
 
 
 ##Make correct spelling function
-library(hunspell)
-library(purrr)
+#library(hunspell)
+#library(purrr)
 
 correct_spelling <- function(input) {
   output <- case_when(
@@ -161,22 +75,16 @@ Q1Sresclean<-anti_join(Q1Sres_remove, stop_words)
 words <- filter(Q1Sresclean, "word" )
 
 
-Q1Sres_counts <- words %>%
-  rename(original = words) %>%
-  group_by(original) %>%
-  summarise(count = n()) %>%
-  ungroup() %>% # so we can mutate word
-  mutate(suggestion = correct_spelling(original)) %>%
-  filter(suggestion != original)
+#Q1Sres_counts <- words %>%
+#  rename(original = words) %>%
+#  group_by(original) %>%
+#  summarise(count = n()) %>%
+#  ungroup() %>% # so we can mutate word
+#  mutate(suggestion = correct_spelling(original)) %>%
+#  filter(suggestion != original)
 
 
-
-
-
-
-
-
-#Q1Sres_counts <- count(Q1Sresclean, word, sort = TRUE)
+Q1Sres_counts <- count(Q1Sresclean, word, sort = TRUE)
 
 Q1results <- filter(Q1Sres_counts, n > 1)
 
