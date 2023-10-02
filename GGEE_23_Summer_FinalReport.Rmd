@@ -1,0 +1,122 @@
+---
+title: "Final Report: Goldberg Gator Engineering Explorers Summer Program 2023"
+author: "Krista D Chisholm"
+date: "2023-10-02"
+output: 
+  html_document:
+    theme: paper
+    toc: true
+    number_section: true
+    toc_float:
+      collapsed: true
+    fig_width: 6
+    fig_height: 4
+    fig_caption: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r cars}
+summary(cars)
+```
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+# Introduction
+
+## Background
+Provide a brief overview of the middle school summer program, including its purpose and objectives. Highlight why the program was initiated and its importance in the district.
+
+## Purpose of the Report
+Explain the purpose of this final report and what the reader can expect to find within it.
+
+# District Recruitment
+
+## Recruitment Strategies
+Detail the strategies used to recruit students for the program. Discuss any partnerships or collaborations that helped with recruitment efforts.
+
+## Participant Selection Criteria
+Explain the criteria used to select participants for the program. This could include grade level, academic standing, or other factors.
+
+# Program Calendar
+
+## Overview of Program Dates and Activities
+Provide an overview of the program's calendar, including the duration of the program, daily schedules, and key activities.
+
+# Program Numbers
+
+## Enrollment Statistics
+Present enrollment data, including the number of students who initially registered, and any changes over the course of the program.
+
+## Attendance Records
+Share attendance records to illustrate the level of student engagement and participation throughout the program.
+
+## Dropout Rates (if applicable)
+If there were any dropouts during the program, provide details and reasons for dropout.
+
+# Student Demographics
+
+## Breakdown of Participant Demographics
+Include demographic information such as age, gender, ethnicity, and socioeconomic background of the participating students.
+
+# Pre-Survey Responses
+
+## Summary of Pre-Program Survey Results
+Summarize the responses from the pre-program survey, highlighting key findings and insights.
+
+# Survey Responses
+
+## Analysis of Ongoing Survey Data (if conducted during the program)
+If you conducted surveys during the program, analyze the responses and share any noteworthy trends or changes over time.
+
+# Student Interviews
+
+## Highlights from Student Interviews
+Share significant insights and quotes gathered from student interviews, emphasizing their experiences and perspectives.
+
+# Final Program Survey Responses
+
+## Summary of Post-Program Survey Results
+Present the results of the post-program survey, emphasizing any changes in student responses compared to the pre-program survey.
+
+# Program Outcomes
+
+## Assessment of Program Objectives and Goals
+Evaluate whether the program met its objectives and goals as outlined in the introduction.
+
+# Challenges and Lessons Learned
+
+## Identification of Challenges Faced
+Discuss any challenges encountered during the program's implementation.
+
+## Lessons Learned and Adaptations Made
+Share lessons learned from the program's challenges and any adjustments or improvements made as a result.
+
+# Recommendations
+
+## Suggestions for Program Improvement
+Provide recommendations for improving the program in future iterations, based on the insights gained.
+
+## Future Directions
+Suggest potential directions for the program's growth or expansion.
+
+# Conclusion
+
+## Recap of Program's Successes
+Summarize the program's achievements and positive outcomes.
+
+## Reiteration of Impact on Students
+Emphasize how the program benefited the participating students and the broader school community.
+
+# Appendices
+
+Include any supplementary materials, such as additional data charts and graphs, the complete survey questions, and interview transcripts.
+
+Please adapt this template to your specific program and add more details and content as needed to create a comprehensive final report for your middle school summer program.
+
+
+
