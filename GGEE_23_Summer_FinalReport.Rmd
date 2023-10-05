@@ -18,14 +18,17 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-```
-
-```{r cars}
-summary(cars)
-```
-
-```{r pressure, echo=FALSE}
-plot(pressure)
+library(tidyverse)
+library(tidytext)
+library(dplyr)
+library(readr)
+library(tidyr)
+library(writexl)
+library(readxl)
+library(textdata)
+library(ggplot2)
+library(scales)
+library(ggrepel)
 ```
 
 # Summary
@@ -51,25 +54,30 @@ Program costs per student
 # Introduction
 
 ## Background
-The Goldberg Gator Engineering Explorers Summer Program was initiated by a generous donor, Arnold Goldberg, to the University of Florida Foundation. He envisioned a free summer program for underrepresented minority middle school students. The program would allow students to experience computer science and have opportunities to learn to not only program but build skills in computational thinking, problem solving, and engineering design. The vision was brought to life by the EQuIPD grant at the University of Florida. Their team developed introductory and advanced-level summer programs and have worked with schools and districts to host the programs across the state of Florida. 
+
+The Goldberg Gator Engineering Explorers Summer Program was initiated by a generous donor, Arnold Goldberg, to the University of Florida Foundation. He envisioned a free summer program for underrepresented minority middle school students. The program would allow students to experience computer science and have opportunities to learn to not only program but build skills in computational thinking, problem solving, and engineering design. The vision was brought to life by the Engaging Quality Instruction through Professional Development (EQuIPD) grant at the University of Florida. Their team developed introductory and advanced-level summer programs and have worked with schools and districts to host the programs across the state of Florida. 
 
 The Goldberg Gator Engineering Explorers Program was designed to introduce middle school-aged students to programming and computer science. The program begins with students learning the base elements of coding through small activities that engage them in applying concepts such as strings, conditional statements, loops, and variables. They use these concepts and the micro:bit to develop a simple game and to also collect and analyze light intensity data to study the relationship of light intensity and distance. The program then has students working on two scaling design challenges with partners and teams. The first is a creative engineering design challenge where they create a micro:bit pet for a partner. Then second is a technical design challenge where teams create a solution to a local problem - traffic lights for emergency service vehicles, environmental sensors for a farmer, and an indicator for new drivers. 
 
-After the pilot program during the summer of 2022, 
+The program was piloted during the Summer of 2022 with eight sessions and six school districts. The program served just over 100 hundred students. The pilot summer program paved the way for a pilot year of virtual after-school programs during the 2022-2023 school year. Student joined the sessions remotely from home. The 2023 summer program #################################
 
-Provide a brief overview of the middle school summer program, including its purpose and objectives. Highlight why the program was initiated and its importance in the district.
+*Provide a brief overview of the middle school summer program, including its purpose and objectives. Highlight why the program was initiated and its importance in the district.*
+
+
+
+
 
 ## Purpose of the Report
+
 *Explain the purpose of this final report and what the reader can expect to find within it.*
-
-
-
+This funding report will provide an overview of 
 
 
 
 # District Recruitment
 
 ## Recruitment Strategies
+
 *Detail the strategies used to recruit students for the program. Discuss any partnerships or collaborations that helped with recruitment efforts.*
 
 
@@ -78,6 +86,7 @@ Provide a brief overview of the middle school summer program, including its purp
 
 
 ## Participant Selection Criteria
+
 *Explain the criteria used to select participants for the program. This could include grade level, academic standing, or other factors.*
 
 School Recruitment
@@ -88,26 +97,23 @@ School Recruitment
 
 ## 2022 vs. 2023
 
+
+
 <center>
-![*2023 Summer Program Calendar*](/Users/kristadulany/Documents/GitHub/GGEESummer23/Graphs/GGEE_23_FL District Map.jpg)
+![*2023 Summer Program Calendar*](Graphs/GGEE_23_FL District Map.jpg)
 </center>
 
-Table with schools and districts
-
-```{r pressure, echo=FALSE}
+<center>
+```{r Programs, echo=FALSE}
 
 library(readxl)
+library(knitr)
 GGEE_23_School_Districts_table <- read_excel("Data/GGEE_23_School Districts_table.xlsx")
 
-```
-
-```{r pressure, echo=TRUE}
-
-View(GGEE_23_School_Districts_table)
+knitr::kable(GGEE_23_School_Districts_table, caption = "Table 1: 2023 Goldberg Gator Engineering Summer Program Locations, Programs, and Formats.", "simple")
 
 ```
-
-
+</center>
 
 
 ## Program Calendar
@@ -117,7 +123,7 @@ There were X many programs in each district
 
 
 <center>
-![*2023 Goldberg Gator Engineering Explorers Summer Program Calendar*](/Users/kristadulany/Documents/GitHub/GGEESummer23/Graphs/GGEE_23_Calendar.jpg)
+![*2023 Goldberg Gator Engineering Explorers Summer Program Calendar*](Graphs/GGEE_23_Calendar.jpg)
 </center>
 
 ## Program Layouts
@@ -173,7 +179,7 @@ Actual attendance with the programs were less than initial registrations. Studen
 
 
 <center>
-![How many of the 319 students participating in the GGEE Summer Programs were from each Florida school district.](/Users/kristadulany/Documents/GitHub/GGEESummer23/Graphs/All Camps/GGEE_23_Summer_Pie_ALL.png)
+![How many of the 319 students participating in the GGEE Summer Programs were from each Florida school district.](Graphs/All Camps/GGEE_23_Summer_Pie_ALL.png)
 </center>
 
 
@@ -189,9 +195,109 @@ Actual attendance with the programs were less than initial registrations. Studen
 
 Demographics were collected on students participating in the research study.
 
+
+```{r Age Demo, echo=FALSE, fig.show = "hold", out.width = "50%"}
+GGEE_23_Pre0 <- read_excel("Data/GGEE_23_PreSurvey.xlsx", sheet = 1)
+GGEE_23_Pre <-filter(GGEE_23_Pre0, Finished == "True")
+
+age <- select(GGEE_23_Pre, Age, Program)|>
+        count(Age, Program)|>
+        na.omit(age)
+
+age_all <- select(GGEE_23_Pre, Age, Program)|>
+  count(Age)|>
+  na.omit(age)
+
+
+age_n <- 1+6+3+6+34+60+49+39+5+1
+
+df_age_all <- age_all%>% 
+  mutate(csum = rev(cumsum(rev(n))), 
+         pos = n/2 + lead(csum, 1),
+         pos = if_else(is.na(pos), n/2, pos))
+
+
+Demo_age_all <-ggplot(age_all, aes(x="", y=n, fill=Age)) +
+  geom_bar(stat="identity", width=1, color="black") +
+  coord_polar("y", start=0)+
+  theme_void()+
+  scale_fill_brewer(guide = guide_legend(reverse = TRUE),palette = "Blues")+
+  ggtitle("GGEE Summer 2023 Age Distribution")+
+  theme(plot.title = element_text(hjust = 0.5, vjust = .5))+
+  geom_label_repel(data = df_age_all,
+                   aes(y = pos, label = paste0(round(n/age_n*100, digits=1), "%")),
+                   size = 4.5, nudge_x = 1, show.legend = FALSE)+
+  theme(legend.position = c(1, .5))
+
+age_intro <- filter(age, Program == "Introductory - 1st Year with GGEE")
+
+age_intro_n <- 6+34+60+49+39+5+1
+
+df_age_intro <- age_intro%>% 
+  mutate(csum = rev(cumsum(rev(n))), 
+         pos = n/2 + lead(csum, 1),
+         pos = if_else(is.na(pos), n/2, pos))
+
+
+Demo_age_intro <- ggplot(age_intro, aes(x="", y=n, fill=Age)) +
+  geom_bar(stat="identity", width=1, color="black") +
+  coord_polar("y", start=0)+
+  theme_void()+
+  scale_fill_brewer(guide = guide_legend(reverse = TRUE),palette = "Blues")+
+  ggtitle("GGEE Summer 2023 Age Distribution of the Introductory Program")+
+  theme(plot.title = element_text(hjust = 0.5, vjust = .5))+
+  geom_label_repel(data = df_age_intro,
+                   aes(y = pos, label = paste0(round(n/age_intro_n*100, digits=1), "%")),
+                   size = 4.5, nudge_x = 1, show.legend = FALSE)+
+  theme(legend.position = c(1, .5))
+
+
+age_adv <- filter(age, Program == "Advanced - 2nd Year with GGEE")
+
+age_adv_n <- 1+6+3
+
+df_age_adv <- age_adv%>% 
+  mutate(csum = rev(cumsum(rev(n))), 
+         pos = n/2 + lead(csum, 1),
+         pos = if_else(is.na(pos), n/2, pos))
+
+
+Demo_age_adv <- ggplot(age_adv, aes(x="", y=n, fill=Age)) +
+  geom_bar(stat="identity", width=1, color="black") +
+  coord_polar("y", start=0)+
+  theme_void()+
+  scale_fill_brewer(guide = guide_legend(reverse = TRUE),palette = "Blues")+
+  ggtitle("GGEE Summer 2023 Age Distribution of the Advanced Program")+
+  theme(plot.title = element_text(hjust = 0.5, vjust = .5))+
+  geom_label_repel(data = df_age_adv,
+                   aes(y = pos, label = paste0(round(n/age_adv_n*100, digits=1), "%")),
+                   size = 4.5, nudge_x = 1, show.legend = FALSE)+
+  theme(legend.position = c(1, .5))
+```
+
+
+
+
+
+
+
 <center>
-![How many of the 319 students participating in the GGEE Summer Programs were from each Florida school district.](/Users/kristadulany/Documents/GitHub/GGEESummer23/Graphs/All Camps/GGEE_23_Summer_Pie_ALL.png)
+````{r Age Demo_all, echo=FALSE, }
+
+Demo_age_all
+```
 </center>
+
+<center>
+```{r Age Demo_in_out, echo=FALSE, fig.show = "hold", out.width = "50%"}
+
+
+Demo_age_adv
+Demo_age_intro
+```
+</center>
+
+
 
 
 ## Gender
