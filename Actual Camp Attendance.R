@@ -46,7 +46,7 @@ ggplot(Camps_all, aes(x="", y=n, fill=Dist)) +
   ggtitle("GGEE Summer 2023 Programs - Students Per District")+
   theme(plot.title = element_text(hjust = 0.5, vjust = .5))+
   geom_label_repel(data = df_all,
-                   aes(y = pos, label = paste0(round(n/Total_Students*100, digits=1), "%")),
+                   aes(y = pos, label = paste0(round(n/All_Students*100, digits=1), "%")),
                    size = 4.5, nudge_x = 1, show.legend = FALSE)+
   theme(legend.position = c(1.02, .5))
 

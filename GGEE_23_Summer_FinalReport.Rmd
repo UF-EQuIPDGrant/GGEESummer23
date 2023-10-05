@@ -1,17 +1,19 @@
 ---
-title: "Funding Report: Goldberg Gator Engineering Explorers Summer Program 2023"
+title: 'Funding Report: Goldberg Gator Engineering Explorers Summer Program 2023'
 author: "Krista D. Chisholm"
 date: "2023-10-02"
-output: 
+output:
   html_document:
     theme: paper
-    toc: true
-    number_section: true
+    toc: yes
+    number_section: no
     toc_float:
-      collapsed: true
+      collapsed: yes
     fig_width: 6
     fig_height: 4
-    fig_caption: true
+    fig_caption: yes
+  pdf_document:
+    toc: yes
 ---
 
 ```{r setup, include=FALSE}
@@ -42,49 +44,165 @@ Follow up after-school programs in 5 districts for 12 sessions with around 200 s
 
 Program costs per student 
 
-Students reported they felt challenged during the program but were rewarded when their code or design worked. They also mentioned the importance of collaboration with peers to solve engineering problems, and they enjoyed the mentorship of the college students working with the program. The longitudinal effects of the summer program on grades in math and science and students' enrollment in higher-level courses will be tracked by the research study for the program. All districts provided in-kind donations to the camp, and many school districts have plans to host or expand the programs for next year. Some schools have asked about follow-up programming, including afterschool programming to continue student engagement. The cost per student for the program was $996, including all costs for program development (three months), camp costs (two months), and post-assessment of the program. The cost per student for future camps should be less owing to development costs built into the program's first year.
+**Last year summary**
+*Students reported they felt challenged during the program but were rewarded when their code or design worked. They also mentioned the importance of collaboration with peers to solve engineering problems, and they enjoyed the mentorship of the college students working with the program. The longitudinal effects of the summer program on grades in math and science and students' enrollment in higher-level courses will be tracked by the research study for the program. All districts provided in-kind donations to the camp, and many school districts have plans to host or expand the programs for next year. Some schools have asked about follow-up programming, including afterschool programming to continue student engagement. The cost per student for the program was $996, including all costs for program development (three months), camp costs (two months), and post-assessment of the program. The cost per student for future camps should be less owing to development costs built into the program's first year.*
 
 
 # Introduction
 
 ## Background
-The Goldberg Gator Engineering Explorers Summer Program was initiated by a generous donor, Arnold Goldberg, to the University of Florida Foundation. He envisioned a free summer program for underrepresented minority middle school students. The program would allow students to experience computer science and have opportunities to learn to not only program but build skills in computational thinking, problem solving, and engineering design. The vision was brought to life by the EQuIPD grant at the University of Florida. Their team has developed introductory and advanced-level summer programs and have worked with schools and districts to host the programs across the state of Florida. 
+The Goldberg Gator Engineering Explorers Summer Program was initiated by a generous donor, Arnold Goldberg, to the University of Florida Foundation. He envisioned a free summer program for underrepresented minority middle school students. The program would allow students to experience computer science and have opportunities to learn to not only program but build skills in computational thinking, problem solving, and engineering design. The vision was brought to life by the EQuIPD grant at the University of Florida. Their team developed introductory and advanced-level summer programs and have worked with schools and districts to host the programs across the state of Florida. 
 
+The Goldberg Gator Engineering Explorers Program was designed to introduce middle school-aged students to programming and computer science. The program begins with students learning the base elements of coding through small activities that engage them in applying concepts such as strings, conditional statements, loops, and variables. They use these concepts and the micro:bit to develop a simple game and to also collect and analyze light intensity data to study the relationship of light intensity and distance. The program then has students working on two scaling design challenges with partners and teams. The first is a creative engineering design challenge where they create a micro:bit pet for a partner. Then second is a technical design challenge where teams create a solution to a local problem - traffic lights for emergency service vehicles, environmental sensors for a farmer, and an indicator for new drivers. 
 
+After the pilot program during the summer of 2022, 
 
 Provide a brief overview of the middle school summer program, including its purpose and objectives. Highlight why the program was initiated and its importance in the district.
 
 ## Purpose of the Report
-Explain the purpose of this final report and what the reader can expect to find within it.
+*Explain the purpose of this final report and what the reader can expect to find within it.*
+
+
+
+
+
 
 # District Recruitment
 
 ## Recruitment Strategies
-Detail the strategies used to recruit students for the program. Discuss any partnerships or collaborations that helped with recruitment efforts.
+*Detail the strategies used to recruit students for the program. Discuss any partnerships or collaborations that helped with recruitment efforts.*
+
+
+
+
+
 
 ## Participant Selection Criteria
-Explain the criteria used to select participants for the program. This could include grade level, academic standing, or other factors.
+*Explain the criteria used to select participants for the program. This could include grade level, academic standing, or other factors.*
 
-# Program Calendar
+School Recruitment
 
-## Overview of Program Dates and Activities
-Provide an overview of the program's calendar, including the duration of the program, daily schedules, and key activities.
+
+
+# Summer Programs
+
+## 2022 vs. 2023
+
+<center>
+![*2023 Summer Program Calendar*](/Users/kristadulany/Documents/GitHub/GGEESummer23/Graphs/GGEE_23_FL District Map.jpg)
+</center>
+
+Table with schools and districts
+
+```{r pressure, echo=FALSE}
+
+library(readxl)
+GGEE_23_School_Districts_table <- read_excel("Data/GGEE_23_School Districts_table.xlsx")
+
+```
+
+```{r pressure, echo=TRUE}
+
+View(GGEE_23_School_Districts_table)
+
+```
+
+
+
+
+## Program Calendar
+*Provide an overview of the program's calendar, including the duration of the program, daily schedules, and key activities.*
+
+There were X many programs in each district
+
+
+<center>
+![*2023 Goldberg Gator Engineering Explorers Summer Program Calendar*](/Users/kristadulany/Documents/GitHub/GGEESummer23/Graphs/GGEE_23_Calendar.jpg)
+</center>
+
+## Program Layouts
+
+### 4-Day Programs
+
+
+### 8-Day Programs
+
+
+
+
+
+
+
+
+# Youth Compliance 
+
+## Waivers and Research Consent    
+
+## Storage of Student Information
+
+## Institutional Review Board
+
+
+
+
+
+
 
 # Program Numbers
 
 ## Enrollment Statistics
-Present enrollment data, including the number of students who initially registered, and any changes over the course of the program.
+*Present enrollment data, including the number of students who initially registered, and any changes over the course of the program.*
+
+Programs were able to host up to 25 students in each of their program sessions. Registrations were closed and students were placed on wait lists in the case of cancellations by student parents. 
+Programs had on average X number of students enroll. Wait lists ranged from 5 - 80 students in some districts.
+
+Bar Graph Comparison - 
+Total Number of Registered Students - stacked bar graph - registered vs waitlist
+
+**GRAPH by Session - stacked graph - regsitered vs waitlist**
+
+Need for more programs in Santa Rosa County District Schools
+
 
 ## Attendance Records
-Share attendance records to illustrate the level of student engagement and participation throughout the program.
+*Share attendance records to illustrate the level of student engagement and participation throughout the program.*
 
-## Dropout Rates (if applicable)
-If there were any dropouts during the program, provide details and reasons for dropout.
+Actual attendance with the programs were less than initial registrations. Students became ill, were unable to attend the first days of the program or parents made new plans for their families. 
+
+**GRAPH Attendance Numbers by School**
+
+
+<center>
+![How many of the 319 students participating in the GGEE Summer Programs were from each Florida school district.](/Users/kristadulany/Documents/GitHub/GGEESummer23/Graphs/All Camps/GGEE_23_Summer_Pie_ALL.png)
+</center>
+
+
+
+
+
+
 
 # Student Demographics
 
-## Breakdown of Participant Demographics
-Include demographic information such as age, gender, ethnicity, and socioeconomic background of the participating students.
+## Age
+*Include demographic information such as age, gender, ethnicity, and socioeconomic background of the participating students.*
+
+Demographics were collected on students participating in the research study.
+
+<center>
+![How many of the 319 students participating in the GGEE Summer Programs were from each Florida school district.](/Users/kristadulany/Documents/GitHub/GGEESummer23/Graphs/All Camps/GGEE_23_Summer_Pie_ALL.png)
+</center>
+
+
+## Gender
+
+## Race and Ethnicity
+
+## 
+
+
+
+
 
 # Pre-Survey Responses
 
@@ -122,10 +240,22 @@ Share lessons learned from the program's challenges and any adjustments or impro
 # Recommendations
 
 ## Suggestions for Program Improvement
-Provide recommendations for improving the program in future iterations, based on the insights gained.
+*Provide recommendations for improving the program in future iterations, based on the insights gained.*
+
+- Updating compliance forms with more clear langaue for parent and the research study
+- Make submitting paperwork a part of the registration process. Did this with the 2023-2024 After-School programs and it has made everything so much easier to process and collect rather than a 2-step process
+- Creating contract-like documents to denote needs, requirments, and expectations from the schools and what is provided from the GGEE program at UF
+- Starting Recruitment in November
+- ensuring districts cover technology to continue to use in after-school programs or integrate into classroom projects
+- revise research study to expand to get more teacher and UF undergraduate mentor insight in the program 
+
+
+
+
+
 
 ## Future Directions
-Suggest potential directions for the program's growth or expansion.
+*Suggest potential directions for the program's growth or expansion.*
 
 # Conclusion
 
