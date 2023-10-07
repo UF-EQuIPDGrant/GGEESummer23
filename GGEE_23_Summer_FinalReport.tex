@@ -37,46 +37,16 @@
 \makeatother
 \usepackage{xcolor}
 \usepackage[margin=1in]{geometry}
-\usepackage{color}
-\usepackage{fancyvrb}
-\newcommand{\VerbBar}{|}
-\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
-\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
-% Add ',fontsize=\small' for more characters per line
-\usepackage{framed}
-\definecolor{shadecolor}{RGB}{248,248,248}
-\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
-\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
-\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
-\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\BuiltInTok}[1]{#1}
-\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
-\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
-\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
-\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
-\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
-\newcommand{\ExtensionTok}[1]{#1}
-\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
-\newcommand{\ImportTok}[1]{#1}
-\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
-\newcommand{\NormalTok}[1]{#1}
-\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
-\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
-\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
-\newcommand{\RegionMarkerTok}[1]{#1}
-\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
-\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
-\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
-\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
 \usepackage{graphicx}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
@@ -118,24 +88,6 @@ Program 2023}
 \setcounter{tocdepth}{2}
 \tableofcontents
 }
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{summary}\NormalTok{(cars)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-##      speed           dist       
-##  Min.   : 4.0   Min.   :  2.00  
-##  1st Qu.:12.0   1st Qu.: 26.00  
-##  Median :15.0   Median : 36.00  
-##  Mean   :15.4   Mean   : 42.98  
-##  3rd Qu.:19.0   3rd Qu.: 56.00  
-##  Max.   :25.0   Max.   :120.00
-\end{verbatim}
-
-\includegraphics{GGEE_23_Summer_FinalReport_files/figure-latex/pressure-1.pdf}
-
 \hypertarget{summary}{%
 \section{Summary}\label{summary}}
 
@@ -195,8 +147,9 @@ Foundation. He envisioned a free summer program for underrepresented
 minority middle school students. The program would allow students to
 experience computer science and have opportunities to learn to not only
 program but build skills in computational thinking, problem solving, and
-engineering design. The vision was brought to life by the EQuIPD grant
-at the University of Florida. Their team developed introductory and
+engineering design. The vision was brought to life by the Engaging
+Quality Instruction through Professional Development (EQuIPD) grant at
+the University of Florida. Their team developed introductory and
 advanced-level summer programs and have worked with schools and
 districts to host the programs across the state of Florida.
 
@@ -215,17 +168,18 @@ create a solution to a local problem - traffic lights for emergency
 service vehicles, environmental sensors for a farmer, and an indicator
 for new drivers.
 
-After the pilot program during the summer of 2022,
+Entering the second year of the
 
-Provide a brief overview of the middle school summer program, including
-its purpose and objectives. Highlight why the program was initiated and
-its importance in the district.
+\emph{Provide a brief overview of the middle school summer program,
+including its purpose and objectives. Highlight why the program was
+initiated and its importance in the district.}
 
 \hypertarget{purpose-of-the-report}{%
 \subsection{Purpose of the Report}\label{purpose-of-the-report}}
 
 \emph{Explain the purpose of this final report and what the reader can
-expect to find within it.}
+expect to find within it.} This funding report will provide an overview
+of
 
 \hypertarget{district-recruitment}{%
 \section{District Recruitment}\label{district-recruitment}}
@@ -236,6 +190,9 @@ expect to find within it.}
 \emph{Detail the strategies used to recruit students for the program.
 Discuss any partnerships or collaborations that helped with recruitment
 efforts.}
+
+School recruitment for the 2023 GGEE Summer Programs began in November
+of 2022. Flyers were shared via email to school administration
 
 \hypertarget{participant-selection-criteria}{%
 \subsection{Participant Selection
@@ -252,11 +209,78 @@ School Recruitment
 \hypertarget{vs.-2023}{%
 \subsection{2022 vs.~2023}\label{vs.-2023}}
 
+The program was piloted during the Summer of 2022 with eight sessions
+and six school districts. The program served just over 100 hundred
+students. The pilot summer program paved the way for a pilot year of
+virtual after-school programs during the 2022-2023 school year. Student
+joined the sessions remotely from home. The 2023 summer program
+\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#
+
 \begin{figure}
 \centering
-\includegraphics{/Users/kristadulany/Documents/GitHub/GGEESummer23/Graphs/GGEE_23_FL District Map.jpg}
+\includegraphics{Graphs/GGEE_23_FL District Map.jpg}
 \caption{\emph{2023 Summer Program Calendar}}
 \end{figure}
+
+\begin{longtable}[]{@{}llll@{}}
+\caption{Table 1: 2023 Goldberg Gator Engineering Summer Program
+Locations, Programs, and Formats.}\tabularnewline
+\toprule\noalign{}
+School District & School/Organization Name & Program Level & Format \\
+\midrule\noalign{}
+\endfirsthead
+\toprule\noalign{}
+School District & School/Organization Name & Program Level & Format \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Alachua County Schools & Take Stock In Children & Advanced & 2-day,
+Full \\
+Brevard Public Schools & Stone Middle School & Introductory & 4-day,
+Full \\
+City of Rivieria Beach - Palm Beach County & Youth Empowerment Programs
+& Introductory & 8-day, Half \\
+Miami Dade County Public Schools & Homestead Senior High School &
+Introductory & 8-day, Half \\
+Miami Dade County Public Schools & North Miami Beach Senior High &
+Introductory & 8-day, Half \\
+Orange County Public Schools & University High School & Introductory &
+4-day, Full \\
+Orange County Public Schools & University High School & Advanced &
+4-day, Full \\
+Orange County Public Schools & University High School & Introductory &
+4-day, Full \\
+Orange County Public Schools & University High School & Introductory &
+4-day, Full \\
+Pinellas County Schools & East Lake High School & Introductory & 4-day,
+Full \\
+Pinellas County Schools & Lakewood High School & Introductory & 4-day,
+Full \\
+Santa Rosa County District Schools & Central School & Introductory &
+8-day, Half \\
+Santa Rosa County District Schools & Gulf Breeze High School &
+Introductory & 8-day, Half \\
+Santa Rosa County District Schools & Gulf Breeze High School &
+Introductory & 8-day, Half \\
+Santa Rosa County District Schools & Milton High School & Introductory &
+8-day, Half \\
+Santa Rosa County District Schools & Navarre High School & Introductory
+& 8-day, Half \\
+Santa Rosa County District Schools & Navarre High School & Introductory
+& 8-day, Half \\
+Sarasota County Schools & Booker Middle School & Introductory & 4-day,
+Full \\
+Sarasota County Schools & Booker Middle School & Advanced & 4-day,
+Full \\
+School District of Palm Beach County & Bear Lakes Middle School &
+Introductory & 8-day, Half \\
+School District of Palm Beach County & Carver Middle School &
+Introductory & 8-day, Half \\
+School District of Palm Beach County & Lake Shore Middle School &
+Introductory & 8-day, Half \\
+& & & \\
+\end{longtable}
 
 \hypertarget{program-calendar}{%
 \subsection{Program Calendar}\label{program-calendar}}
@@ -268,7 +292,7 @@ There were X many programs in each district
 
 \begin{figure}
 \centering
-\includegraphics{/Users/kristadulany/Documents/GitHub/GGEESummer23/Graphs/GGEE_23_Calendar.jpg}
+\includegraphics[width=0.9\textwidth,height=\textheight]{Images/GGEE_23_Calendar.jpg}
 \caption{\emph{2023 Goldberg Gator Engineering Explorers Summer Program
 Calendar}}
 \end{figure}
@@ -331,12 +355,10 @@ of the program or parents made new plans for their families.
 
 \textbf{GRAPH Attendance Numbers by School}
 
-\begin{figure}
-\centering
-\includegraphics{/Users/kristadulany/Documents/GitHub/GGEESummer23/Graphs/All Camps/GGEE_23_Summer_Pie_ALL.png}
-\caption{How many of the 319 students participating in the GGEE Summer
-Programs were from each Florida school district.}
-\end{figure}
+\includegraphics{GGEE_23_Summer_FinalReport_files/figure-latex/District_all-1.pdf}
+
+\includegraphics[width=0.5\linewidth]{GGEE_23_Summer_FinalReport_files/figure-latex/District_in_out-1}
+\includegraphics[width=0.5\linewidth]{GGEE_23_Summer_FinalReport_files/figure-latex/District_in_out-2}
 
 \hypertarget{student-demographics}{%
 \section{Student Demographics}\label{student-demographics}}
@@ -350,12 +372,13 @@ and socioeconomic background of the participating students.}
 Demographics were collected on students participating in the research
 study.
 
-\begin{figure}
-\centering
-\includegraphics{/Users/kristadulany/Documents/GitHub/GGEESummer23/Graphs/All Camps/GGEE_23_Summer_Pie_ALL.png}
-\caption{How many of the 319 students participating in the GGEE Summer
-Programs were from each Florida school district.}
-\end{figure}
+\includegraphics{GGEE_23_Summer_FinalReport_files/figure-latex/Age Demo_all-1.pdf}
+
+\emph{Demographics for all Goldberg Gator Engineering Explorer Summer
+Programs. N=-204}
+
+\includegraphics[width=0.5\linewidth]{GGEE_23_Summer_FinalReport_files/figure-latex/Age Demo_in_out-1}
+\includegraphics[width=0.5\linewidth]{GGEE_23_Summer_FinalReport_files/figure-latex/Age Demo_in_out-2}
 
 \hypertarget{gender}{%
 \subsection{Gender}\label{gender}}

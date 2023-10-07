@@ -55,22 +55,16 @@ Program costs per student
 
 ## Background
 
-The Goldberg Gator Engineering Explorers Summer Program was initiated by a generous donor, Arnold Goldberg, to the University of Florida Foundation. He envisioned a free summer program for underrepresented minority middle school students. The program would allow students to experience computer science and have opportunities to learn to not only program but build skills in computational thinking, problem solving, and engineering design. The vision was brought to life by the Engaging Quality Instruction through Professional Development (EQuIPD) grant at the University of Florida. Their team developed introductory and advanced-level summer programs and have worked with schools and districts to host the programs across the state of Florida. 
+The Goldberg Gator Engineering Explorers Summer Program was initiated by a generous donor, Arnold Goldberg, to the University of Florida Foundation. He envisioned a free summer program for underrepresented minority middle school students. The program would allow students and teachers to experience computer science and have opportunities to learn to not only program but build skills in computational thinking, problem solving, and engineering design. The vision was brought to life by the Engaging Quality Instruction through Professional Development (EQuIPD) grant at the University of Florida. Their team worked with schools, districts, and teachers across Florida to host these programs.
 
 The Goldberg Gator Engineering Explorers Program was designed to introduce middle school-aged students to programming and computer science. The program begins with students learning the base elements of coding through small activities that engage them in applying concepts such as strings, conditional statements, loops, and variables. They use these concepts and the micro:bit to develop a simple game and to also collect and analyze light intensity data to study the relationship of light intensity and distance. The program then has students working on two scaling design challenges with partners and teams. The first is a creative engineering design challenge where they create a micro:bit pet for a partner. Then second is a technical design challenge where teams create a solution to a local problem - traffic lights for emergency service vehicles, environmental sensors for a farmer, and an indicator for new drivers. 
 
-The program was piloted during the Summer of 2022 with eight sessions and six school districts. The program served just over 100 hundred students. The pilot summer program paved the way for a pilot year of virtual after-school programs during the 2022-2023 school year. Student joined the sessions remotely from home. The 2023 summer program #################################
-
-*Provide a brief overview of the middle school summer program, including its purpose and objectives. Highlight why the program was initiated and its importance in the district.*
-
-
-
-
+Entering the second year of GGEE, an Advanced Program was developed and piloted to allow returning students to continue to participate in the GGEE programs. The Advanced Program was designed to introduce students to the basic concepts of Artificial Intelligence with a focus in Machine Learning. The Advanced program session was held over 4 full-days and were open to students who previously attended the GGEE program in 2022. 
 
 ## Purpose of the Report
 
 *Explain the purpose of this final report and what the reader can expect to find within it.*
-This funding report will provide an overview of 
+This funding report provides an overview of the 2023 Goldberg Gator Engineering Explorer Summer Programs.
 
 
 
@@ -97,10 +91,11 @@ School Recruitment
 
 ## 2022 vs. 2023
 
+The program was piloted during the Summer of 2022 with eight sessions and six school districts. The program served just over 100 hundred students. The pilot summer program paved the way for a pilot year of virtual after-school programs during the 2022-2023 school year. Student joined the sessions remotely from home. The 2023 summer program #################################
 
 
 <center>
-![*2023 Summer Program Calendar*](Graphs/GGEE_23_FL District Map.jpg)
+![*GGEE Summer Program Districts from 2022 and 2023*](Images/GGEE_23_FL District Map.jpg)
 </center>
 
 <center>
@@ -123,10 +118,18 @@ There were X many programs in each district
 
 
 <center>
-![*2023 Goldberg Gator Engineering Explorers Summer Program Calendar*](Graphs/GGEE_23_Calendar.jpg){ width=90%}
+![*2023 Goldberg Gator Engineering Explorers Summer Program Calendar*](Images/GGEE_23_Calendar.jpg){ width=90%}
 </center>
 
 ## Program Layouts
+
+## Introductory Programs
+
+<center>
+![*Introductory Program Roadmap*](Images/GGEE_23_intro_roadmap.jpg){ width=90%}
+</center>
+
+## Advanced Programs
 
 ### 4-Day Programs
 
