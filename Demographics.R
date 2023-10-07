@@ -301,12 +301,14 @@ ggplot(district_all, aes(x="", y=n, fill=District)) +
   coord_polar("y", start=0)+
   theme_void()+
   scale_fill_brewer(guide = guide_legend(reverse = FALSE),palette = "Blues")+
-  ggtitle("GGEE Summer 2023 District Distribution")+
-  theme(plot.title = element_text(hjust = 0.5, vjust = .5))+
+  ggtitle("Students Per District for All Programs")+
+  theme(plot.title = element_text(hjust = 0.5, vjust = .5, size = 20, face = "bold"))+
   geom_label_repel(data = df_district_all,
                    aes(y = pos, label = paste0(round(n/district_n_all*100, digits=1), "%")),
-                   size = 4.5, nudge_x = 1, show.legend = FALSE)+
-  theme(legend.position = c(1.05, .5))
+                   size = 10, nudge_x = 1, show.legend = FALSE)+
+  theme(legend.position = c(1.12, .5),
+        legend.title = element_text(size = 18, face = "bold"),
+        legend.text = element_text(size = 18))
 
 
 ggsave(
@@ -340,12 +342,14 @@ ggplot(district_intro, aes(x="", y=n, fill=District)) +
   coord_polar("y", start=0)+
   theme_void()+
   scale_fill_brewer(guide = guide_legend(reverse = FALSE),palette = "Blues")+
-  ggtitle("GGEE Summer 2023 District Distribution for Introductory Programs")+
-  theme(plot.title = element_text(hjust = 0.5, vjust = .5))+
+  ggtitle("Students Per District in Introductory Programs")+
+  theme(plot.title = element_text(hjust = 0.5, vjust = .5, size = 20, face = "bold"))+
   geom_label_repel(data = df_district_intro,
                    aes(y = pos, label = paste0(round(n/district_intro_n*100, digits=1), "%")),
-                   size = 4.5, nudge_x = 1, show.legend = FALSE)+
-  theme(legend.position = c(1, .5))
+                   size = 10, nudge_x = 1, show.legend = FALSE)+
+  theme(legend.position = c(1.12, .5),
+        legend.title = element_text(size = 18, face = "bold"),
+        legend.text = element_text(size = 18))
 
 
 ggsave(
@@ -380,12 +384,14 @@ ggplot(district_adv, aes(x="", y=n, fill=District)) +
   coord_polar("y", start=0)+
   theme_void()+
   scale_fill_brewer(guide = guide_legend(reverse = FALSE),palette = "Blues")+
-  ggtitle("GGEE Summer 2023 District Distribution for Advanced Programs")+
-  theme(plot.title = element_text(hjust = 0.5, vjust = .5))+
+  ggtitle("Students Per District in Advanced Programs")+
+  theme(plot.title = element_text(hjust = 0.5, vjust = .5, size = 20, face = "bold"))+
   geom_label_repel(data = df_district_adv,
                    aes(y = pos, label = paste0(round(n/district_adv_n*100, digits=1), "%")),
-                   size = 4.5, nudge_x = 1, show.legend = FALSE)+
-  theme(legend.position = c(1.05, .5))
+                   size = 10, nudge_x = 1, show.legend = FALSE)+
+  theme(legend.position = c(1, .5),
+        legend.title = element_text(size = 18, face = "bold"),
+        legend.text = element_text(size = 18))
 
 
 ggsave(
@@ -460,7 +466,7 @@ ggplot(district_intro, aes(x=District, y = n))+
   theme(axis.text.x = element_text(colour = "black"))+
   theme(axis.text.y = element_text(colour = "black"))+
   ggtitle("GGEE Introductory Summer Program 2023 District Distribution")+
-  theme(plot.title = element_text(hjust = 0.5))+
+  theme(plot.title = element_text(hjust = 0.5)+
   scale_y_continuous(expand = c(0, 0), limits = c(0, 85), n.breaks=20)+
   xlab("District")+
   ylab("Number of Students")
