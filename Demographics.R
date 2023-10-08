@@ -54,13 +54,16 @@ ggplot(age_all, aes(x="", y=n, fill=Age)) +
   geom_bar(stat="identity", width=1, color="black") +
   coord_polar("y", start=0)+
   theme_void()+
-  scale_fill_brewer(guide = guide_legend(reverse = TRUE),palette = "Blues")+
-  ggtitle("GGEE Summer 2023 Age Distribution")+
-  theme(plot.title = element_text(hjust = 0.5, vjust = .5))+
+  scale_fill_brewer(guide = guide_legend(reverse = FALSE),palette = "Blues")+
+  ggtitle("Distribution of Age in All Programs")+
+  theme(plot.title = element_text(hjust = 0.5, vjust = .5, size = 20, face = "bold"))+
   geom_label_repel(data = df_age_all,
                    aes(y = pos, label = paste0(round(n/age_n*100, digits=1), "%")),
-                   size = 4.5, nudge_x = 1, show.legend = FALSE)+
-  theme(legend.position = c(1, .5))
+                   size = 10, nudge_x = 1, show.legend = FALSE)+
+  theme(legend.position = c(.9, .5),
+        legend.title = element_text(size = 18, face = "bold"),
+        legend.text = element_text(size = 18))
+
 
 
 ggsave(
@@ -94,13 +97,16 @@ ggplot(age_intro, aes(x="", y=n, fill=Age)) +
   geom_bar(stat="identity", width=1, color="black") +
   coord_polar("y", start=0)+
   theme_void()+
-  scale_fill_brewer(guide = guide_legend(reverse = TRUE),palette = "Blues")+
-  ggtitle("GGEE Summer 2023 Age Distribution of the Introductory Program")+
-  theme(plot.title = element_text(hjust = 0.5, vjust = .5))+
+  scale_fill_brewer(guide = guide_legend(reverse = FALSE),palette = "Blues")+
+  ggtitle("Distribution of Age in Introductory Programs")+
+  theme(plot.title = element_text(hjust = 0.5, vjust = .5, size = 20, face = "bold"))+
   geom_label_repel(data = df_age_intro,
                    aes(y = pos, label = paste0(round(n/age_intro_n*100, digits=1), "%")),
-                   size = 4.5, nudge_x = 1, show.legend = FALSE)+
-  theme(legend.position = c(1, .5))
+                   size = 10, nudge_x = 1, show.legend = FALSE)+
+  theme(legend.position = c(.9, .5),
+        legend.title = element_text(size = 18, face = "bold"),
+        legend.text = element_text(size = 18))
+
 
 
 ggsave(
@@ -134,13 +140,16 @@ ggplot(age_adv, aes(x="", y=n, fill=Age)) +
   geom_bar(stat="identity", width=1, color="black") +
   coord_polar("y", start=0)+
   theme_void()+
-  scale_fill_brewer(guide = guide_legend(reverse = TRUE),palette = "Blues")+
-  ggtitle("GGEE Summer 2023 Age Distribution of the Advanced Program")+
-  theme(plot.title = element_text(hjust = 0.5, vjust = .5))+
+  scale_fill_brewer(guide = guide_legend(reverse = FALSE),palette = "Blues")+
+  ggtitle("Distribution of Age in Advanced Programs")+
+  theme(plot.title = element_text(hjust = 0.5, vjust = .5, size = 20, face = "bold"))+
   geom_label_repel(data = df_age_adv,
                    aes(y = pos, label = paste0(round(n/age_adv_n*100, digits=1), "%")),
-                   size = 4.5, nudge_x = 1, show.legend = FALSE)+
-  theme(legend.position = c(1, .5))
+                   size = 10, nudge_x = 1, show.legend = FALSE)+
+  theme(legend.position = c(.9, .5),
+        legend.title = element_text(size = 18, face = "bold"),
+        legend.text = element_text(size = 18))
+
 
 
 ggsave(
@@ -466,7 +475,7 @@ ggplot(district_intro, aes(x=District, y = n))+
   theme(axis.text.x = element_text(colour = "black"))+
   theme(axis.text.y = element_text(colour = "black"))+
   ggtitle("GGEE Introductory Summer Program 2023 District Distribution")+
-  theme(plot.title = element_text(hjust = 0.5)+
+  theme(plot.title = element_text(hjust = 0.5))+
   scale_y_continuous(expand = c(0, 0), limits = c(0, 85), n.breaks=20)+
   xlab("District")+
   ylab("Number of Students")
@@ -555,13 +564,16 @@ ggplot(grade_all, aes(x="", y=n, fill=Grade)) +
   geom_bar(stat="identity", width=1, color="black") +
   coord_polar("y", start=0)+
   theme_void()+
-  scale_fill_brewer(guide = guide_legend(reverse = TRUE),palette = "Blues")+
-  ggtitle("GGEE Summer 2023 Grade Distribution")+
-  theme(plot.title = element_text(hjust = 0.5, vjust = .5))+
+  scale_fill_brewer(guide = guide_legend(reverse = FALSE),palette = "Blues")+
+  ggtitle("Distribution of Grade Levels in All Programs")+
+  theme(plot.title = element_text(hjust = 0.5, vjust = .5, size = 20, face = "bold"))+
   geom_label_repel(data = df_grade_all,
                    aes(y = pos, label = paste0(round(n/grade_n*100, digits=1), "%")),
-                   size = 4.5, nudge_x = 1, show.legend = FALSE)+
-  theme(legend.position = c(1, .5))
+                   size = 10, nudge_x = 1, show.legend = FALSE)+
+  theme(legend.position = c(.9, .5),
+        legend.title = element_text(size = 18, face = "bold"),
+        legend.text = element_text(size = 18))
+
 
 
 ggsave(
@@ -595,13 +607,16 @@ ggplot(grade_intro, aes(x="", y=n, fill=Grade)) +
   geom_bar(stat="identity", width=1, color="black") +
   coord_polar("y", start=0)+
   theme_void()+
-  scale_fill_brewer(guide = guide_legend(reverse = TRUE),palette = "Blues")+
-  ggtitle("GGEE Summer 2023 Grade Level Distribution of the Introductory Program")+
-  theme(plot.title = element_text(hjust = 0.5, vjust = .5))+
+  scale_fill_brewer(guide = guide_legend(reverse = FALSE),palette = "Blues")+
+  ggtitle("Distribution of Grade Levels in Introductory Programs")+
+  theme(plot.title = element_text(hjust = 0.5, vjust = .5, size = 20, face = "bold"))+
   geom_label_repel(data = df_grade_intro,
                    aes(y = pos, label = paste0(round(n/grade_intro_n*100, digits=1), "%")),
-                   size = 4.5, nudge_x = 1, show.legend = FALSE)+
-  theme(legend.position = c(1, .5))
+                   size = 10, nudge_x = 1, show.legend = FALSE)+
+  theme(legend.position = c(.9, .5),
+        legend.title = element_text(size = 18, face = "bold"),
+        legend.text = element_text(size = 18))
+
 
 
 ggsave(
@@ -635,13 +650,16 @@ ggplot(grade_adv, aes(x="", y=n, fill=Grade)) +
   geom_bar(stat="identity", width=1, color="black") +
   coord_polar("y", start=0)+
   theme_void()+
-  scale_fill_brewer(guide = guide_legend(reverse = TRUE),palette = "Blues")+
-  ggtitle("GGEE Summer 2023 Grade Level Distribution of the Advanced Program")+
-  theme(plot.title = element_text(hjust = 0.5, vjust = .5))+
+  scale_fill_brewer(guide = guide_legend(reverse = FALSE),palette = "Blues")+
+  ggtitle("Distribution of Grade Levels in Advanced Programs")+
+  theme(plot.title = element_text(hjust = 0.5, vjust = .5, size = 20, face = "bold"))+
   geom_label_repel(data = df_grade_adv,
                    aes(y = pos, label = paste0(round(n/grade_adv_n*100, digits=1), "%")),
-                   size = 4.5, nudge_x = 1, show.legend = FALSE)+
-  theme(legend.position = c(1, .5))
+                   size = 10, nudge_x = 1, show.legend = FALSE)+
+  theme(legend.position = c(.9, .5),
+        legend.title = element_text(size = 18, face = "bold"),
+        legend.text = element_text(size = 18))
+
 
 
 ggsave(
@@ -805,12 +823,15 @@ ggplot(gender_all, aes(x="", y=n, fill=Gender)) +
   coord_polar("y", start=0)+
   theme_void()+
   scale_fill_brewer(guide = guide_legend(reverse = FALSE),palette = "Blues")+
-  ggtitle("GGEE Summer 2023 Gender Distribution")+
-  theme(plot.title = element_text(hjust = 0.5, vjust = .5))+
+  ggtitle("Distribution of Genders in All Programs")+
+  theme(plot.title = element_text(hjust = 0.5, vjust = .5, size = 20, face = "bold"))+
   geom_label_repel(data = df_gender_all,
                    aes(y = pos, label = paste0(round(n/gender_n*100, digits=1), "%")),
-                   size = 4.5, nudge_x = 1, show.legend = FALSE)+
-  theme(legend.position = c(1, .5))
+                   size = 10, nudge_x = 1, show.legend = FALSE)+
+  theme(legend.position = c(1, .5),
+        legend.title = element_text(size = 18, face = "bold"),
+        legend.text = element_text(size = 18))
+
 
 
 ggsave(
@@ -845,12 +866,15 @@ ggplot(gender_intro, aes(x="", y=n, fill=Gender)) +
   coord_polar("y", start=0)+
   theme_void()+
   scale_fill_brewer(guide = guide_legend(reverse = FALSE),palette = "Blues")+
-  ggtitle("GGEE Summer 2023 Gender Distribution of the Introductory Program")+
-  theme(plot.title = element_text(hjust = 0.5, vjust = .5))+
+  ggtitle("Distribution of Genders in Introductory Programs")+
+  theme(plot.title = element_text(hjust = 0.5, vjust = .5, size = 20, face = "bold"))+
   geom_label_repel(data = df_gender_intro,
                    aes(y = pos, label = paste0(round(n/gender_intro_n*100, digits=1), "%")),
-                   size = 4.5, nudge_x = 1, show.legend = FALSE)+
-  theme(legend.position = c(1, .5))
+                   size = 10, nudge_x = 1, show.legend = FALSE)+
+  theme(legend.position = c(1, .5),
+        legend.title = element_text(size = 18, face = "bold"),
+        legend.text = element_text(size = 18))
+
 
 
 ggsave(
@@ -885,12 +909,15 @@ ggplot(gender_adv, aes(x="", y=n, fill=Gender)) +
   coord_polar("y", start=0)+
   theme_void()+
   scale_fill_brewer(guide = guide_legend(reverse = FALSE),palette = "Blues")+
-  ggtitle("GGEE Summer 2023 Gender Distribution of the Advanced Program")+
-  theme(plot.title = element_text(hjust = 0.5, vjust = .5))+
+  ggtitle("Distribution of Genders in Advanced Programs")+
+  theme(plot.title = element_text(hjust = 0.5, vjust = .5, size = 20, face = "bold"))+
   geom_label_repel(data = df_gender_adv,
                    aes(y = pos, label = paste0(round(n/gender_adv_n*100, digits=1), "%")),
-                   size = 4.5, nudge_x = 1, show.legend = FALSE)+
-  theme(legend.position = c(1, .5))
+                   size = 10, nudge_x = 1, show.legend = FALSE)+
+  theme(legend.position = c(1, .5),
+        legend.title = element_text(size = 18, face = "bold"),
+        legend.text = element_text(size = 18))
+
 
 
 ggsave(

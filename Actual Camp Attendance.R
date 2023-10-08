@@ -43,19 +43,22 @@ ggplot(Camps_all, aes(x="", y=n, fill=Dist)) +
   coord_polar("y", start=0)+
   theme_void()+
   scale_fill_brewer(guide = guide_legend(reverse = FALSE),palette = "Blues")+
-  ggtitle("GGEE Summer 2023 Programs - Students Per District")+
-  theme(plot.title = element_text(hjust = 0.5, vjust = .5))+
+  ggtitle("Distribution of Students by District for All Programs")+
+  theme(plot.title = element_text(hjust = 0.5, vjust = .5, size = 20, face = "bold"))+
   geom_label_repel(data = df_all,
                    aes(y = pos, label = paste0(round(n/All_Students*100, digits=1), "%")),
-                   size = 4.5, nudge_x = 1, show.legend = FALSE)+
-  theme(legend.position = c(1.02, .5))
+                   size = 10, nudge_x = 1, show.legend = FALSE)+
+  theme(legend.position = c(1.12, .5),
+        legend.title = element_text(size = 18, face = "bold"),
+        legend.text = element_text(size = 18))
+
 
 
 ggsave(
   filename = "GGEE_23_Summer_Pie_ALL.png",
   plot = last_plot(),
   device = "png",
-  path = "/Users/kristadulany/Documents/GitHub/GGEESummer23/Graphs/All Camps",
+  path = "Graphs/All Camps",
   scale = 2,
   width = 6,
   height = 4,
@@ -81,19 +84,22 @@ ggplot(Camps_intro, aes(x="", y=n, fill=Dist)) +
   coord_polar("y", start=0)+
   theme_void()+
   scale_fill_brewer(guide = guide_legend(reverse = FALSE),palette = "Blues")+
-  ggtitle("GGEE Summer 2023 Programs - Introductory Program Students Per District")+
-  theme(plot.title = element_text(hjust = 0.5, vjust = .5))+
+  ggtitle("Distribution of Students by District for Introductory Programs")+
+  theme(plot.title = element_text(hjust = 0.5, vjust = .5, size = 20, face = "bold"))+
   geom_label_repel(data = df_intro,
                    aes(y = pos, label = paste0(round(n/Intro_Students*100, digits=1), "%")),
-                   size = 4.5, nudge_x = 1, show.legend = FALSE)+
-  theme(legend.position = c(1.02, .5))
+                   size = 10, nudge_x = 1, show.legend = FALSE)+
+  theme(legend.position = c(1.12, .5),
+        legend.title = element_text(size = 18, face = "bold"),
+        legend.text = element_text(size = 18))
+
 
 
 ggsave(
   filename = "GGEE_23_Summer_Pie_Intro.png",
   plot = last_plot(),
   device = "png",
-  path = "/Users/kristadulany/Documents/GitHub/GGEESummer23/Graphs/All Camps",
+  path = "Graphs/All Camps",
   scale = 2,
   width = 6,
   height = 4,
@@ -118,19 +124,22 @@ ggplot(Camps_adv, aes(x="", y=n, fill=Dist)) +
   coord_polar("y", start=0)+
   theme_void()+
   scale_fill_brewer(guide = guide_legend(reverse = FALSE),palette = "Blues")+
-  ggtitle("GGEE Summer 2023 Programs - Advanced Program Students Per District")+
-  theme(plot.title = element_text(hjust = 0.5, vjust = .5))+
+  ggtitle("Distribution of Students by District for Advanced Programs")+
+  theme(plot.title = element_text(hjust = 0.5, vjust = .5, size = 20, face = "bold"))+
   geom_label_repel(data = df_adv,
                    aes(y = pos, label = paste0(round(n/Adv_Students*100, digits=1), "%")),
-                   size = 4.5, nudge_x = 1, show.legend = FALSE)+
-  theme(legend.position = c(1.02, .5))
+                   size = 10, nudge_x = 1, show.legend = FALSE)+
+  theme(legend.position = c(1, .5),
+        legend.title = element_text(size = 18, face = "bold"),
+        legend.text = element_text(size = 18))
+
 
 
 ggsave(
   filename = "GGEE_23_Summer_Pie_Adv.png",
   plot = last_plot(),
   device = "png",
-  path = "/Users/kristadulany/Documents/GitHub/GGEESummer23/Graphs/All Camps",
+  path = "Graphs/All Camps",
   scale = 2,
   width = 6,
   height = 4,

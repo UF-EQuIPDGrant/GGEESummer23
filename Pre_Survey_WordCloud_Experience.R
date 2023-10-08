@@ -17,7 +17,9 @@ library(ggplot2)
 library(scales)
 library(writexl)
 library(wordcloud2)
-
+library(webshot)
+library(htmlwidgets) 
+webshot::install_phantomjs()
 
 GGEE_23_PreSurvey <- read_excel("Data/GGEE_23_PreSurvey.xlsx")
 #View(GGEE_23_PreSurvey)
@@ -47,16 +49,25 @@ Experience_counts <- count(Experience_clean, word, sort = TRUE)
 
 Experience_Fin <- filter(Experience_counts,n>1)
 
+write_xlsx(Experience_Fin,"/Users/kristachisholm/Documents/GitHub/GGEESummer23/Graphs/Pre_Survey Responses/ExperienceSheet_Fin.xlsx")
 
-wordcloud2(Experience_Fin)
+
+Experience_Cloud <- read_excel("Graphs/Pre_Survey Responses/ExperienceSheet_Fin.xlsx")
+
+
+hw <- wordcloud2(Experience_Cloud)
+
 
 library(RColorBrewer)
-color_range_number <- length(unique(Experience_Fin$word))
-color <- colorRampPalette(brewer.pal(9,"Blues")[3:7])(color_range_number)[factor(Experience_Fin$word)]
+color_range_number <- length(unique(Experience_Cloud$word))
+color <- colorRampPalette(brewer.pal(9,"Blues")[3:7])(color_range_number)[factor(Experience_Cloud$word)]
 
-hw <-wordcloud2(Experience_Fin, color=color, size=2)
+hw = wordcloud2(Experience_Cloud, color=color, size=2)
 
 hw
+
+
+
 ##Export Word Cloud
 
 saveWidget(hw,"1.html",selfcontained = F)

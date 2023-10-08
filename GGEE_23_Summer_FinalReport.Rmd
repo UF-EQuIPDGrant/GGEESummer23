@@ -191,11 +191,11 @@ Actual attendance with the programs were less than initial registrations. Studen
 
 
 <center>
-![*The percentage of students by district for both introductory and advanced Goldberg Gator Engineering Explorer Summer Programs (n=204)*](Graphs/Paper/GGEE_23_District_All.jpg){ width=55%}
+![*The percentage of students by district for both introductory and advanced Goldberg Gator Engineering Explorer Summer Programs (n=204)*](Graphs/Report/GGEE_23_District_All.jpg){ width=55%}
 </center>
 
 <center>
-![*The percentage of students by district for the introductory (left, n=194) and advanced (right,n=10) Goldberg Gator Engineering Explorer Summer Programs*](Graphs/Paper/GGEE_23_District_IA.jpg)
+![*The percentage of students by district for the introductory (left, n=194) and advanced (right,n=10) Goldberg Gator Engineering Explorer Summer Programs*](Graphs/Report/GGEE_23_District_IA.jpg)
 </center>
 
 
@@ -206,108 +206,6 @@ Actual attendance with the programs were less than initial registrations. Studen
 
 Demographics were collected on students participating in the research study.
 
-
-```{r Age Demo, echo=FALSE, fig.show = "hold", out.width = "50%"}
-GGEE_23_Pre0 <- read_excel("Data/GGEE_23_PreSurvey.xlsx", sheet = 1)
-GGEE_23_Pre <-filter(GGEE_23_Pre0, Finished == "True")
-
-age <- select(GGEE_23_Pre, Age, Program)|>
-        count(Age, Program)|>
-        na.omit(age)
-
-age_all <- select(GGEE_23_Pre, Age, Program)|>
-  count(Age)|>
-  na.omit(age)
-
-
-age_n <- 1+6+3+6+34+60+49+39+5+1
-
-df_age_all <- age_all%>% 
-  mutate(csum = rev(cumsum(rev(n))), 
-         pos = n/2 + lead(csum, 1),
-         pos = if_else(is.na(pos), n/2, pos))
-
-
-Demo_age_all <-ggplot(age_all, aes(x="", y=n, fill=Age)) +
-  geom_bar(stat="identity", width=1, color="black") +
-  coord_polar("y", start=0)+
-  theme_void()+
-  scale_fill_brewer(guide = guide_legend(reverse = TRUE),palette = "Blues")+
-  ggtitle("Age Distribution for All Programs")+
-  theme(plot.title = element_text(hjust = 0.5, vjust = .5))+
-  geom_label_repel(data = df_age_all,
-                   aes(y = pos, label = paste0(round(n/age_n*100, digits=1), "%")),
-                   size = 4.5, nudge_x = 1, show.legend = FALSE)+
-  theme(legend.position = c(1, .5))
-
-age_intro <- filter(age, Program == "Introductory - 1st Year with GGEE")
-
-age_intro_n <- 6+34+60+49+39+5+1
-
-df_age_intro <- age_intro%>% 
-  mutate(csum = rev(cumsum(rev(n))), 
-         pos = n/2 + lead(csum, 1),
-         pos = if_else(is.na(pos), n/2, pos))
-
-
-Demo_age_intro <- ggplot(age_intro, aes(x="", y=n, fill=Age)) +
-  geom_bar(stat="identity", width=1, color="black") +
-  coord_polar("y", start=0)+
-  theme_void()+
-  scale_fill_brewer(guide = guide_legend(reverse = TRUE),palette = "Blues")+
-  ggtitle("Age Distribution of Introductory Programs")+
-  theme(plot.title = element_text(hjust = 0.5, vjust = .5))+
-  geom_label_repel(data = df_age_intro,
-                   aes(y = pos, label = paste0(round(n/age_intro_n*100, digits=1), "%")),
-                   size = 4.5, nudge_x = 1, show.legend = FALSE)+
-  theme(legend.position = c(1, .5))
-
-
-age_adv <- filter(age, Program == "Advanced - 2nd Year with GGEE")
-
-age_adv_n <- 1+6+3
-
-df_age_adv <- age_adv%>% 
-  mutate(csum = rev(cumsum(rev(n))), 
-         pos = n/2 + lead(csum, 1),
-         pos = if_else(is.na(pos), n/2, pos))
-
-
-Demo_age_adv <- ggplot(age_adv, aes(x="", y=n, fill=Age)) +
-  geom_bar(stat="identity", width=1, color="black") +
-  coord_polar("y", start=0)+
-  theme_void()+
-  scale_fill_brewer(guide = guide_legend(reverse = TRUE),palette = "Blues")+
-  ggtitle("Age Distribution of Advanced Programs")+
-  theme(plot.title = element_text(hjust = 0.5, vjust = .5))+
-  geom_label_repel(data = df_age_adv,
-                   aes(y = pos, label = paste0(round(n/age_adv_n*100, digits=1), "%")),
-                   size = 4.5, nudge_x = 1, show.legend = FALSE)+
-  theme(legend.position = c(1, .5))
-```
-
-
-
-
-
-
-
-<center>
-````{r Age Demo_all, echo=FALSE, }
-Demo_age_all
-```
-
-*Demographics for all Goldberg Gator Engineering Explorer Summer Programs. N=-204*
-</center>
-
-<center>
-```{r Age Demo_in_out, echo=FALSE, fig.show = "hold", out.width = "50%"}
-
-
-Demo_age_adv
-Demo_age_intro
-```
-</center>
 
 
 
