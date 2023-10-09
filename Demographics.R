@@ -789,6 +789,145 @@ ggsave(
 
 
 
+
+
+
+#################################################################################
+##RACE AND ETHNICITY in Research
+#################################################################################
+
+#DOUBLE CHECK NUMBERS
+raceraw <-  select(GGEE_23_Pre, Race, Program)
+raceraw_Count <- count(raceraw, Race, Program)
+
+write_xlsx(raceraw_Count,("/Users/kristachisholm/Documents/GitHub/GGEESummer23/Data/race_raw_count.xlsx"))
+
+
+
+
+##BAR PLOT RACE ETH ALL
+
+GGEE_23_Race_Eth_ALL <- read_excel("Data/GGEE_23_Race_Eth_1.xlsx", sheet = 3)
+
+ggplot(GGEE_23_Race_Eth_ALL, aes(x=Race, y = n, fill = Secondary, label = round(n/total*100, digits=0),'%'))+
+  geom_bar(stat="identity", colour='black', size=.5)+
+  geom_text(size = 3.5, position = position_stack(vjust = 0.5))+
+  theme_classic()+
+  coord_flip()+
+  ggtitle("Distribution of Race and Ethnicity in All Programs")+
+  scale_fill_brewer(guide = guide_legend("% Secondary", reverse = FALSE),palette = "Blues")+
+  theme(axis.text.x = element_text(colour = "black", size = 14),
+        axis.title.x=element_text(size=14,face="bold"))+
+  theme(axis.text.y = element_text(colour = "black", size = 14),
+        axis.title.y=element_text(size=14,face="bold"))+
+  theme(plot.title = element_text(hjust = 0.5, vjust = 0.5, size = 20, face = "bold"))+
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 95), n.breaks=20)+
+  ylab("Number of Students")+
+  theme(legend.position = c(.8, .2),
+        legend.title = element_text(size = 14, face = "bold"),
+        legend.text = element_text(size = 12))
+
+
+
+ggsave(
+  filename = "GGEE_23_Summer_Pie_Race_ALL.png",
+  plot = last_plot(),
+  device = "png",
+  path = "/Users/kristachisholm/Documents/GitHub/GGEESummer23/Graphs/Demographics_092723",
+  scale = 2,
+  width = 6,
+  height = 4,
+  units = c("in"),
+  dpi = 300,
+  limitsize = TRUE,
+  bg = NULL)
+
+
+
+##BAR PLOT RACE ETH INTRO
+
+GGEE_23_Race_Eth_IN <- read_excel("Data/GGEE_23_Race_Eth_1.xlsx", sheet = 1)
+
+ggplot(GGEE_23_Race_Eth_IN, aes(x=Race, y = n, fill = Secondary, label = round(n/total*100, digits=0),'%'))+
+  geom_bar(stat="identity", colour='black', size=.5)+
+  geom_text(size = 3.5, position = position_stack(vjust = 0.5))+
+  theme_classic()+
+  coord_flip()+
+  ggtitle("Distribution of Race and Ethnicity in Introductory Programs")+
+  scale_fill_brewer(guide = guide_legend("% Secondary", reverse = FALSE),palette = "Blues")+
+  theme(axis.text.x = element_text(colour = "black", size = 14),
+        axis.title.x=element_text(size=14,face="bold"))+
+  theme(axis.text.y = element_text(colour = "black", size = 14),
+        axis.title.y=element_text(size=14,face="bold"))+
+  theme(plot.title = element_text(hjust = 0.5, vjust = 0.5, size = 20, face = "bold"))+
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 90), n.breaks=20)+
+  ylab("Number of Students")+
+  theme(legend.position = c(.8, .2),
+        legend.title = element_text(size = 14, face = "bold"),
+        legend.text = element_text(size = 12))
+
+
+
+ggsave(
+  filename = "GGEE_23_Summer_Pie_Race_INTRO.png",
+  plot = last_plot(),
+  device = "png",
+  path = "/Users/kristachisholm/Documents/GitHub/GGEESummer23/Graphs/Demographics_092723",
+  scale = 2,
+  width = 6,
+  height = 4,
+  units = c("in"),
+  dpi = 300,
+  limitsize = TRUE,
+  bg = NULL)
+
+
+
+##BAR PLOT RACE ETH ADV
+
+GGEE_23_Race_Eth_ADV <- read_excel("Data/GGEE_23_Race_Eth_1.xlsx", sheet = 2)
+
+race_n <- 6+19+4+42+4+26+21+82
+race_n
+
+
+ggplot(GGEE_23_Race_Eth_ADV, aes(x=Race, y = n, fill = Secondary, label = round(n/total*100, digits=0),'%'))+
+  geom_bar(stat="identity", colour='black', size=.5)+
+  geom_text(size = 3.5, position = position_stack(vjust = 0.5))+
+  theme_classic()+
+  coord_flip()+
+  ggtitle("Distribution of Race and Ethnicity in Advanced Programs")+
+  scale_fill_brewer(guide = guide_legend("% Secondary", reverse = FALSE),palette = "Blues")+
+  theme(axis.text.x = element_text(colour = "black", size = 14),
+        axis.title.x=element_text(size=14,face="bold"))+
+  theme(axis.text.y = element_text(colour = "black", size = 14),
+        axis.title.y=element_text(size=14,face="bold"))+
+  theme(plot.title = element_text(hjust = 0.5, vjust = 0.5, size = 20, face = "bold"))+
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 3.5), n.breaks=4)+
+  ylab("Number of Students")+
+  theme(legend.position = c(.8, .2),
+        legend.title = element_text(size = 14, face = "bold"),
+        legend.text = element_text(size = 12))
+
+ggsave(
+  filename = "GGEE_23_Summer_Pie_Race_ADV.png",
+  plot = last_plot(),
+  device = "png",
+  path = "/Users/kristachisholm/Documents/GitHub/GGEESummer23/Graphs/Demographics_092723",
+  scale = 2,
+  width = 6,
+  height = 4,
+  units = c("in"),
+  dpi = 300,
+  limitsize = TRUE,
+  bg = NULL)
+
+
+
+
+
+
+
 #################################################################################
 ##Gender in Research
 #################################################################################

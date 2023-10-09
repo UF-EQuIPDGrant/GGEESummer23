@@ -3,6 +3,10 @@ title: 'Funding Report: Goldberg Gator Engineering Explorers Summer Program 2023
 author: "Krista D. Chisholm"
 date: "2023-10-02"
 output:
+  pdf_document:
+    toc: yes
+  word_document:
+    toc: yes
   html_document:
     toc: yes
     number_section: no
@@ -11,10 +15,6 @@ output:
     fig_width: 4
     fig_height: 2
     fig_caption: yes
-  word_document:
-    toc: yes
-  pdf_document:
-    toc: yes
 ---
 
 
@@ -70,17 +70,28 @@ An Advanced Program was developed and piloted during the second year of the GGEE
 
 This funding report provides an overview of the 2023 Goldberg Gator Engineering Explorer Summer Programs. The report provides details from preparing for the summer programs, during the summer program, and information about what follows the programs as well as suggestions for next year's programs. 
 
-Preparing for the GGEE summer programs 
-
-
-
 # Preparation for GGEE Programs
+
+To prepare for the GGEE Summer Programs, the EQuIPD team worked to recruit school districts, students, and prepare required research documentation. 
 
 ## School District Recruitment
 
 *Detail the strategies used to recruit students for the program. Discuss any partnerships or collaborations that helped with recruitment efforts.*
 
 School recruitment for the 2023 GGEE Summer Programs began in November of 2022. Flyers were shared via email to school administration 
+
+
+```{r Program_Fund, echo=FALSE}
+
+library(readxl)
+library(knitr)
+
+GGEE_23_School_Districts_fund <- read_excel("Data/GGEE_23_School Districts_table.xlsx", sheet =2)
+
+knitr::kable(GGEE_23_School_Districts_fund, caption = "2023 Goldberg Gator Engineering Summer Program location funding sources. ", "simple")
+
+```
+
 
 
 ## Student Recruitment
@@ -125,7 +136,7 @@ library(readxl)
 library(knitr)
 GGEE_23_School_Districts_table <- read_excel("Data/GGEE_23_School Districts_table.xlsx")
 
-knitr::kable(GGEE_23_School_Districts_table, caption = "Table 1: 2023 Goldberg Gator Engineering Summer Program Locations, Programs, and Formats.", "simple")
+knitr::kable(GGEE_23_School_Districts_table, caption = "2023 Goldberg Gator Engineering Summer Program Locations, Programs, and Formats.", "simple")
 
 ```
 
@@ -175,7 +186,7 @@ On Day 4, students were introduced to Neural Networks. The activity walked them 
 
 
 
-# Student Participation and Demographics
+# Student Enrollment & Demographics
 
 ## Enrollment Statistics
 *Present enrollment data, including the number of students who initially registered, and any changes over the course of the program.*
@@ -213,28 +224,49 @@ Demographics were collected from students that participated in the resaerch stud
 *Include demographic information such as age, gender, ethnicity, and socioeconomic background of the participating students.*
 
 <center>
-![*The percentage of student age for both introductory and advanced Goldberg Gator Engineering Explorer Summer Programs (n=204)*](Graphs/Report/GGEE_23_Age_All.jpg){ width=50%}
+![*The percentage of student age for both introductory and advanced Goldberg Gator Engineering Explorer Summer Programs (n=204)*](Graphs/Report/GGEE_23_Age_All.jpg){ width=45%}
 </center>
 
 
 
 <center>
-![*The percentage of students ages for the introductory (left, n=194) and advanced (right,n=10) Goldberg Gator Engineering Explorer Summer Programs*](Graphs/Report/GGEE_23_Age_IA.jpg)
+![*The percentage of students ages for the introductory (left, n=194) and advanced (right,n=10) Goldberg Gator Engineering Explorer Summer Programs*](Graphs/Report/GGEE_23_Age_IA.jpg){ width=85%}
 </center>
 
 
 ### Gender
 
+<center>
+![*The percentage of student genders for both introductory and advanced Goldberg Gator Engineering Explorer Summer Programs (n=204)*](Graphs/Report/GGEE_23_Gender_All.jpg){ width=50%}
+</center>
 
 
 
-
+<center>
+![*The percentage of students genders for the introductory (left, n=194) and advanced (right,n=10) Goldberg Gator Engineering Explorer Summer Programs*](Graphs/Report/GGEE_23_Gender_IA.jpg)
+</center>
 
 
 ### Race and Ethnicity
 
+- Students that chose 3 or more race and ethnicity were grouped together
+- Count of students by race or ethnicity in each course 
+- Many students selected multiple races or ethnicity, primary race with secondary ethniticty was listed
+- Broken down into percentage of secondary race or ethnicity
+
+<center>
+![*The percentage of student race and ethnicities for both introductory and advanced Goldberg Gator Engineering Explorer Summer Programs (n=204)*](Graphs/Report/GGEE_23_Race_All.jpg){ width=80%}
+</center>
 
 
+
+<center>
+![*The percentage of student race and ethnicities for Introductory Goldberg Gator Engineering Explorer Summer Programs (n=194)*](Graphs/Report/GGEE_23_Race_In.jpg){ width=80%}
+</center>
+
+<center>
+![*The percentage of student race and ethnicities for Advanced Goldberg Gator Engineering Explorer Summer Programs (n=10)*](Graphs/Report/GGEE_23_Race_Adv.jpg){ width=80%}
+</center>
 
 
 
@@ -275,7 +307,7 @@ Evaluate whether the program met its objectives and goals as outlined in the int
 ## Identification of Challenges Faced
 Discuss any challenges encountered during the program's implementation.
 
-## Lessons Learned and Adaptations Made
+## Lessons Learned & Adaptations Made
 Share lessons learned from the program's challenges and any adjustments or improvements made as a result.
 
 # Recommendations
