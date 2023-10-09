@@ -3,10 +3,6 @@ title: 'Funding Report: Goldberg Gator Engineering Explorers Summer Program 2023
 author: "Krista D. Chisholm"
 date: "2023-10-02"
 output:
-  pdf_document:
-    toc: yes
-  word_document:
-    toc: yes
   html_document:
     toc: yes
     number_section: no
@@ -15,11 +11,11 @@ output:
     fig_width: 4
     fig_height: 2
     fig_caption: yes
+  word_document:
+    toc: yes
+  pdf_document:
+    toc: yes
 ---
-
-
-
-
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -64,7 +60,7 @@ The Goldberg Gator Engineering Explorers (GGEE) Summer Program was initiated by 
 
 The GGEE Program was designed to introduce middle school-aged students to programming and computer science. The program begins with students learning the base elements of coding through small activities that engage them in applying concepts such as strings, conditional statements, loops, and variables. They use these concepts and the micro:bit to develop a simple game and to also collect and analyze light intensity data to study the relationship of light intensity and distance. The program then has students working on two scaling design challenges with partners and teams. The first is a creative engineering design challenge where they create a micro:bit pet for a partner. Then second is a technical design challenge where teams create a solution to a local problem - traffic lights for emergency service vehicles, environmental sensors for a farmer, and an indicator for new drivers. 
 
-An Advanced Program was developed and piloted during the second year of the GGEE programs to allow returning students to continue to participate in the GGEE programs. The Advanced Program was designed to introduce students to the basic concepts of Artificial Intelligence with a focus in Machine Learning. The Advanced Program session was held over 4 full-days and were open to students who previously attended the GGEE program in 2022. 
+An Advanced Program was developed and piloted during the second year of the GGEE programs to allow returning students to continue to participate in the GGEE programs. The program was designed to introduce students to the basic concepts of Artificial Intelligence with a focus in Machine Learning. The Advanced Program session designed to be held over 4 full-days. Registrations were open to students who previously attended the GGEE program in 2022. 
 
 ## Purpose of the Report
 
@@ -78,7 +74,26 @@ To prepare for the GGEE Summer Programs, the EQuIPD team worked to recruit schoo
 
 *Detail the strategies used to recruit students for the program. Discuss any partnerships or collaborations that helped with recruitment efforts.*
 
+**October 2022**
+
+Emails were sent to schools and districts to invite them to participate in the 2023 Goldberg Gator Engineering Explorer Programs. Correspondence was sent to schools that participated in the 2022 pilot programs in addition to the school district leaders in Career and Technical Education for all Florida school districts. 
+
+- registrations from interested schools
+- information session about the summer programs
+- working with schools and districts to coordinate programs and funding
+
+
+**November 2022**
+
+
+
 School recruitment for the 2023 GGEE Summer Programs began in November of 2022. Flyers were shared via email to school administration 
+
+
+
+
+
+
 
 
 ```{r Program_Fund, echo=FALSE}
