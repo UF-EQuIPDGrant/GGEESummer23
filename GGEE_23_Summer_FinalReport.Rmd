@@ -3,8 +3,6 @@ title: 'Funding Report: Goldberg Gator Engineering Explorers Summer Program 2023
 author: "Krista D. Chisholm"
 date: "2023-10-02"
 output:
-  word_document:
-    toc: yes
   html_document:
     toc: yes
     number_section: no
@@ -13,6 +11,8 @@ output:
     fig_width: 4
     fig_height: 2
     fig_caption: yes
+  word_document:
+    toc: yes
   pdf_document:
     toc: yes
 ---
@@ -60,39 +60,55 @@ Program costs per student
 
 ## Background
 
-The Goldberg Gator Engineering Explorers Summer Program was initiated by a generous donor, Arnold Goldberg, to the University of Florida Foundation. He envisioned a free summer program for underrepresented minority middle school students. The program would allow students and teachers to experience computer science and have opportunities to learn to not only program but build skills in computational thinking, problem solving, and engineering design. The vision was brought to life by the Engaging Quality Instruction through Professional Development (EQuIPD) grant at the University of Florida. Their team worked with schools, districts, and teachers across Florida to host these programs.
+The Goldberg Gator Engineering Explorers (GGEE) Summer Program was initiated by a generous donor, Arnold Goldberg, to the University of Florida Foundation. He envisioned a free summer program for underrepresented minority middle school students. The program would allow students and teachers to experience computer science and have opportunities to learn to not only program but build skills in computational thinking, problem solving, and engineering design. The vision was brought to life by the Engaging Quality Instruction through Professional Development (EQuIPD) grant at the University of Florida. Their team worked with schools, districts, and teachers across Florida to host these programs.
 
-The Goldberg Gator Engineering Explorers Program was designed to introduce middle school-aged students to programming and computer science. The program begins with students learning the base elements of coding through small activities that engage them in applying concepts such as strings, conditional statements, loops, and variables. They use these concepts and the micro:bit to develop a simple game and to also collect and analyze light intensity data to study the relationship of light intensity and distance. The program then has students working on two scaling design challenges with partners and teams. The first is a creative engineering design challenge where they create a micro:bit pet for a partner. Then second is a technical design challenge where teams create a solution to a local problem - traffic lights for emergency service vehicles, environmental sensors for a farmer, and an indicator for new drivers. 
+The GGEE Program was designed to introduce middle school-aged students to programming and computer science. The program begins with students learning the base elements of coding through small activities that engage them in applying concepts such as strings, conditional statements, loops, and variables. They use these concepts and the micro:bit to develop a simple game and to also collect and analyze light intensity data to study the relationship of light intensity and distance. The program then has students working on two scaling design challenges with partners and teams. The first is a creative engineering design challenge where they create a micro:bit pet for a partner. Then second is a technical design challenge where teams create a solution to a local problem - traffic lights for emergency service vehicles, environmental sensors for a farmer, and an indicator for new drivers. 
 
-Entering the second year of GGEE, an Advanced Program was developed and piloted to allow returning students to continue to participate in the GGEE programs. The Advanced Program was designed to introduce students to the basic concepts of Artificial Intelligence with a focus in Machine Learning. The Advanced program session was held over 4 full-days and were open to students who previously attended the GGEE program in 2022. 
+An Advanced Program was developed and piloted during the second year of the GGEE programs to allow returning students to continue to participate in the GGEE programs. The Advanced Program was designed to introduce students to the basic concepts of Artificial Intelligence with a focus in Machine Learning. The Advanced Program session was held over 4 full-days and were open to students who previously attended the GGEE program in 2022. 
 
 ## Purpose of the Report
 
-*Explain the purpose of this final report and what the reader can expect to find within it.*
-This funding report provides an overview of the 2023 Goldberg Gator Engineering Explorer Summer Programs.
+This funding report provides an overview of the 2023 Goldberg Gator Engineering Explorer Summer Programs. The report provides details from preparing for the summer programs, during the summer program, and information about what follows the programs as well as suggestions for next year's programs. 
+
+Preparing for the GGEE summer programs 
 
 
 
-# District Recruitment
+# Preparation for GGEE Programs
 
-## Recruitment Strategies
+## School District Recruitment
 
 *Detail the strategies used to recruit students for the program. Discuss any partnerships or collaborations that helped with recruitment efforts.*
 
 School recruitment for the 2023 GGEE Summer Programs began in November of 2022. Flyers were shared via email to school administration 
 
 
-
-
-## Participant Selection Criteria
+## Student Recruitment
 
 *Explain the criteria used to select participants for the program. This could include grade level, academic standing, or other factors.*
 
 School Recruitment
 
+## Research and Youth Compliance 
+
+### Research
+
+- IRB filed through UF for research
+- Research questions
+- Surveys
+- Interview Protocols
+- Parent Research Consent
+
+### Youth Compliance
+
+- Mentors Level 2 Background Screening and Fingerprinting for Jessica Lundsford Act
+- School district partnership covered compliance for their teachers 
+- UF Youth Compliance Training 
+- UF Waiver liability......for Parents 
 
 
-# Summer Programs
+
+# Scheduling Summer Programs
 
 ## 2022 vs. 2023
 
@@ -103,7 +119,6 @@ The program was piloted during the Summer of 2022 with eight sessions and six sc
 ![*GGEE Summer Program Districts from 2022 and 2023*](Images/GGEE_23_FL District Map.jpg)
 </center>
 
-<center>
 ```{r Programs, echo=FALSE}
 
 library(readxl)
@@ -113,10 +128,9 @@ GGEE_23_School_Districts_table <- read_excel("Data/GGEE_23_School Districts_tabl
 knitr::kable(GGEE_23_School_Districts_table, caption = "Table 1: 2023 Goldberg Gator Engineering Summer Program Locations, Programs, and Formats.", "simple")
 
 ```
-</center>
-
 
 ## Program Calendar
+
 *Provide an overview of the program's calendar, including the duration of the program, daily schedules, and key activities.*
 
 There were X many programs in each district
@@ -126,7 +140,7 @@ There were X many programs in each district
 ![*2023 Goldberg Gator Engineering Explorers Summer Program Calendar*](Images/GGEE_23_Calendar.jpg){ width=100%}
 </center>
 
-## Program Layouts
+# Program Layouts
 
 ## Introductory Programs
 
@@ -136,25 +150,22 @@ There were X many programs in each district
 
 ## Advanced Programs
 
-### 4-Day Programs
+The Advanced Program was formatted as 4 day program in all the pilot schools, Figure ^. On Day 1, Students were introduced to the basic concepts of artificial intelligence and then machine learning. The day was concluded with an introduction to programming in [Scratch](https://scratch.mit.edu/) to prepare for the following day. 
+
+On Day 2, students were introduced to Image-based and Test-based machine learning models from [Machine Learning for Kids](https://machinelearningforkids.co.uk/). Classrooms were set up and students were given a login and password unique to their session location. Students develop and train a image-based machine learning model that analyzes the color characteristics of different types of Pokémon. Students then build and train a text-based machine learning model to develop a smart classroom with electronic devices that power on or off using a variety of commands. 
+
+On Day 3, students use their micro:bit programming skills from the previous summer program combined with their new machine learning skills to program a micro:bit to be able to identify different types of gestures. During this activity, students built their own sets of training data using the micro:bits. Students would program 2 gestures together as a class and then make up to 5 gestures on their own. There were at least 20-30 data points for each gesture. The machine learning models were trained using a decision tree constructed in Python and hosted in a Juypter Notebook on [NanoHub](https://nanohub.org/). The model was loaded onto the micro:bit and the model would identify gestures based on the training data provided. 
+
+On Day 4, students were introduced to Neural Networks. The activity walked them through the various types of machine learning models from decision trees to more complex neural networks. Students learned about the multiple layers in a neural network and the processes that each of those layer serve. The following activity had students develop and train a neural network to identify images of numbers. Students manipulated the number of nodes and studied the effect on the outcame and weights in identifying each number. This activity concluded the program. 
+
+<center>
+![*Advanced Program Roadmap*](Images/GGEE_23_Adv_roadmap.jpg){ width=80%}
+</center>
+
+## 4-Day Programs
 
 
-### 8-Day Programs
-
-
-
-
-
-
-
-
-# Youth Compliance 
-
-## Waivers and Research Consent    
-
-## Storage of Student Information
-
-## Institutional Review Board
+## 8-Day Programs
 
 
 
@@ -162,7 +173,9 @@ There were X many programs in each district
 
 
 
-# Program Numbers
+
+
+# Student Participation and Demographics
 
 ## Enrollment Statistics
 *Present enrollment data, including the number of students who initially registered, and any changes over the course of the program.*
@@ -183,62 +196,74 @@ Need for more programs in Santa Rosa County District Schools
 
 Actual attendance with the programs were less than initial registrations. Students became ill, were unable to attend the first days of the program or parents made new plans for their families. 
 
-**GRAPH Attendance Numbers by School**
-
-
-<!-- THESE GRAPHS ARE FOR RESEARCH DATA -- SHOULD BE ALL DATA NOT FROM PRESURVEY -->
-<!-- USE THE FORMAT FROM THE GRAPHS DISTRICT_ALL IN ALL FIGURES TO MAKE THEM LEGIBLE IN REPORT -->
-
-
 <center>
-![*The percentage of students by district for both introductory and advanced Goldberg Gator Engineering Explorer Summer Programs (n=204)*](Graphs/Report/GGEE_23_District_All.jpg){ width=55%}
+![*The percentage of students by district for both introductory and advanced Goldberg Gator Engineering Explorer Summer Programs (n=319)*](Graphs/Report/GGEE_23_District_All.jpg){ width=55%}
 </center>
 
 <center>
-![*The percentage of students by district for the introductory (left, n=194) and advanced (right,n=10) Goldberg Gator Engineering Explorer Summer Programs*](Graphs/Report/GGEE_23_District_IA.jpg)
+![*The percentage of students by district for the introductory (left, n=284) and advanced (right,n=35) Goldberg Gator Engineering Explorer Summer Programs*](Graphs/Report/GGEE_23_District_IA.jpg)
 </center>
 
 
-# Student Demographics
+## Student Demographics
 
-## Age
+Demographics were collected from students that participated in the resaerch study. There were a total of 204 students that participated in the GGEE Summer programs. **add amounts from intro and advanced**
+
+### Age
 *Include demographic information such as age, gender, ethnicity, and socioeconomic background of the participating students.*
 
-Demographics were collected on students participating in the research study.
+<center>
+![*The percentage of student age for both introductory and advanced Goldberg Gator Engineering Explorer Summer Programs (n=204)*](Graphs/Report/GGEE_23_Age_All.jpg){ width=50%}
+</center>
+
+
+
+<center>
+![*The percentage of students ages for the introductory (left, n=194) and advanced (right,n=10) Goldberg Gator Engineering Explorer Summer Programs*](Graphs/Report/GGEE_23_Age_IA.jpg)
+</center>
+
+
+### Gender
 
 
 
 
 
-## Gender
 
-## Race and Ethnicity
 
-## 
+### Race and Ethnicity
 
 
 
 
 
-# Pre-Survey Responses
 
-## Summary of Pre-Program Survey Results
+# Research
+
+## Summary of Pre-Survey Survey Results
 Summarize the responses from the pre-program survey, highlighting key findings and insights.
 
-# Survey Responses
+##  Survey Responses
 
 ## Analysis of Ongoing Survey Data (if conducted during the program)
 If you conducted surveys during the program, analyze the responses and share any noteworthy trends or changes over time.
 
-# Student Interviews
+## Student Interviews
 
-## Highlights from Student Interviews
+### Highlights from Student Interviews
 Share significant insights and quotes gathered from student interviews, emphasizing their experiences and perspectives.
 
-# Final Program Survey Responses
+## End of Program Survey Responses
 
-## Summary of Post-Program Survey Results
+### Summary of Post-Program Survey Results
 Present the results of the post-program survey, emphasizing any changes in student responses compared to the pre-program survey.
+
+
+
+
+
+
+
 
 # Program Outcomes
 
@@ -264,9 +289,6 @@ Share lessons learned from the program's challenges and any adjustments or impro
 - Starting Recruitment in November
 - ensuring districts cover technology to continue to use in after-school programs or integrate into classroom projects
 - revise research study to expand to get more teacher and UF undergraduate mentor insight in the program 
-
-
-
 
 
 
