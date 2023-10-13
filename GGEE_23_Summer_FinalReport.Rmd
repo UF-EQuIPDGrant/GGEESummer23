@@ -70,21 +70,39 @@ The purpose of this report is to offer a comprehensive overview of the 2023 Gold
 
 In preparation for the GGEE Summer Programs, the EQuIPD team actively engaged in district recruitment, student enrollment, and the meticulous preparation of essential research and compliance documentation.
 
+## Research and Youth Compliance 
+
+### Research
+
+A new study was filed with the University of Florida's Institutional Review Board. The study included updates from the 2022 programs. Modifications to any parent and teacher consent documents, survey questions, and survey tools, and interview protocols were documented and reviewed to ensure the research study was done ethically and appropriately with K-12 student participants. 
+
+### Youth Compliance
+
+The GGEE Summer Program was registered with the University of Florida's Youth Compliance department. Youth compliance requires collecting student information, parent/guardian emergency contact information, as well as information on adults working with K-12 students during the programs.
+
+All personnel hired through the University of Florida were required to undergo a level-2 background screening along with fingerprinting to be compliant to work with minors as guided by the Jessica Lundsford Act. They also complete youth compliance training from the university to ensure they understood their role and procedures to keep themselves and students safe during the summer programs. Teachers from their local schools and districts were not required to undergo background screening from UF as they have already done so with their districts. Their information was recorded and they were added as personnel for the programs. 
+
+## Training
+
+School district teachers and undergraduate student mentors participated in training sessions held remotely over Zoom. Sessions were held for 2 hours once a week over the course of four weeks. Program leaders attended sessions 
+
 ## School District Recruitment
 
 **October 2022**
 
 Emails were sent to schools and districts to invite them to participate in the 2023 Goldberg Gator Engineering Explorer Programs. Correspondence was sent to schools that participated in the 2022 pilot programs in addition to all of the school district leaders in Career and Technical Education across Florida. The email provided an overview of the program and it's pilot run in 2022. It also contained a survey for schools or districts to sign up to show their interest and to learn more about the program in an upcoming information session. These emails were distributed multiple times up until the information session. 
 
-The information session was held on October, 13th, 2022 and had 11 registrants from Broward, Hillsborough, Lake, Manatee, Miami-Dade, Palm Beach, Santa Rosa, and St. Lucie counties. Orange, Pinellas, and Sarasota counties were also interested in the GGEE Programs and had either participated in the pilot programs or were participating in another EQuIPD gratn program and wanted to host a summer program. 
+The information session was held on October, 13th, 2022 and had 11 registrants from Broward, Hillsborough, Lake, Manatee, Miami-Dade, Palm Beach, Santa Rosa, and St. Lucie counties. Orange, Pinellas, and Sarasota counties were also interested in the GGEE Programs and had either participated in the pilot programs or were participating in another EQuIPD grant program and wanted to host a summer program. 
 
 **November - December 2022**
 
-The GGEE team continued to communicate and build relationships with districts and teacher partners across Florida. Many conversations at this stage were discussing funding, technology needs, and personnel needs. Districts and schools worked to identify teachers for the programs. Districts were also applying and ear-marking grant funding to use at the end of the year. 
+The GGEE team continued to communicate and build relationships with districts and teacher partners across Florida. Many conversations at this stage were discussing funding, technology needs, and personnel needs. Districts and schools worked to identify teachers for the programs. Districts were also applying and ear-marking funding to use for the summer program at the end of the year.
+
+This year, we took an approach to share the costs of the summer programs with schools and districts to instill ownership in the program and begin the process of schools and districts running these programs on their own with guidance and training from GGEE. 
 
 **January - March 2023**
 
-January through April were filled with continued discussions with district, school, and city leaders. During these months, dates were finalized and any final locations were added. Once dates, program formats and locations were finalized, flyers were created for each program location and a registration survey was developed for the program. Funding was also secured by school distrcits for majority of the program sessions and a few locations required support from the GGEE program, Table 1. 
+January through April were filled with continued discussions with district, school, and city leaders. During these months, dates were finalized and any final locations were added. Once dates, program formats and locations were finalized, flyers were created for each program location and a registration survey was developed for the program. Funding was also secured by school districts for majority of the program sessions and a few locations required support from the GGEE program, Table 1. 
 
 During this time, we worked with an additional UF foundation donors from Brevard County, Bud and Kim Deffebach, to bring a Goldberg Gator Engineering Explorer summer program to Stone Magnet Middle School in Brevard County. We also worked with the Youth Empowerment Program at the City of Riviera Beach to sponsor and host a summer program session in their STEM lab located at the public library. 
 
@@ -101,40 +119,39 @@ knitr::kable(GGEE_23_School_Districts_fund, caption = "2023 Goldberg Gator Engin
 
 **April - May 2023**
 
-Teachers were hired through UF for programs that were donor sponsored, city sponsors, or required funding assistance for their teachers. Final details to programs, technology disbursement, and 
+Teachers were hired through UF for programs that were donor sponsored, city sponsors, or required funding assistance for their teachers. Final details to programs, technology disbursement, and training were all occurring during this time. 
+
+By the end of scheduling, there were 20 teachers participating in the summer programs to lead sessions. 
+
+Student participant and Undergraduate Mentor recruitment also occurred during this time and is further detailed in the following sections.
+
+## Undergraduate Mentor Recruiment 
+
+From April to May, the EQuIPD program recruited, interviewed and onboarded 20 undergraduate students from UF and other colleges and universities across the state. Flyers were shared with engineering student groups such as National Society of Black Engineers, Society of Hispanic Professional Engineers, Society of Asian Engineers, and Society of Women Engineers. Dr. Ruzycki and other EQuIPD students shared the opportunities in their classes. 
+
+To minimize travel costs, we recruited students that were local to the areas hosting summer programs. Many students went home for the summer or were able to stay with a relative for the duration of the program.
+
+By the end of the recruitment and onboarding process, there were 20 undergraduate students employed to support the GGEE summer programs, Table 2. 
+
+```{r Mentors, echo=FALSE}
+
+library(readxl)
+library(knitr)
+
+Undergrad_Hires <- read_excel("Data/Undergrad_Hires.xlsx")
+
+knitr::kable(Undergrad_Hires, caption = "Goldberg Gator Engineering Explorers undergraduate student mentor recruitment colleges and universities.", "simple", align = 'lcl')
+
+```
 
 
-During this same period of time, student recruitment was started by schools, districts, and the EQuIPD program. EQuIPD was also interviewing and onboarding university students mentors. 
+## Student Participant Recruitment
 
+The GGEE summer programs are targeted to middle school students. We invited students that are rising sixth graders to rising ninth graders to participate. For the advanced programs, we extended the grade level to include rising tenth grade students to avoid excluding students that participated as rising ninth graders last year. Students range from 10-16 years of age in the programs.
 
+The GGEE program provided schools and districts with flyers detailing the summer program dates and locations. The flyer contained a link to a registration survey where parents provided information for their child meeting the requirements for the University of Florida's youth compliance standards. 
 
-## Student Mentor Recruiment 
-
-
-## Student Recruitment
-
-*Explain the criteria used to select participants for the program. This could include grade level, academic standing, or other factors.*
-
-School Recruitment
-
-## Research and Youth Compliance 
-
-### Research
-
-- IRB filed through UF for research
-- Research questions
-- Surveys
-- Interview Protocols
-- Parent Research Consent
-
-### Youth Compliance
-
-- Mentors Level 2 Background Screening and Fingerprinting for Jessica Lundsford Act
-- School district partnership covered compliance for their teachers 
-- UF Youth Compliance Training 
-- UF Waiver liability......for Parents 
-
-
+Summer program locations were in charge of recruitment for their programs. Many teachers and schools shared the flyers with their students and schools to invite students that attend their school. Other districts shared their flyers on their social media pages or sent announcements using parent communication portals and invited students from across the district as long as they were enrolled in a school in their district. 
 
 # Scheduling
 
@@ -170,6 +187,8 @@ There were X many programs in each district
 
 # Program Layouts
 
+The GGEE summer programs were designed to provide options that best fit with school district's summer schedules and existing summer programs. To better accommodate and support our programs, we structured them to run on 4-day schedules for either 4 full-days for 7-8 hour days or 8 half-days for 4-5 hour days. When working with schools we founds that some ran for an entire day, some were open for half of a day, and almost all locations were closed on Fridays. 
+
 ## Introductory Programs
 
 The Introductory Program design allowed students with varying skill levels to participate. The program can be run in 4-day, full-day or 8-day, half-day programs. A roadmap, Figure ^, was developed to walk through the program by day. The goals for the first day of the program were to introduce the team, goals for the program, collaborative learning strategies, and Micro:bit programming basics using no-code and low-code activities. The program then introduced students to their first design-based activity where they were challenged with designing a Micro:bit Pet for their partner using the Stanford design cycle: Empathize, Define, Ideate, Prototype, Test. While designing the Pet, students had to learn to wire and program external sensors and motors to the Micro:bit to create additional features for pets. The remainder of the program focused on a technical design challenge where student groups worked together in a project team to design a solution for one of three challenges: temperature regulation in a greenhouse, an acceleration indicator for a new driver, and a remotely activated stoplight for first responders. Together, they stepped through the design cycle to develop solutions to these challenges like many engineers and scientists. They also developed teamwork and program management skills during the technical design challenge. 
@@ -185,17 +204,6 @@ The Advanced Program was formatted as 4 day program in all the pilot schools, Fi
 <center>
 ![*Advanced Program Roadmap*](Images/GGEE_23_Adv_roadmap.jpg){ width=70%}
 </center>
-
-## 4-Day Programs
-
-
-## 8-Day Programs
-
-
-
-
-
-
 
 
 
