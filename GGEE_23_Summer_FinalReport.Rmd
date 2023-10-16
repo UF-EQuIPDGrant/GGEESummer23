@@ -160,14 +160,17 @@ Summer program locations were in charge of recruitment for their programs. Many 
 
 ## 2022 vs. 2023
 
-The program was piloted during the Summer of 2022 with eight sessions and six school districts. The program served just over 100 hundred students in Alachua, Collier, Escambia, Palm Beach, Orange, and Sarasota counties. 
+The program was piloted during the Summer of 2022 with eight sessions and six school districts. The program served just over 100 hundred students in Alachua, Collier, Escambia, Palm Beach, Orange, and Sarasota counties, Figure ^. Through partnerships with schools, districts, and cities, the GGEE program was able to host 22 sessions in eight school districts across Florida. 
 
-Through oartnerships with schools, distrcits, and cities, 
-
+School funding went toward supporting lead teachers for their time leading the program and training, meals for students, building space, technology, and consumable materials. GGEE funds were generally used to support UF undergraduate mentor's time for supporting programs and training, mentor travel, and technology.
 
 <center>
 ![*GGEE Summer Program Districts from 2022 and 2023*](Images/GGEE_23_FL District Map.jpg)
 </center>
+
+## Program Calendar
+
+During the 2023 GGEE summer program sessions, there was one program in Alachua and Brevard counties, two programs in Miami-Dade, Pinellas, and Sarasota counties, three programs four programs in Orange, and Palm Beach counties, and 6 in Santa Rosa county. The locations of each program, which program level was hosted, and how many sessions were held are detailed in Table ^.
 
 ```{r Programs, echo=FALSE}
 
@@ -179,12 +182,7 @@ knitr::kable(GGEE_23_School_Districts_table, caption = "2023 Goldberg Gator Engi
 
 ```
 
-## Program Calendar
-
-*Provide an overview of the program's calendar, including the duration of the program, daily schedules, and key activities.*
-
-There were X many programs in each district
-
+Each program was given the option to host a session over 1-2 weeks from June 5th through July 24th, 2023. Many programs overlapped during the 9-week window as shown in Figure ^. Programs are color coded by district and locations with more than one session were given a number at the end, such as Orange Intro 1. Sessions that were held across two weeks are listed in both weeks. The least popular week was July 3rd-7th with one session running, likely due to the fourth of July holiday. The most popular week to host a summer program was June 19th-22nd with a total of nine sessions running concurrently. 
 
 <center>
 ![*2023 Goldberg Gator Engineering Explorers Summer Program Calendar*](Images/GGEE_23_Calendar.jpg){ width=100%}
@@ -210,23 +208,24 @@ The Advanced Program was formatted as 4 day program in all the pilot schools, Fi
 ![*Advanced Program Roadmap*](Images/GGEE_23_Adv_roadmap.jpg){ width=70%}
 </center>
 
-
-
 # Student Enrollment & Demographics
 
 ## Enrollment Statistics
-*Present enrollment data, including the number of students who initially registered, and any changes over the course of the program.*
 
-Programs were able to host up to 25 students in each of their program sessions. Registrations were closed and students were placed on wait lists in the case of cancellations by student parents. 
-Programs had on average X number of students enroll. Wait lists ranged from 5 - 80 students in some districts.
+Enrollment in each summer program session was managed by the EQuIPD team through a Qualtrics survey. Programs were limited to 25 student registrants with the expectation that around 20 students would attend the program. 
 
-Bar Graph Comparison - 
-Total Number of Registered Students - stacked bar graph - registered vs waitlist
+When the registration limit was met for a program, the option for the program was marked as "FULL" and parents were set a wait list notice email, instead of the confirmation email regularly sent. Students would move from the wait list to the main registration when parents would withdraw their students from the program prior to the start of the program. 
 
-**GRAPH by Session - stacked graph - regsitered vs waitlist**
 
-Need for more programs in Santa Rosa County District Schools
+```{r Raw Registrations, echo=FALSE}
 
+library(readxl)
+library(knitr)
+GGEE_23_Locations_1 <- read_excel("Data/GGEE_23_Locations_1.xlsx")
+
+knitr::kable(GGEE_23_Locations_1, caption = "2023 Goldberg Gator Engineering Summer Program Registrations before sessions limits.", "simple")
+
+```
 
 ## Attendance Records
 *Share attendance records to illustrate the level of student engagement and participation throughout the program.*
@@ -347,6 +346,7 @@ Share lessons learned from the program's challenges and any adjustments or impro
 - Starting Recruitment in November
 - ensuring districts cover technology to continue to use in after-school programs or integrate into classroom projects
 - revise research study to expand to get more teacher and UF undergraduate mentor insight in the program 
+- more summer program options in Santa Rosa County - the students and families are interested in their students participating in the programs. 
 
 
 
