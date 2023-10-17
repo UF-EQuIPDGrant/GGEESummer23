@@ -17,11 +17,11 @@ GGEE_23_Reg_Locations <- read_excel("Data/GGEE_23_Registration Locations.xlsx")
 
 
 Locations <- select(GGEE_23_Reg_Locations, District, Program)|>
-  count(District, Program)
+  count(District)
 
-write_xlsx(Locations,"/Users/kristachisholm/Documents/GitHub/GGEESummer23/Data/GGEE_23_Locations_1.xlsx")
+write_xlsx(Locations,"/Users/kristachisholm/Documents/GitHub/GGEESummer23/Data/GGEE_23_Locations_2.xlsx")
 
 
-GGEE_23_Locations_1 <- read_excel("Data/GGEE_23_Locations_1.xlsx")
+GGEE_23_Locations_2 <- read_excel("Data/GGEE_23_Locations_2.xlsx")
 
 

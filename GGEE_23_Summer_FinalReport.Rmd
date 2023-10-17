@@ -116,7 +116,7 @@ library(knitr)
 
 GGEE_23_School_Districts_fund <- read_excel("Data/GGEE_23_School Districts_table.xlsx", sheet =2)
 
-knitr::kable(GGEE_23_School_Districts_fund, caption = "2023 Goldberg Gator Engineering Summer Program location funding sources. ", "simple")
+knitr::kable(GGEE_23_School_Districts_fund, caption = "2023 Goldberg Gator Engineering Summer Program location funding sources. ", "simple", align = 'llc')
 
 ```
 
@@ -197,7 +197,7 @@ The GGEE summer programs were designed to provide options that best fit with sch
 The Introductory Program design allowed students with varying skill levels to participate. The program can be run in 4-day, full-day or 8-day, half-day programs. A roadmap, Figure ^, was developed to walk through the program by day. The goals for the first day of the program were to introduce the team, goals for the program, collaborative learning strategies, and Micro:bit programming basics using no-code and low-code activities. The program then introduced students to their first design-based activity where they were challenged with designing a Micro:bit Pet for their partner using the Stanford design cycle: Empathize, Define, Ideate, Prototype, Test. While designing the Pet, students had to learn to wire and program external sensors and motors to the Micro:bit to create additional features for pets. The remainder of the program focused on a technical design challenge where student groups worked together in a project team to design a solution for one of three challenges: temperature regulation in a greenhouse, an acceleration indicator for a new driver, and a remotely activated stoplight for first responders. Together, they stepped through the design cycle to develop solutions to these challenges like many engineers and scientists. They also developed teamwork and program management skills during the technical design challenge. 
 
 <center>
-![*Introductory Program Roadmap*](Images/GGEE_23_intro_roadmap.jpg){ width=70%}
+![*Introductory Program Roadmap*](Images/GGEE_23_intro_roadmap.jpg){ width=65%}
 </center>
 
 ## Advanced Programs
@@ -205,120 +205,126 @@ The Introductory Program design allowed students with varying skill levels to pa
 The Advanced Program was formatted as 4 day program in all the pilot schools, Figure ^. Students were first introduced to the basic concepts of artificial intelligence and then machine learning. The day was concluded with an introduction to programming in [Scratch](https://scratch.mit.edu/) to prepare for the following day when students were introduced to Image-based and Test-based machine learning models from [Machine Learning for Kids](https://machinelearningforkids.co.uk/). Students develop and train a image-based machine learning model that analyzes the color characteristics of different types of Pokémon. They then trained a text-based machine learning model to design a smart classroom that had electronic devices that power on or off using a variety of written commands. On the third day, students use their micro:bit programming skills from last summer program to program a micro:bit to identify different types of gestures. During this activity, students built their own sets of training data using the micro:bits. Students program gestures together as a class and a number of gestures on their own. The machine learning models were trained using a decision tree constructed in Python and hosted in a Juypter Notebook on [NanoHub](https://nanohub.org/). The model was loaded onto the micro:bit giving it the ability to identify gestures based on the training data provided. To round out the program, students were introduced to Neural Networks. The activity walked them through the various types of machine learning models from decision trees to more complex neural networks. Students learned about the multiple layers in a neural network and the processes that each of those layer serve. The following activity had students develop and train a neural network to identify images of numbers. Students manipulated the number of nodes and studied the effect on the outcame and weights in identifying each number. This activity concluded the program. 
 
 <center>
-![*Advanced Program Roadmap*](Images/GGEE_23_Adv_roadmap.jpg){ width=70%}
+![*Advanced Program Roadmap*](Images/GGEE_23_Adv_roadmap.jpg){ width=65%}
 </center>
 
 # Student Enrollment & Demographics
 
-## Enrollment Statistics
+## Enrollment
 
-Enrollment in each summer program session was managed by the EQuIPD team through a Qualtrics survey. Programs were limited to 25 student registrants with the expectation that around 20 students would attend the program. 
+Enrollment in each summer program session was managed by the EQuIPD team through a Qualtrics survey. Programs were limited to 25 student registrants with the expectation that around 20 students would attend the program. When the registration limit was met for a program, the option for the program was marked as "FULL" and parents were set a wait list notice email, instead of the confirmation email regularly sent. Students would move from the wait list to the main registration when parents would withdraw their students from the program prior to the start of the program.
 
-When the registration limit was met for a program, the option for the program was marked as "FULL" and parents were set a wait list notice email, instead of the confirmation email regularly sent. Students would move from the wait list to the main registration when parents would withdraw their students from the program prior to the start of the program. 
+Parents continued to register their children for the program and join the wait list. Session registrations averaged around 33 students per session. The highest number of registrations being 113 students for the Santa Rosa County, Milton High School Introductory program from July 10-13 + 17-20. 
 
 
 ```{r Raw Registrations, echo=FALSE}
 
 library(readxl)
 library(knitr)
-GGEE_23_Locations_1 <- read_excel("Data/GGEE_23_Locations_1.xlsx")
+GGEE_23_Locations_2 <- read_excel("Data/GGEE_23_Locations_2.xlsx")
 
-knitr::kable(GGEE_23_Locations_1, caption = "2023 Goldberg Gator Engineering Summer Program Registrations before sessions limits.", "simple")
+knitr::kable(GGEE_23_Locations_2, caption = "Total number of registrations by district before enrollment limits and wait lists.", "simple", align = 'lcc')
 
 ```
 
-## Attendance Records
-*Share attendance records to illustrate the level of student engagement and participation throughout the program.*
+## Attendance
 
-Actual attendance with the programs were less than initial registrations. Students became ill, were unable to attend the first days of the program or parents made new plans for their families. 
+After limiting the program to 25 students, actual attendance of the programs averaged around 15 students per program with 319 students participating in a 2023 Goldberg Gator Engineering Explorer Summer Program, Figure ^. The districts with the largest number of student participants were as follows: Santa Rosa County - 111 students in 6 sessions, Palm Beach County - 56 students in 4 sessions, and Orange County - 55 students in 4 sessions.
+
+While most programs reached the 25 student registration limit for the summer program, there were less students actually attended the programs due to falling ill, unexpected family travel, or changes in plans without notifying our program. Students were moved up on the wait list up until the first day of the program. Once the program started, no students were moved from the wait list to ensure the program would meet youth compliance adult to student ratios and to prevent students falling behind after missing the essential concepts covered during day one. 
+
+There were 284 students that participated in the 19 Introductory GGEE summer program sessions and 35 students in the 3 Advanced GGEE summer program sessions. The breakdown of student attendance by program level is shown in Figure ^. The highest number of students in attendance for a program was 24 students at Santa Rosa County, Navarre High School Introductory Program from June 5-8 + 12-15. The lowest attendance was 8 students participating in the Orange County, University High School Advanced Program from June 5-8. 
+
+When looking at the distribution of students in the introductory programs the large percentage from Santa Rosa County aligns with the number of sessions they hosted, Figure ^. Santa Rosa held the most sessions in a given district providing the most opportunities for students to participate in the program. Nearly half of the students in the advanced programs were from Orange County. During the previous pilot year Orange county held 3 introductory sessions providing a larger base of students to recruit to participate in the advanced program. 
 
 <center>
-![*The percentage of students by district for both introductory and advanced Goldberg Gator Engineering Explorer Summer Programs (n=319)*](Graphs/Report/GGEE_23_District_All.jpg){ width=55%}
+![*The distribution of students by district for both introductory and advanced Goldberg Gator Engineering Explorer Summer Programs (n=319)*](Graphs/Report/GGEE_23_District_All.jpg){ width=55%}
 </center>
 
 <center>
-![*The percentage of students by district for the introductory (left, n=284) and advanced (right,n=35) Goldberg Gator Engineering Explorer Summer Programs*](Graphs/Report/GGEE_23_District_IA.jpg)
+![*The distribution of students by district for the introductory (left, n=284) and advanced (right,n=35) Goldberg Gator Engineering Explorer Summer Programs*](Graphs/Report/GGEE_23_District_IA.jpg){ width=90%}
 </center>
-
 
 ## Student Demographics
 
-Demographics were collected from students that participated in the resaerch study. There were a total of 204 students that participated in the GGEE Summer programs. **add amounts from intro and advanced**
+Student demographics were collected from students that participated in the research study by permission of their parents. The results for student demographics were taken from the Pre-Survey that students completed at the start of the program. To ensure consistency in results, surveys that were taken after the first day of the respective program were removed from analysis in addition to responses that were missing a critical demographic response such as age, grade, race/ethnicity, or gender. Students participating in Alachua county's Take Stock in Children advanced program were not surveyed or interviewed because the session was modified to two days unlike the other programs with full 4 or 8 day experiences. There were a total of 204 Pre-survey student responses that were analyzed for the GGEE Summer programs, 194 students participated in an introductory level program and 10 participated in an advanced level program. 
 
-### Age
-*Include demographic information such as age, gender, ethnicity, and socioeconomic background of the participating students.*
+### Age and Grade Level
 
-<center>
-![*The percentage of student age for both introductory and advanced Goldberg Gator Engineering Explorer Summer Programs (n=204)*](Graphs/Report/GGEE_23_Age_All.jpg){ width=45%}
-</center>
-
-
+The GGEE summer programs were targeted toward rising 6th to 10th graders. The introductory programs were open to rising 6th through 9th graders while the advanced programs were open to rising 7th to 10th graders to include the older students that participated in the 2022 GGEE programs and returned for a second year. This range of grade levels invited students from the ages of 10 to 16 to participate in the program. The distribution of ages and grade levels participating in all GGEE summer programs are shown in Figure ^. Over 50% of students participating in the program are between the ages of 12 and 13 and in either 7th or 8th grade. 
 
 <center>
-![*The percentage of students ages for the introductory (left, n=194) and advanced (right,n=10) Goldberg Gator Engineering Explorer Summer Programs*](Graphs/Report/GGEE_23_Age_IA.jpg){ width=85%}
+![*The distribution of student ages (left) and student grade levels (right) for both introductory and advanced Goldberg Gator Engineering Explorer Summer Programs (n=204).*](Graphs/Report/GGEE_23_AgeGrade_All.jpg){ width=85%}
 </center>
+
+When looking at the distribution of age in the introductory programs, Figure ^, left, we see that students from ages 10-16 are participating in the program. This is likely due to parents registering younger or older siblings into the program to participate together. In the introductory programs more than 50% of students were within the target age range of 12-13 years old and going into 7th or 8th grade. When looking at the advanced program age distributions, Figure ^, right, students are mainly 13 years old and equally going into 8th or 9th grade. Since advanced program students were required to have participated in the previous pilot year, age and grade levels were anticipated to be higher than the introductory programs.  
+
+
+<center>
+![*The distribution of students age and grade level for introductory programs (left, n=194) and student age and grade level for advanced programs (right, n=10).*](Graphs/Report/GGEE_23_AgeGrade_IA.jpg){ width=85%}
 
 
 ### Gender
 
+Gender demographics were collected in the pre-survey. Students were given the following options to select from: Male, Female, Prefer to Self Describe, and Prefer Not to Say. The Prefer to Self Describe option gave students the chance to write in their response. The distribution of student participant gender for all GGEE programs is shown in Figure ^. 
+
+Majority of the students participating in the research study were male, 145 students. There were 49 female students across each program. There were 6 students who opted not to disclose their gender and 4 students that preferred to self-describe. Of the students that self-described, 1 student left their response blank, 1 student described themselves as a "girl", 1 student described themselves as a "male", and 1 student described themselves as a type of vehicle, which is assumed to be a part of a joke. 
+
+
 <center>
-![*The percentage of student genders for both introductory and advanced Goldberg Gator Engineering Explorer Summer Programs (n=204)*](Graphs/Report/GGEE_23_Gender_All.jpg){ width=50%}
+![*The distribution of student genders for both introductory and advanced Goldberg Gator Engineering Explorer Summer Programs (n=204)*](Graphs/Report/GGEE_23_Gender_All.jpg){ width=55%}
 </center>
 
-
+Looking at the distributions for each program type, we see a similar distribution of male to female students in the introductory sessions, Figure ^, right, as the pilot year in 2022 which was nearly 75% to 25%. There were 140 male students, 45 female students, 6 students who did not disclose, and 3 students that preferred to self describe as, nothing, girl, and a vehicle. The GGEE program relied on schools and districts to promote program registrations. During information sessions, the goal to recruit more female students into the GGEE programs was share, but ultimately GGEE did not have control on promotion of the program. There was a closer distribution of student genders in the advanced programs, Figure ^, left. There were 5 male students, 4 female students, and 1 student that preferred to self describe as male that participated in the advanced program.
 
 <center>
-![*The percentage of students genders for the introductory (left, n=194) and advanced (right,n=10) Goldberg Gator Engineering Explorer Summer Programs*](Graphs/Report/GGEE_23_Gender_IA.jpg)
+![*The distribution of students genders for the introductory (left, n=194) and advanced (right,n=10) Goldberg Gator Engineering Explorer Summer Programs*](Graphs/Report/GGEE_23_Gender_IA.jpg){ width=85%}
 </center>
-
 
 ### Race and Ethnicity
 
-- Students that chose 3 or more race and ethnicity were grouped together
-- Count of students by race or ethnicity in each course 
-- Many students selected multiple races or ethnicity, primary race with secondary ethniticty was listed
-- Broken down into percentage of secondary race or ethnicity
+In the Pre-survey, students were given the option to select as many options apply to them from the following list: American Indian/Alaskan Native, Asian, Black or African American, Hispanic or Latin(x), Native Hawaiian or other Pacific Islander, or White. Most students chose one to two options to classify their race and ethnicity. In order to evaluate the distribution of students across the programs, students that listed 3 or more race/ethnicity options were grouped together. There were 7 students out of the 204 surveyed that chose 3 or more options. Those results were as follows: 
+
+- 1 student American Indian or Alaska Native, Black or African American, and White
+- 2 students Hispanic or Latin(x), American Indian or Alaska Native, and White
+- 1 student Hispanic or Latin(x), Asian, and Black or African American
+- 2 students Hispanic or Latin(x), Asian, and White
+- 1 student that selected all options
+
+To display the distribution of student race and ethnicity, the results were displayed as a total number of students that selected a race or ethnicity with the number of students who chose a specific secondary race or ethnicity within the bar of the graph. 
+
+The distribution or race and ethnicity for all GGEE summer programs is shown in Figure ^. Of the 204 students surveyed, 44.1 percent of students selected White as their race. 84 students selected just White while other 6 students selected both White and Hispanic/Latinx. 13.7 percent of students selected Hispanic/Latinx, which equaled to 27 students. 24.5 percent of students selected Black or African American. 43 students identified as Black or African American, 3 students selected Black or African American and White, and 4 students selected Black or African American and Hispanic/Latinx. 13.2 percent of students identified as Asian, 21 students only selected Asian while 1 student selected Asian and Black or African American, and 2 students selected both White and Asian or White and Hispanic/Latinx. 2 percent of students selected American Indian or Alaska Native with 2 students solely selecting American Indian or Alaska Native, 1 student selected American Indian or Alaska Native and Asian, and 1 student selected American Indian or Alaska Native and Hispanic/Latinx.
 
 <center>
-![*The percentage of student race and ethnicities for both introductory and advanced Goldberg Gator Engineering Explorer Summer Programs (n=204)*](Graphs/Report/GGEE_23_Race_All.jpg){ width=80%}
+![*The distribution of student race and ethnicities for both introductory and advanced Goldberg Gator Engineering Explorer Summer Programs (n=204)*](Graphs/Report/GGEE_23_Race_All_Num.jpg){ width=75%}
 </center>
 
 
 
 <center>
-![*The percentage of student race and ethnicities for Introductory Goldberg Gator Engineering Explorer Summer Programs (n=194)*](Graphs/Report/GGEE_23_Race_In.jpg){ width=80%}
+![*The distribution of student race and ethnicities for Introductory Goldberg Gator Engineering Explorer Summer Programs (n=194)*](Graphs/Report/GGEE_23_Race_In_Num.jpg){ width=75%}
 </center>
 
 <center>
-![*The percentage of student race and ethnicities for Advanced Goldberg Gator Engineering Explorer Summer Programs (n=10)*](Graphs/Report/GGEE_23_Race_Adv.jpg){ width=80%}
+![*The distribution of student race and ethnicities for Advanced Goldberg Gator Engineering Explorer Summer Programs (n=10)*](Graphs/Report/GGEE_23_Race_Adv_Num.jpg){ width=75%}
 </center>
 
 
 
-# Research
+# Ongoing Research
 
-## Summary of Pre-Survey Survey Results
+## Pre-Survey Survey Results
 Summarize the responses from the pre-program survey, highlighting key findings and insights.
-
-##  Survey Responses
-
-## Analysis of Ongoing Survey Data (if conducted during the program)
-If you conducted surveys during the program, analyze the responses and share any noteworthy trends or changes over time.
 
 ## Student Interviews
 
-### Highlights from Student Interviews
+## Teacher Interviews
 Share significant insights and quotes gathered from student interviews, emphasizing their experiences and perspectives.
 
 ## End of Program Survey Responses
 
 ### Summary of Post-Program Survey Results
 Present the results of the post-program survey, emphasizing any changes in student responses compared to the pre-program survey.
-
-
-
-
-
 
 
 
@@ -342,8 +348,10 @@ Share lessons learned from the program's challenges and any adjustments or impro
 
 - Updating compliance forms with more clear langaue for parent and the research study
 - Make submitting paperwork a part of the registration process. Did this with the 2023-2024 After-School programs and it has made everything so much easier to process and collect rather than a 2-step process
-- Creating contract-like documents to denote needs, requirments, and expectations from the schools and what is provided from the GGEE program at UF
+- Creating contract-like documents to denote needs, requirements, and expectations from the schools and what is provided from the GGEE program at UF
 - Starting Recruitment in November
+- working to recruit more female students into the intro summer programs by collaborating with the school districts and providing suggestions to recruit more female students into the program. 
+-- does this look like videos, showing female students, changing the look of the flyers, working with teachers, focusing on girl clubs
 - ensuring districts cover technology to continue to use in after-school programs or integrate into classroom projects
 - revise research study to expand to get more teacher and UF undergraduate mentor insight in the program 
 - more summer program options in Santa Rosa County - the students and families are interested in their students participating in the programs. 
