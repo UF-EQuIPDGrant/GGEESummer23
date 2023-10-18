@@ -36,17 +36,11 @@ library(ggrepel)
 
 The Goldberg Gator Engineering Explorers (GGEE) Summer Program was designed to provide middle school students with an authentic experience in programming, engineering design, and computational thinking. The 2023 Summer Program successfully engaged 319 students across 8 school districts. Students developed computational thinking skills through design-based challenges using micro:bit micro-controllers. 
 
-Schools and Districts partnered with the GGEE program to host programs and sponsor teachers and materials for the programs at their schools. There were 20 local teachers that lead summer programs in their area. Twenty undergraduate engineering students from the University of Florida and neighboring colleges and universities supported teacher leaders and served as mentors for students in the program. Both teachers and undergraduate mentors were trained in program activities to upskill their abilities in programming, computational thinking, engineering desgin, and teaching practices. Two grant staff coordinated and ran the programs. 
+Schools and Districts partnered with the GGEE program to host programs and sponsor teachers and materials for the programs at their schools. There were 20 local teachers that lead summer programs in their area. Twenty undergraduate engineering students from the University of Florida and neighboring colleges and universities supported teacher leaders and served as mentors for students in the program. Both teachers and undergraduate mentors were trained in program activities to upskill their abilities in programming, computational thinking, engineering design, and teaching practices. Two grant staff coordinated and ran the programs. 
 
-----DATA 
+In addition to the funding from donors Arnold Goldberg and Bud and Kim Deffebach, school districts, or city programs - City of Riviera Beach Youth Empowerment Programs; the Goldberg Gator Engineering Explorers summer programs received funding from the State of Florida Department of Education (291-1231C-2C001) to aid in supporting student travel, time, and providing technology. 
 
-Demographics
-How students enjoyed the program
-Growth from beginning to end
 
-Follow up after-school programs in 5 districts for 12 sessions with around 200 students participating in the program. 
-
-Program costs per student 
 
 **Last year summary**
 *Students reported they felt challenged during the program but were rewarded when their code or design worked. They also mentioned the importance of collaboration with peers to solve engineering problems, and they enjoyed the mentorship of the college students working with the program. The longitudinal effects of the summer program on grades in math and science and students' enrollment in higher-level courses will be tracked by the research study for the program. All districts provided in-kind donations to the camp, and many school districts have plans to host or expand the programs for next year. Some schools have asked about follow-up programming, including afterschool programming to continue student engagement. The cost per student for the program was $996, including all costs for program development (three months), camp costs (two months), and post-assessment of the program. The cost per student for future camps should be less owing to development costs built into the program's first year.*
@@ -70,6 +64,41 @@ The purpose of this report is to offer a comprehensive overview of the 2023 Gold
 
 In preparation for the GGEE Summer Programs, the EQuIPD team actively engaged in district recruitment, student enrollment, and the meticulous preparation of essential research and compliance documentation.
 
+## Funding
+
+Funding for the Goldberg Gator Engineering Explorer Summer Programs came few multiple sources this year in addition to donation from Arnold Goldberg to the University of Florida's Herbert Wertheim College of Engineering. 
+
+*State of Florida Department of Education*
+
+The State of Florida Department of Education provided \$250,000 (291-1231C-2C001) to support the Goldberg Gator Engineering Explorer Summer Programs alongside providing training and materials for teachers around artificial intelligence. These funds supported staff time and effort, program travel, technology, and consumable materials.
+
+*Bud and Kim Deffebach UF Foundation*
+
+We partnered with Bud and Kim Deffebach to host both a GGEE summer program and after-school program for students in Brevard County at Stone Magnet Middle School. Their gift provided funding for the teacher to train and lead the summer and after-school programs, consumable materials, technology, and meals for the students and staff that participated in the summer program.
+
+*City of Riviera Beach - Youth Empowerment Programs* 
+
+The EQuIPD grant worked with the City of Riviera Beach to host a session of the GGEE program over the summer. The city provided meals for the students and a learning lab space for their Youth Empowerment Programs within their public library. A \$5,500 contract was developed between UF and the city for the city to provide funding for a teacher, technology, and consumable learning materials. The GGEE program provided funding for the student mentors supporting the program. 
+
+*Schools and Districts*
+
+Many of the schools and districts we collaborated with to host GGEE summer programs were able to allocated funds from the end of the year to support their teachers through training and leading sessions, technology such as micro:bits and STEM kits for the teachers to keep for their own classrooms and after-school programs, and consumable materials such as paper, pencils, pens, markers, tape, and glue. The GGEE program provided funding for student mentors time and any travel costs. Many school districts provided breakfast and lunch for students participating in the program as part of the already existing summer lunch programs. 
+The estimated costs for schools were around \$4,000 for 4-day programs and around \$6,000 for 8-day half-day programs.
+
+
+Table ^ displays the funding sources for each of the GGEE program sessions. A more concise breakdown of funds will be provided in an additional report.
+
+```{r Program_Fund, echo=FALSE}
+
+library(readxl)
+library(knitr)
+
+GGEE_23_School_Districts_fund <- read_excel("Data/GGEE_23_School Districts_table.xlsx", sheet =2)
+
+knitr::kable(GGEE_23_School_Districts_fund, caption = "2023 Goldberg Gator Engineering Summer Program location funding sources. ", "simple", align = 'llc')
+
+```
+
 ## Research and Youth Compliance 
 
 ### Research
@@ -86,41 +115,28 @@ All personnel hired through the University of Florida were required to undergo a
 
 School district teachers and undergraduate student mentors participated in training sessions held remotely over Zoom. Sessions were held for 2 hours once a week over the course of five weeks. Program teacher leaders attended the sessions live. During those sessions teachers completed the activities from a learner perspective so they understood how to program the activity as well as an idea of how to facilitate the activity. Teacher leads had the opportunity to ask questions regarding logistics and content during the training time. 
 
-The undergraduate mentors participated in training in a hybrid series that took place over three days. The mentors met with the facilitator for 2 hours on Tuesday and Thursday and were expected to work on their own for 2 hours on Wednesday. The facilitator review the requirements and expectations of being a program lead and reveiwed the rules for youth compliance in addition to working through the program activities with the student mentors and asnwering any questions regarding content or logistics. 
+The undergraduate mentors participated in training in a hybrid series that took place over three days. The mentors met with the facilitator for 2 hours on Tuesday and Thursday and were expected to work on their own for 2 hours on Wednesday. The facilitator review the requirements and expectations of being a program lead and reviewed the rules for youth compliance in addition to working through the program activities with the student mentors and answering any questions regarding content or logistics. 
 
 
 ## School District Recruitment
 
-**October 2022**
+*October 2022*
 
 Emails were sent to schools and districts to invite them to participate in the 2023 Goldberg Gator Engineering Explorer Programs. Correspondence was sent to schools that participated in the 2022 pilot programs in addition to all of the school district leaders in Career and Technical Education across Florida. The email provided an overview of the program and it's pilot run in 2022. It also contained a survey for schools or districts to sign up to show their interest and to learn more about the program in an upcoming information session. These emails were distributed multiple times up until the information session. 
 
 The information session was held on October, 13th, 2022 and had 11 registrants from Broward, Hillsborough, Lake, Manatee, Miami-Dade, Palm Beach, Santa Rosa, and St. Lucie counties. Orange, Pinellas, and Sarasota counties were also interested in the GGEE Programs and had either participated in the pilot programs or were participating in another EQuIPD grant program and wanted to host a summer program. 
 
-**November - December 2022**
+*November - December 2022*
 
 The GGEE team continued to communicate and build relationships with districts and teacher partners across Florida. Many conversations at this stage were discussing funding, technology needs, and personnel needs. Districts and schools worked to identify teachers for the programs. Districts were also applying and ear-marking funding to use for the summer program at the end of the year.
 
 This year, we took an approach to share the costs of the summer programs with schools and districts to instill ownership in the program and begin the process of schools and districts running these programs on their own with guidance and training from GGEE. 
 
-**January - March 2023**
+*January - March 2023*
 
-January through April were filled with continued discussions with district, school, and city leaders. During these months, dates were finalized and any final locations were added. Once dates, program formats and locations were finalized, flyers were created for each program location and a registration survey was developed for the program. Funding was also secured by school districts for majority of the program sessions and a few locations required support from the GGEE program, Table 1. 
+January through April were filled with continued discussions with district, school, and city leaders. During these months, dates were finalized and any final locations were added. Once dates, program formats and locations were finalized, flyers were created for each program location and a registration survey was developed for the program. 
 
-During this time, we worked with an additional UF foundation donors from Brevard County, Bud and Kim Deffebach, to bring a Goldberg Gator Engineering Explorer summer program to Stone Magnet Middle School in Brevard County. We also worked with the Youth Empowerment Program at the City of Riviera Beach to sponsor and host a summer program session in their STEM lab located at the public library. 
-
-```{r Program_Fund, echo=FALSE}
-
-library(readxl)
-library(knitr)
-
-GGEE_23_School_Districts_fund <- read_excel("Data/GGEE_23_School Districts_table.xlsx", sheet =2)
-
-knitr::kable(GGEE_23_School_Districts_fund, caption = "2023 Goldberg Gator Engineering Summer Program location funding sources. ", "simple", align = 'llc')
-
-```
-
-**April - May 2023**
+*April - May 2023*
 
 Teachers were hired through UF for programs that were donor sponsored, city sponsors, or required funding assistance for their teachers. Final details to programs, technology disbursement, and training were all occurring during this time. 
 
@@ -130,11 +146,7 @@ Student participant and Undergraduate Mentor recruitment also occurred during th
 
 ## Undergraduate Mentor Recruiment 
 
-From April to May, the EQuIPD program recruited, interviewed and onboarded 20 undergraduate students from UF and other colleges and universities across the state. Flyers were shared with engineering student groups such as National Society of Black Engineers, Society of Hispanic Professional Engineers, Society of Asian Engineers, and Society of Women Engineers. Dr. Ruzycki and other EQuIPD students shared the opportunities in their classes. 
-
-To minimize travel costs, we recruited students that were local to the areas hosting summer programs. Many students went home for the summer or were able to stay with a relative for the duration of the program.
-
-By the end of the recruitment and onboarding process, there were 20 undergraduate students employed to support the GGEE summer programs, Table 2. 
+From April to May, the EQuIPD program recruited, interviewed and on-boarded 20 undergraduate students from UF and other colleges and universities across the state, Table ^. 
 
 ```{r Mentors, echo=FALSE}
 
@@ -147,6 +159,9 @@ knitr::kable(Undergrad_Hires, caption = "Goldberg Gator Engineering Explorers un
 
 ```
 
+To recruit mentors, flyers were shared with engineering student groups such as National Society of Black Engineers, Society of Hispanic Professional Engineers, Society of Asian Engineers, and Society of Women Engineers. Dr. Ruzycki and other EQuIPD students shared the opportunities in their classes. 
+
+To minimize travel costs, we recruited students that were local to the areas hosting summer programs. Since many undergraduate students return home for the summer it was easy for them to attend and support their local GGEE program. 
 
 ## Student Participant Recruitment
 
@@ -172,6 +187,8 @@ School funding went toward supporting lead teachers for their time leading the p
 
 During the 2023 GGEE summer program sessions, there was one program in Alachua and Brevard counties, two programs in Miami-Dade, Pinellas, and Sarasota counties, three programs four programs in Orange, and Palm Beach counties, and 6 in Santa Rosa county. The locations of each program, which program level was hosted, and how many sessions were held are detailed in Table ^.
 
+Each program was given the option to host a session over 1-2 weeks from June 5th through July 24th, 2023. Many programs overlapped during the 9-week window as shown in ***[Appendix 1: Summer Program Calendar]***. Programs are color coded by district and locations with more than one session were given a number at the end, such as Orange Intro 1. Sessions that were held across two weeks are listed in both weeks. The least popular week was July 3rd-7th with one session running, likely due to the fourth of July holiday. The most popular week to host a summer program was June 19th-22nd with a total of nine sessions running concurrently. 
+
 ```{r Programs, echo=FALSE}
 
 library(readxl)
@@ -181,12 +198,6 @@ GGEE_23_School_Districts_table <- read_excel("Data/GGEE_23_School Districts_tabl
 knitr::kable(GGEE_23_School_Districts_table, caption = "2023 Goldberg Gator Engineering Summer Program Locations, Programs, and Formats.", "simple")
 
 ```
-
-Each program was given the option to host a session over 1-2 weeks from June 5th through July 24th, 2023. Many programs overlapped during the 9-week window as shown in Figure ^. Programs are color coded by district and locations with more than one session were given a number at the end, such as Orange Intro 1. Sessions that were held across two weeks are listed in both weeks. The least popular week was July 3rd-7th with one session running, likely due to the fourth of July holiday. The most popular week to host a summer program was June 19th-22nd with a total of nine sessions running concurrently. 
-
-<center>
-![*2023 Goldberg Gator Engineering Explorers Summer Program Calendar*](Images/GGEE_23_Calendar.jpg){ width=100%}
-</center>
 
 # Program Layouts
 
@@ -202,7 +213,7 @@ The Introductory Program design allowed students with varying skill levels to pa
 
 ## Advanced Programs
 
-The Advanced Program was formatted as 4 day program in all the pilot schools, Figure ^. Students were first introduced to the basic concepts of artificial intelligence and then machine learning. The day was concluded with an introduction to programming in [Scratch](https://scratch.mit.edu/) to prepare for the following day when students were introduced to Image-based and Test-based machine learning models from [Machine Learning for Kids](https://machinelearningforkids.co.uk/). Students develop and train a image-based machine learning model that analyzes the color characteristics of different types of Pokémon. They then trained a text-based machine learning model to design a smart classroom that had electronic devices that power on or off using a variety of written commands. On the third day, students use their micro:bit programming skills from last summer program to program a micro:bit to identify different types of gestures. During this activity, students built their own sets of training data using the micro:bits. Students program gestures together as a class and a number of gestures on their own. The machine learning models were trained using a decision tree constructed in Python and hosted in a Juypter Notebook on [NanoHub](https://nanohub.org/). The model was loaded onto the micro:bit giving it the ability to identify gestures based on the training data provided. To round out the program, students were introduced to Neural Networks. The activity walked them through the various types of machine learning models from decision trees to more complex neural networks. Students learned about the multiple layers in a neural network and the processes that each of those layer serve. The following activity had students develop and train a neural network to identify images of numbers. Students manipulated the number of nodes and studied the effect on the outcame and weights in identifying each number. This activity concluded the program. 
+The Advanced Program was formatted as 4 day program in all the pilot schools, Figure ^. Students were first introduced to the basic concepts of artificial intelligence and then machine learning. The day was concluded with an introduction to programming in ***[Scratch](https://scratch.mit.edu/)*** to prepare for the following day when students were introduced to Image-based and Test-based machine learning models from ***[Machine Learning for Kids](https://machinelearningforkids.co.uk/)***. Students develop and train a image-based machine learning model that analyzes the color characteristics of different types of Pokémon. They then trained a text-based machine learning model to design a smart classroom that had electronic devices that power on or off using a variety of written commands. On the third day, students use their micro:bit programming skills from last summer program to program a micro:bit to identify different types of gestures. During this activity, students built their own sets of training data using the micro:bits. Students program gestures together as a class and a number of gestures on their own. The machine learning models were trained using a decision tree constructed in Python and hosted in a Juypter Notebook on ***[NanoHub](https://nanohub.org/)***. The model was loaded onto the micro:bit giving it the ability to identify gestures based on the training data provided. To round out the program, students were introduced to Neural Networks. The activity walked them through the various types of machine learning models from decision trees to more complex neural networks. Students learned about the multiple layers in a neural network and the processes that each of those layer serve. The following activity had students develop and train a neural network to identify images of numbers. Students manipulated the number of nodes and studied the effect on the outcame and weights in identifying each number. This activity concluded the program. 
 
 <center>
 ![*Advanced Program Roadmap*](Images/GGEE_23_Adv_roadmap.jpg){ width=65%}
@@ -212,10 +223,7 @@ The Advanced Program was formatted as 4 day program in all the pilot schools, Fi
 
 ## Enrollment
 
-Enrollment in each summer program session was managed by the EQuIPD team through a Qualtrics survey. Programs were limited to 25 student registrants with the expectation that around 20 students would attend the program. When the registration limit was met for a program, the option for the program was marked as "FULL" and parents were set a wait list notice email, instead of the confirmation email regularly sent. Students would move from the wait list to the main registration when parents would withdraw their students from the program prior to the start of the program.
-
-Parents continued to register their children for the program and join the wait list. Session registrations averaged around 33 students per session. The highest number of registrations being 113 students for the Santa Rosa County, Milton High School Introductory program from July 10-13 + 17-20. 
-
+There were a total of 713 student registrations completed for the GGEE 2023 summer programs. Table ^ displays how many registrations were completed for each distrcit as well as how many programs were held in the location. 
 
 ```{r Raw Registrations, echo=FALSE}
 
@@ -227,13 +235,17 @@ knitr::kable(GGEE_23_Locations_2, caption = "Total number of registrations by di
 
 ```
 
+Recruitment of students for the GGEE summer programs were managed by the districts and schools while the enrollment registration process was managed by the EQuIPD team through a Qualtrics survey. Programs were limited to 25 student registrants with the expectation that around 20 students would attend the program. When the registration limit was met for a program, the option for the program was marked as "FULL" and parents were set a wait list notice email, instead of the confirmation email regularly sent. Students would move from the wait list to the main registration when parents would withdraw their students from the program prior to the start of the program.
+
+Parents continued to register their children for the program and join the wait list. Session registrations averaged around 33 students per session. The highest number of registrations being 113 students for the Santa Rosa County, Milton High School Introductory program from July 10-13 + 17-20. 
+
 ## Attendance
 
 After limiting the program to 25 students, actual attendance of the programs averaged around 15 students per program with 319 students participating in a 2023 Goldberg Gator Engineering Explorer Summer Program, Figure ^. The districts with the largest number of student participants were as follows: Santa Rosa County - 111 students in 6 sessions, Palm Beach County - 56 students in 4 sessions, and Orange County - 55 students in 4 sessions.
 
 While most programs reached the 25 student registration limit for the summer program, there were less students actually attended the programs due to falling ill, unexpected family travel, or changes in plans without notifying our program. Students were moved up on the wait list up until the first day of the program. Once the program started, no students were moved from the wait list to ensure the program would meet youth compliance adult to student ratios and to prevent students falling behind after missing the essential concepts covered during day one. 
 
-There were 284 students that participated in the 19 Introductory GGEE summer program sessions and 35 students in the 3 Advanced GGEE summer program sessions. The breakdown of student attendance by program level is shown in Figure ^. The highest number of students in attendance for a program was 24 students at Santa Rosa County, Navarre High School Introductory Program from June 5-8 + 12-15. The lowest attendance was 8 students participating in the Orange County, University High School Advanced Program from June 5-8. 
+There were 284 students that participated in the 19 Introductory GGEE summer program sessions and 35 students that participated in the 3 Advanced GGEE summer program sessions. The breakdown of student attendance by program level is shown in Figure ^. The highest number of students in attendance for a program was 24 students at Santa Rosa County, Navarre High School Introductory Program from June 5-8 + 12-15. The lowest attendance was 8 students participating in the Orange County, University High School Advanced Program from June 5-8. 
 
 When looking at the distribution of students in the introductory programs the large percentage from Santa Rosa County aligns with the number of sessions they hosted, Figure ^. Santa Rosa held the most sessions in a given district providing the most opportunities for students to participate in the program. Nearly half of the students in the advanced programs were from Orange County. During the previous pilot year Orange county held 3 introductory sessions providing a larger base of students to recruit to participate in the advanced program. 
 
@@ -295,9 +307,11 @@ To display the distribution of student race and ethnicity, the results were disp
 
 The distribution or race and ethnicity for all GGEE summer programs is shown in Figure ^. Of the 204 students surveyed, 44.1 percent of students selected White as their race. 84 students selected just White while other 6 students selected both White and Hispanic/Latinx. 13.7 percent of students selected Hispanic/Latinx, which equaled to 27 students. 24.5 percent of students selected Black or African American. 43 students identified as Black or African American, 3 students selected Black or African American and White, and 4 students selected Black or African American and Hispanic/Latinx. 13.2 percent of students identified as Asian, 21 students only selected Asian while 1 student selected Asian and Black or African American, and 2 students selected both White and Asian or White and Hispanic/Latinx. 2 percent of students selected American Indian or Alaska Native with 2 students solely selecting American Indian or Alaska Native, 1 student selected American Indian or Alaska Native and Asian, and 1 student selected American Indian or Alaska Native and Hispanic/Latinx.
 
+
 <center>
 ![*The distribution of student race and ethnicities for both introductory and advanced Goldberg Gator Engineering Explorer Summer Programs (n=204)*](Graphs/Report/GGEE_23_Race_All_Num.jpg){ width=75%}
 </center>
+
 
 
 
@@ -380,11 +394,15 @@ Summarize the program's achievements and positive outcomes.
 ## Reiteration of Impact on Students
 Emphasize how the program benefited the participating students and the broader school community.
 
+
+\pagebreak
+
 # Appendices
 
-Include any supplementary materials, such as additional data charts and graphs, the complete survey questions, and interview transcripts.
-
-Please adapt this template to your specific program and add more details and content as needed to create a comprehensive final report for your middle school summer program.
+## Appendix 1: Summer Program Calendar
+<center>
+![](Images/GGEE_23_Calendar.jpg){ width=100%}
+</center>
 
 
 
