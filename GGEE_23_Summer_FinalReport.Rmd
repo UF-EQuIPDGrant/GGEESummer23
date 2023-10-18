@@ -85,7 +85,6 @@ The EQuIPD grant worked with the City of Riviera Beach to host a session of the 
 Many of the schools and districts we collaborated with to host GGEE summer programs were able to allocated funds from the end of the year to support their teachers through training and leading sessions, technology such as micro:bits and STEM kits for the teachers to keep for their own classrooms and after-school programs, and consumable materials such as paper, pencils, pens, markers, tape, and glue. The GGEE program provided funding for student mentors time and any travel costs. Many school districts provided breakfast and lunch for students participating in the program as part of the already existing summer lunch programs. 
 The estimated costs for schools were around \$4,000 for 4-day programs and around \$6,000 for 8-day half-day programs.
 
-
 Table ^ displays the funding sources for each of the GGEE program sessions. A more concise breakdown of funds will be provided in an additional report.
 
 ```{r Program_Fund, echo=FALSE}
@@ -117,7 +116,6 @@ School district teachers and undergraduate student mentors participated in train
 
 The undergraduate mentors participated in training in a hybrid series that took place over three days. The mentors met with the facilitator for 2 hours on Tuesday and Thursday and were expected to work on their own for 2 hours on Wednesday. The facilitator review the requirements and expectations of being a program lead and reviewed the rules for youth compliance in addition to working through the program activities with the student mentors and answering any questions regarding content or logistics. 
 
-
 ## School District Recruitment
 
 *October 2022*
@@ -138,9 +136,7 @@ January through April were filled with continued discussions with district, scho
 
 *April - May 2023*
 
-Teachers were hired through UF for programs that were donor sponsored, city sponsors, or required funding assistance for their teachers. Final details to programs, technology disbursement, and training were all occurring during this time. 
-
-By the end of scheduling, there were 20 teachers participating in the summer programs to lead sessions. 
+Teachers were hired through UF for programs that were donor sponsored, city sponsors, or required funding assistance for their teachers. Final details to programs, technology disbursement, and training were all occurring during this time. By the end of scheduling, there were 20 teachers participating in the summer programs to lead sessions. 
 
 Student participant and Undergraduate Mentor recruitment also occurred during this time and is further detailed in the following sections.
 
@@ -175,29 +171,29 @@ Summer program locations were in charge of recruitment for their programs. Many 
 
 ## 2022 vs. 2023
 
-The program was piloted during the Summer of 2022 with eight sessions and six school districts. The program served just over 100 hundred students in Alachua, Collier, Escambia, Palm Beach, Orange, and Sarasota counties, Figure ^. Through partnerships with schools, districts, and cities, the GGEE program was able to host 22 sessions in eight school districts across Florida. 
-
-School funding went toward supporting lead teachers for their time leading the program and training, meals for students, building space, technology, and consumable materials. GGEE funds were generally used to support UF undergraduate mentor's time for supporting programs and training, mentor travel, and technology.
+The program was piloted during the Summer of 2022 with eight sessions and six school districts. The program served just over 100 hundred students in Alachua, Collier, Escambia, Palm Beach, Orange, and Sarasota counties. Through partnerships with schools, districts, and cities, the GGEE program was able to host 319 students across 22 sessions in 8 school districts across Florida, Figure ^. 
 
 <center>
 ![*GGEE Summer Program Districts from 2022 and 2023*](Images/GGEE_23_FL District Map.jpg)
 </center>
 
-## Program Calendar
+## Program Locations
 
-During the 2023 GGEE summer program sessions, there was one program in Alachua and Brevard counties, two programs in Miami-Dade, Pinellas, and Sarasota counties, three programs four programs in Orange, and Palm Beach counties, and 6 in Santa Rosa county. The locations of each program, which program level was hosted, and how many sessions were held are detailed in Table ^.
-
-Each program was given the option to host a session over 1-2 weeks from June 5th through July 24th, 2023. Many programs overlapped during the 9-week window as shown in ***[Appendix 1: Summer Program Calendar]***. Programs are color coded by district and locations with more than one session were given a number at the end, such as Orange Intro 1. Sessions that were held across two weeks are listed in both weeks. The least popular week was July 3rd-7th with one session running, likely due to the fourth of July holiday. The most popular week to host a summer program was June 19th-22nd with a total of nine sessions running concurrently. 
+The 22 program locations, schools, program levels and formats are listed in Table ^. Of the 22 programs, 3 piloted the advanced program and the remaining 19 were introductory levels programs to introduce students to programming and micro:bits.
 
 ```{r Programs, echo=FALSE}
 
 library(readxl)
 library(knitr)
-GGEE_23_School_Districts_table <- read_excel("Data/GGEE_23_School Districts_table.xlsx")
+GGEE_23_School_Districts_table <- read_excel("Data/GGEE_23_School Districts_table.xlsx", sheet=1)
 
 knitr::kable(GGEE_23_School_Districts_table, caption = "2023 Goldberg Gator Engineering Summer Program Locations, Programs, and Formats.", "simple")
 
 ```
+
+## Program Calendar
+
+Each program was given the option to host a session over 1-2 weeks from June 5th through July 24th, 2023. Many programs overlapped during the 9-week window as shown in ***[Appendix 1: Summer Program Calendar]***. Programs are color coded by district and locations with more than one session were given a number at the end, such as Orange Intro 1. Sessions that were held across two weeks are listed in both weeks. The least popular week was July 3rd-7th with one session running, likely due to the fourth of July holiday. The most popular week to host a summer program was June 19th-22nd with a total of nine sessions. 
 
 # Program Layouts
 
