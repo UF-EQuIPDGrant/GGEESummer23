@@ -3,10 +3,6 @@ title: 'Funding Report: Goldberg Gator Engineering Explorers Summer Program 2023
 author: "Krista D. Chisholm"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 output:
-  pdf_document:
-    toc: yes
-  word_document:
-    toc: yes
   html_document:
     toc: yes
     number_section: no
@@ -15,6 +11,10 @@ output:
     fig_width: 4
     fig_height: 2
     fig_caption: yes
+  word_document:
+    toc: yes
+  pdf_document:
+    toc: yes
 ---
 
 ```{r setup, include=FALSE}
@@ -301,27 +301,27 @@ In the Pre-survey, students were given the option to select as many options appl
 
 To display the distribution of student race and ethnicity, the results were displayed as a total number of students that selected a race or ethnicity with the number of students who chose a specific secondary race or ethnicity within the bar of the graph. 
 
-The distribution or race and ethnicity for all GGEE summer programs is shown in Figure ^. Of the 204 students surveyed, 44.1 percent of students selected White as their race. 84 students selected just White while other 6 students selected both White and Hispanic/Latinx. 13.7 percent of students selected Hispanic/Latinx, which equaled to 27 students. 24.5 percent of students selected Black or African American. 43 students identified as Black or African American, 3 students selected Black or African American and White, and 4 students selected Black or African American and Hispanic/Latinx. 13.2 percent of students identified as Asian, 21 students only selected Asian while 1 student selected Asian and Black or African American, and 2 students selected both White and Asian or White and Hispanic/Latinx. 2 percent of students selected American Indian or Alaska Native with 2 students solely selecting American Indian or Alaska Native, 1 student selected American Indian or Alaska Native and Asian, and 1 student selected American Indian or Alaska Native and Hispanic/Latinx.
-
+The distribution or race and ethnicity for all GGEE summer programs is shown in Figure ^. Of the 204 students surveyed, 44.1 percent of students (90 students) selected White as their race. 84 students selected just White while other 6 students selected both White and Hispanic/Latinx. 13.2 percent of students (27 students) selected Hispanic/Latinx. 24.5 percent of students (50 students) selected Black or African American as their race. 43 students identified as Black or African American, 3 students selected Black or African American and White, and 4 students selected Black or African American and Hispanic/Latinx. 12.7 percent of students (26 students) identified as Asian, 21 students only selected Asian while 1 student selected Asian and Black or African American, and 2 students selected both White and Asian or White and Hispanic/Latinx. 2 percent of students (4 students) selected American Indian or Alaska Native with 2 students solely selecting American Indian or Alaska Native, 1 student selected American Indian or Alaska Native and Asian, and 1 student selected American Indian or Alaska Native and Hispanic/Latinx. 3.4 percent or 7 students selected more than 3 race/ethnicity options.
 
 <center>
 ![*The distribution of student race and ethnicities for both introductory and advanced Goldberg Gator Engineering Explorer Summer Programs (n=204)*](Graphs/Report/GGEE_23_Race_All_Num.jpg){ width=75%}
 </center>
 
-
-
+In the introductory programs there was a similar distribution of student race and ethnicity compared to both programs combined, Figure ^. Of the 194 students, 44.8 percent of students (87 students) selected White as their race. 82 students selected White and 5 students selected White and Hispanic/Latinx. 13.4 percent of students (26 students) selected Hispanic/Latinx. 24.2 percent (47 students) chose a race including Black or African American. 42 students selected Black or African American, 3 students selected Black or African American and Hispanic/Latinx, and 2 students selected Black or African American and White. 12.4 percent of students (24 students) identified as Asian; 19 selected Asian, 2 selected Asian and Black or African American, 2 selected Asian and Hispanic/Latinx, and 1 selected Asian and White. 2.1 percent of students (4 students) chose an option including American Indian or Alaska Native. 2 students chose American Indian or Alaska Native, 1 student chose American Indian or Alaska Native and Asian, and 1 student chose American Indian or Alaska Native and Hispanic/Latinx.
 
 <center>
 ![*The distribution of student race and ethnicities for Introductory Goldberg Gator Engineering Explorer Summer Programs (n=194)*](Graphs/Report/GGEE_23_Race_In_Num.jpg){ width=75%}
 </center>
 
+Of the 10 students that participated in the research study for the advanced program, 30 percent (3 students) identified as White; 2 students selected White while 1 student chose White and Hispanic/Latinx. 10 percent (1 student) identified as completely Hispanic/Latinx. 30 percent of students (3 students) identified as Black or African American; 1 student chose Black or African American, 1 student chose Black or African American and White, and 1 student chose Black or African American and Hispanic/Latinx. 20 percent (2 students) identified as Asian and 10 percent (1 student) chose more than 3 race/ethnicities to identify themselves. 
+
 <center>
 ![*The distribution of student race and ethnicities for Advanced Goldberg Gator Engineering Explorer Summer Programs (n=10)*](Graphs/Report/GGEE_23_Race_Adv_Num.jpg){ width=75%}
 </center>
 
-
-
 # Ongoing Research
+
+
 
 ## Pre-Survey Survey Results
 Summarize the responses from the pre-program survey, highlighting key findings and insights.
@@ -336,12 +336,6 @@ Share significant insights and quotes gathered from student interviews, emphasiz
 ### Summary of Post-Program Survey Results
 Present the results of the post-program survey, emphasizing any changes in student responses compared to the pre-program survey.
 
-
-
-# Program Outcomes
-
-## Assessment of Program Objectives and Goals
-Evaluate whether the program met its objectives and goals as outlined in the introduction.
 
 # Challenges and Lessons Learned
 
@@ -368,10 +362,9 @@ Share lessons learned from the program's challenges and any adjustments or impro
 
 
 
-## Future Directions
+# After-school Programs
 *Suggest potential directions for the program's growth or expansion.*
-
-### After-school Programs
+ After-school Programs
 
 overview of programs 
 
