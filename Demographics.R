@@ -800,7 +800,7 @@ ggsave(
 raceraw <-  select(GGEE_23_Pre, Race, Program)
 raceraw_Count <- count(raceraw, Race, Program)
 
-write_xlsx(raceraw_Count,("/Users/kristachisholm/Documents/GitHub/GGEESummer23/Data/race_raw_count.xlsx"))
+#write_xlsx(raceraw_Count,("/Users/kristachisholm/Documents/GitHub/GGEESummer23/Data/race_raw_count.xlsx"))
 
 raceraw_Count2 <- count(raceraw, Race)
 
@@ -811,7 +811,7 @@ GGEE_23_Race_Eth_ALL <- read_excel("Data/GGEE_23_Race_Eth_1.xlsx", sheet = 3)
 
 ggplot(GGEE_23_Race_Eth_ALL, aes(x=Race, y = n, fill = Secondary, label = round(n, digits=0),'%'))+
   geom_bar(stat="identity", colour='black', size=.5)+
-  geom_text(size = 3.5, position = position_stack(vjust = 0.5))+
+  geom_text(size = 5, position = position_stack(vjust = 0.5))+
   theme_classic()+
   coord_flip()+
   ggtitle("Distribution of Race and Ethnicity in All Programs")+
@@ -850,7 +850,7 @@ GGEE_23_Race_Eth_IN <- read_excel("Data/GGEE_23_Race_Eth_1.xlsx", sheet = 1)
 
 ggplot(GGEE_23_Race_Eth_IN, aes(x=Race, y = n, fill = Secondary, label = round(n, digits=0),'%'))+
   geom_bar(stat="identity", colour='black', size=.5)+
-  geom_text(size = 3.5, position = position_stack(vjust = 0.5))+
+  geom_text(size = 5, position = position_stack(vjust = 0.5))+
   theme_classic()+
   coord_flip()+
   ggtitle("Distribution of Race and Ethnicity in Introductory Programs")+
@@ -893,7 +893,7 @@ race_n
 
 ggplot(GGEE_23_Race_Eth_ADV, aes(x=Race, y = n, fill = Secondary, label = round(n, digits=0),'%'))+
   geom_bar(stat="identity", colour='black', size=.5)+
-  geom_text(size = 3.5, position = position_stack(vjust = 0.5))+
+  geom_text(size = 5, position = position_stack(vjust = 0.5))+
   theme_classic()+
   coord_flip()+
   ggtitle("Distribution of Race and Ethnicity in Advanced Programs")+
