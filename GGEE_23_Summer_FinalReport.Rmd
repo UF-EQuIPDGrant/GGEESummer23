@@ -3,6 +3,10 @@ title: 'Funding Report: Goldberg Gator Engineering Explorers Summer Program 2023
 author: "Krista D. Chisholm"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 output:
+  word_document:
+    toc: yes
+  pdf_document:
+    toc: yes
   html_document:
     toc: yes
     number_section: no
@@ -11,10 +15,6 @@ output:
     fig_width: 4
     fig_height: 2
     fig_caption: yes
-  word_document:
-    toc: yes
-  pdf_document:
-    toc: yes
 ---
 
 ```{r setup, include=FALSE}
