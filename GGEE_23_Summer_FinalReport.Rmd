@@ -3,10 +3,6 @@ title: 'Funding Report: Goldberg Gator Engineering Explorers Summer Program 2023
 author: "Krista D. Chisholm"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 output:
-  pdf_document:
-    toc: yes
-  word_document:
-    toc: yes
   html_document:
     toc: yes
     number_section: no
@@ -15,6 +11,10 @@ output:
     fig_width: 4
     fig_height: 2
     fig_caption: yes
+  word_document:
+    toc: yes
+  pdf_document:
+    toc: yes
 ---
 
 ```{r setup, include=FALSE}
@@ -70,11 +70,11 @@ Funding for the Goldberg Gator Engineering Explorer Summer Programs came few mul
 
 *State of Florida Department of Education*
 
-The State of Florida Department of Education provided \$250,000 (291-1231C-2C001) to support the Goldberg Gator Engineering Explorer Summer Programs alongside providing training and materials for teachers around artificial intelligence. These funds supported staff time and effort, program travel, technology, and consumable materials.
+The State of Florida Department of Education provided \$199,000 (291-1231C-2C001) to support the Goldberg Gator Engineering Explorer Summer Programs alongside providing training and materials for teachers around artificial intelligence. These funds supported staff time and effort, program travel, technology, and consumable materials.
 
 *Bud and Kim Deffebach UF Foundation*
 
-We partnered with Bud and Kim Deffebach to host both a GGEE summer program and after-school program for students in Brevard County at Stone Magnet Middle School. Their gift provided funding for the teacher to train and lead the summer and after-school programs, consumable materials, technology, and meals for the students and staff that participated in the summer program.
+We partnered with Bud and Kim Deffebach to host both a GGEE summer program and after-school program for students in Brevard County at Stone Magnet Middle School. Their gift of \$24,000 provided funding for the teacher to train and lead the summer and after-school programs, consumable materials, technology, and meals for the students and staff that participated in the summer program.
 
 *City of Riviera Beach - Youth Empowerment Programs* 
 
@@ -397,38 +397,45 @@ The goal of the interview was to see how teachers felt about the summer programs
 
 # Challenges, Lessons Learned, and Modifications
 
-*Challenges faced, lessons leared, and adaptations.* 
+In the process of improving our summer programs, we encountered several challenges that prompted us to make necessary modifications. First, with the transition to virtual interviews, we faced challenges related to internet connectivity, the authenticity of student responses, and the absence of quiet and connected spaces for interviews. To address these issues, we collaborated with teachers to find suitable, quiet interview spaces and had student mentors assist with operating the computers and managing the physical space students were in. This new approach not only improved the quality of interviews but also ensured that students were comfortable and guided through online interactions, enhancing the overall interview process.
 
-- Virtual Interviews - internet connection, authentic responses, quiet connected places for interviews 
-- Virtual Observations - hard to tell what is going on in the classroom, no time to properly train students in observation protocols. Need to incorporate that into the training program in addition to learning the content
-- Student recruitment - delays from HR and confirmation of funding to support student mentors
-- Ensure no tasks are implied tasks for teacher prep - attendance, student drop off and pick up etc. 
-- Parent documents - have the documents be a requirement for registration instead of having 2 surveys
-- Youth Compliance - uploading students and teachers in to the portal - identifying all required versus suggested information
+The shift to virtual observations also presented challenges, including the difficulty of accurately assessing classroom activities and a lack of time for comprehensive student training in observation protocols. To address this for next summer and after-school programs, we need to incorporate a observation protocol training into our overall program training, alongside the curriculum content. This comprehensive training approach equips students with the necessary skills to conduct effective virtual observations, thus enhancing the quality of data collected.
+
+In terms of facilitator preparation, we identified issues where some facilitators were uncertain about implied tasks, such as taking attendance and coordinating student drop-off and pick-up. To address this, we will need to update the facilitator agendas to provide clear, step-by-step instructions for what to expect on the first day of the program. We also introduced a process map for program commencement, leaving no room for confusion and ensuring that facilitators understand their roles and responsibilities.
+
+Another challenge we tackled was related to parent documents. We observed that having a registration survey and another survey to collect required parent documents separately was inefficient. To streamline this process, we updated the registration system to make parent documents a mandatory part of the registration requirement.
+
+We faced challenges regarding youth compliance, particularly in identifying what information was required versus suggested for student and teacher profiles in the portal. In response, we developed a process to work with the youth compliance system and updated the registration layout to better match the needs of the system. These changes made it easier to transfer information, reducing errors and ensuring that only necessary data was included. This streamlined the compliance process, making it more efficient and accurate.
 
 
 # Recommendations for Program Improvement
 
-*Provide recommendations for improving the program in future iterations, based on the insights gained.*
+Based on the insights and experiences gained from the 2023 Goldberg Gator Engineering Explorer Summer Programs, several recommendations have emerged for enhancing future program iterations. 
 
-- Updating compliance forms with more clear language for parent and the research study
-- Make submitting paperwork a part of the registration process. Did this with the 2023-2024 After-School programs and it has made everything so much easier to process and collect rather than a 2-step process
-- Creating contract-like documents to denote needs, requirements, and expectations from the schools and what is provided from the GGEE program at UF
-- Starting Recruitment in November
-- working to recruit more female students into the intro summer programs by collaborating with the school districts and providing suggestions to recruit more female students into the program. 
--- does this look like videos, showing female students, changing the look of the flyers, working with teachers, focusing on girl clubs
-- ensuring districts cover technology to continue to use in after-school programs or integrate into classroom projects
-- revise research study to expand to get more teacher and UF undergraduate mentor insight in the program 
-- more summer program options in Santa Rosa County - the students and families are interested in their students participating in the programs. 
+*Collaboration with Schools and Districts*
+We recommend initiating the recruitment process in October and November, allowing for a more extended outreach period and ensuring that a wider pool of students can be engaged in the program. This extended timeline will facilitate better planning and coordination with schools and districts. Then to establish clearer expectations and responsibilities between the GGEE program at UF and participating schools and districts, we suggest creating comprehensive contract-like documents. These documents should outline the needs, requirements, and expectations of the schools while clearly defining what the GGEE program will provide, enhancing transparency and alignment between all parties involved.
 
+*Student Recruitment*
+To enhance the diversity and inclusion of our program, we recommend a concerted effort to recruit more female students into the introductory summer programs. Collaboration with school districts, the creation of promotional videos featuring female students, changes in the design of program flyers, partnership with teachers, and engagement with girl clubs are among the strategies to consider. These steps will contribute to a more balanced and representative program.
 
+In response to the expressed interest from students and families in Santa Rosa County, we propose offering more summer program options in this region. Expanding our presence in Santa Rosa County will meet the demand for STEM educational opportunities and ensure that more students have access to our programs in areas where the programs are highly valued and desired.
+
+*Research*
+To gain a broader perspective on the program's impact, we recommend revising the research study to encompass more insights on mentoring and the relationships from the network of teachers, college student mentors, and student participants. This expansion of the study will provide a deeper understanding of the program's influence on various stakeholders and further guide program enhancements.
+
+These recommendations, when implemented, will contribute to the continued growth and success of the Goldberg Gator Engineering Explorer Summer Programs, making them more inclusive, effective, and impactful for students, parents, schools, and districts.
 
 # After-school Programs
-*Suggest potential directions for the program's growth or expansion.*
 
-After-school Programs
+Following the success and excitement of the summer programs there was a desire to have after-school programs that both introduced students to programming and had the option for students to continue programming from the summer. These sessions would be held in a hybrid setting where trained teachers are leading from inside a classroom and a co student mentor is 
+
+*Program Design*
+We updated our  an 8-week pr
 
 overview of programs 
+
+Current After-school and projected spring
+ 
 
 
 
