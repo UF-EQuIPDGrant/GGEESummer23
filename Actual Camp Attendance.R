@@ -42,7 +42,7 @@ ggplot(Camps_all, aes(x="", y=n, fill=Dist)) +
   geom_bar(stat="identity", width=1, color="black") +
   coord_polar("y", start=0)+
   theme_void()+
-  scale_fill_brewer(guide = guide_legend(reverse = FALSE),palette = "Blues")+
+  scale_fill_brewer(guide = guide_legend(reverse = FALSE),palette = "Purples")+
   ggtitle("Distribution of Students by District for All Programs")+
   theme(plot.title = element_text(hjust = 0.5, vjust = .5, size = 20, face = "bold"))+
   geom_label_repel(data = df_all,
@@ -83,7 +83,7 @@ ggplot(Camps_intro, aes(x="", y=n, fill=Dist)) +
   geom_bar(stat="identity", width=1, color="black") +
   coord_polar("y", start=0)+
   theme_void()+
-  scale_fill_brewer(guide = guide_legend(reverse = FALSE),palette = "Blues")+
+  scale_fill_brewer(guide = guide_legend(reverse = FALSE),palette = "Purples")+
   ggtitle("Distribution of Students by District for Introductory Programs")+
   theme(plot.title = element_text(hjust = 0.5, vjust = .5, size = 20, face = "bold"))+
   geom_label_repel(data = df_intro,
@@ -123,7 +123,7 @@ ggplot(Camps_adv, aes(x="", y=n, fill=Dist)) +
   geom_bar(stat="identity", width=1, color="black") +
   coord_polar("y", start=0)+
   theme_void()+
-  scale_fill_brewer(guide = guide_legend(reverse = FALSE),palette = "Blues")+
+  scale_fill_brewer(guide = guide_legend(reverse = FALSE),palette = "Purples")+
   ggtitle("Distribution of Students by District for Advanced Programs")+
   theme(plot.title = element_text(hjust = 0.5, vjust = .5, size = 20, face = "bold"))+
   geom_label_repel(data = df_adv,

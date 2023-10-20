@@ -54,7 +54,7 @@ ggplot(age_all, aes(x="", y=n, fill=Age)) +
   geom_bar(stat="identity", width=1, color="black") +
   coord_polar("y", start=0)+
   theme_void()+
-  scale_fill_brewer(guide = guide_legend(reverse = FALSE),palette = "Blues")+
+  scale_fill_brewer(guide = guide_legend(reverse = FALSE),palette = "Oranges")+
   ggtitle("Distribution of Age in All Programs")+
   theme(plot.title = element_text(hjust = 0.5, vjust = .5, size = 20, face = "bold"))+
   geom_label_repel(data = df_age_all,
@@ -97,7 +97,7 @@ ggplot(age_intro, aes(x="", y=n, fill=Age)) +
   geom_bar(stat="identity", width=1, color="black") +
   coord_polar("y", start=0)+
   theme_void()+
-  scale_fill_brewer(guide = guide_legend(reverse = FALSE),palette = "Blues")+
+  scale_fill_brewer(guide = guide_legend(reverse = FALSE),palette = "Oranges")+
   ggtitle("Distribution of Age in Introductory Programs")+
   theme(plot.title = element_text(hjust = 0.5, vjust = .5, size = 20, face = "bold"))+
   geom_label_repel(data = df_age_intro,
@@ -140,7 +140,7 @@ ggplot(age_adv, aes(x="", y=n, fill=Age)) +
   geom_bar(stat="identity", width=1, color="black") +
   coord_polar("y", start=0)+
   theme_void()+
-  scale_fill_brewer(guide = guide_legend(reverse = FALSE),palette = "Blues")+
+  scale_fill_brewer(guide = guide_legend(reverse = FALSE),palette = "Oranges")+
   ggtitle("Distribution of Age in Advanced Programs")+
   theme(plot.title = element_text(hjust = 0.5, vjust = .5, size = 20, face = "bold"))+
   geom_label_repel(data = df_age_adv,
@@ -309,7 +309,7 @@ ggplot(district_all, aes(x="", y=n, fill=District)) +
   geom_bar(stat="identity", width=1, color="black") +
   coord_polar("y", start=0)+
   theme_void()+
-  scale_fill_brewer(guide = guide_legend(reverse = FALSE),palette = "Blues")+
+  scale_fill_brewer(guide = guide_legend(reverse = FALSE),palette = "Greens")+
   ggtitle("Students Per District for All Programs")+
   theme(plot.title = element_text(hjust = 0.5, vjust = .5, size = 20, face = "bold"))+
   geom_label_repel(data = df_district_all,
@@ -350,7 +350,7 @@ ggplot(district_intro, aes(x="", y=n, fill=District)) +
   geom_bar(stat="identity", width=1, color="black") +
   coord_polar("y", start=0)+
   theme_void()+
-  scale_fill_brewer(guide = guide_legend(reverse = FALSE),palette = "Blues")+
+  scale_fill_brewer(guide = guide_legend(reverse = FALSE),palette = "Greens")+
   ggtitle("Students Per District in Introductory Programs")+
   theme(plot.title = element_text(hjust = 0.5, vjust = .5, size = 20, face = "bold"))+
   geom_label_repel(data = df_district_intro,
@@ -392,7 +392,7 @@ ggplot(district_adv, aes(x="", y=n, fill=District)) +
   geom_bar(stat="identity", width=1, color="black") +
   coord_polar("y", start=0)+
   theme_void()+
-  scale_fill_brewer(guide = guide_legend(reverse = FALSE),palette = "Blues")+
+  scale_fill_brewer(guide = guide_legend(reverse = FALSE),palette = "Greens")+
   ggtitle("Students Per District in Advanced Programs")+
   theme(plot.title = element_text(hjust = 0.5, vjust = .5, size = 20, face = "bold"))+
   geom_label_repel(data = df_district_adv,
@@ -815,7 +815,7 @@ ggplot(GGEE_23_Race_Eth_ALL, aes(x=Race, y = n, fill = Secondary, label = round(
   theme_classic()+
   coord_flip()+
   ggtitle("Distribution of Race and Ethnicity in All Programs")+
-  scale_fill_brewer(guide = guide_legend("# Secondary Race/Ethnicity", reverse = FALSE),palette = "Blues")+
+  scale_fill_brewer(guide = guide_legend("# Secondary Race/Ethnicity", reverse = FALSE),palette = "GnBu")+
   theme(axis.text.x = element_text(colour = "black", size = 14),
         axis.title.x=element_text(size=14,face="bold"))+
   theme(axis.text.y = element_text(colour = "black", size = 14),
@@ -854,7 +854,7 @@ ggplot(GGEE_23_Race_Eth_IN, aes(x=Race, y = n, fill = Secondary, label = round(n
   theme_classic()+
   coord_flip()+
   ggtitle("Distribution of Race and Ethnicity in Introductory Programs")+
-  scale_fill_brewer(guide = guide_legend("# Secondary Race/Ethnicity", reverse = FALSE),palette = "Blues")+
+  scale_fill_brewer(guide = guide_legend("# Secondary Race/Ethnicity", reverse = FALSE),palette = "GnBu")+
   theme(axis.text.x = element_text(colour = "black", size = 14),
         axis.title.x=element_text(size=14,face="bold"))+
   theme(axis.text.y = element_text(colour = "black", size = 14),
@@ -897,7 +897,7 @@ ggplot(GGEE_23_Race_Eth_ADV, aes(x=Race, y = n, fill = Secondary, label = round(
   theme_classic()+
   coord_flip()+
   ggtitle("Distribution of Race and Ethnicity in Advanced Programs")+
-  scale_fill_brewer(guide = guide_legend("# Secondary Race/Ethnicity", reverse = FALSE),palette = "Blues")+
+  scale_fill_brewer(guide = guide_legend("# Secondary Race/Ethnicity", reverse = FALSE),palette = "GnBu")+
   theme(axis.text.x = element_text(colour = "black", size = 14),
         axis.title.x=element_text(size=14,face="bold"))+
   theme(axis.text.y = element_text(colour = "black", size = 14),
@@ -961,7 +961,7 @@ ggplot(gender_all, aes(x="", y=n, fill=Gender)) +
   geom_bar(stat="identity", width=1, color="black") +
   coord_polar("y", start=0)+
   theme_void()+
-  scale_fill_brewer(guide = guide_legend(reverse = FALSE),palette = "Blues")+
+  scale_fill_brewer(guide = guide_legend(reverse = FALSE),palette = "Reds")+
   ggtitle("Distribution of Genders in All Programs")+
   theme(plot.title = element_text(hjust = 0.5, vjust = .5, size = 20, face = "bold"))+
   geom_label_repel(data = df_gender_all,
@@ -1004,7 +1004,7 @@ ggplot(gender_intro, aes(x="", y=n, fill=Gender)) +
   geom_bar(stat="identity", width=1, color="black") +
   coord_polar("y", start=0)+
   theme_void()+
-  scale_fill_brewer(guide = guide_legend(reverse = FALSE),palette = "Blues")+
+  scale_fill_brewer(guide = guide_legend(reverse = FALSE),palette = "Reds")+
   ggtitle("Distribution of Genders in Introductory Programs")+
   theme(plot.title = element_text(hjust = 0.5, vjust = .5, size = 20, face = "bold"))+
   geom_label_repel(data = df_gender_intro,
@@ -1047,7 +1047,7 @@ ggplot(gender_adv, aes(x="", y=n, fill=Gender)) +
   geom_bar(stat="identity", width=1, color="black") +
   coord_polar("y", start=0)+
   theme_void()+
-  scale_fill_brewer(guide = guide_legend(reverse = FALSE),palette = "Blues")+
+  scale_fill_brewer(guide = guide_legend(reverse = FALSE),palette = "Reds")+
   ggtitle("Distribution of Genders in Advanced Programs")+
   theme(plot.title = element_text(hjust = 0.5, vjust = .5, size = 20, face = "bold"))+
   geom_label_repel(data = df_gender_adv,
