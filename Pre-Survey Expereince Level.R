@@ -1,7 +1,17 @@
 #Pre-Survey Expereince Level
 #Krista D Chisholm
 #September 29, 2023
-
+install.packages("tidyverse")
+installed.packages("tidytext")
+install.packages("dplyr")
+install.packages("readr")
+install.packages("writexl")
+install.packages("tidyr")
+install.packages("writexl")
+install.packages("readxl")
+install.packages("textdata")
+install.packages("scales")
+install.packages("wordcloud2")
 library(tidyverse)
 library(tidytext)
 library(dplyr)
@@ -14,9 +24,11 @@ library(ggplot2)
 library(scales)
 library(writexl)
 library(wordcloud2)
-
+install.packages("psych")
+install.packages("likert")
 install.packages("HH")
 install.packages("lattice")
+install.packages("ggplot2")
 
 library(psych)
 library(likert)
@@ -27,13 +39,13 @@ webshot::install_phantomjs()
 
 #https://jakec007.github.io/2021-06-23-R-likert/
 
-GGEE_23_Pre_Survey_Likert <- read_excel("Data/GGEE_23_Pre_Survey_Likert.xlsx", sheet = 1)
+GGEE_23_Pre_Survey_Likert <- read_excel("Data/GGEE_23_Pre_Survey_Likert.xlsx", sheet = 3)
 #View(GGEE_23_PreSurvey)
 
 graph1<-likert(Item~., GGEE_23_Pre_Survey_Likert, ReferenceZero=3, 
                ylab = "Statement", 
                xlab = "Percentage", 
-               main = list("Pre-Survey Level of Experience", 
+               main = list("Pre-Survey Level of Coding Enjoyment", 
                x=unit(.62, "npc")), 
                borders = list(),
                col=c("#2271B5", "#6BAED6", "#EFF3FF", "#9ECAE2"),
