@@ -27,8 +27,8 @@ graph1<-likert(Item~., GGEE_23_EndofCamp_Likert, ReferenceZero=3,
                            x=unit(.62, "npc")), 
                borders = list(),
                col=c("#2271B5", "#6BAED6", "#EFF3FF", "#9ECAE2"),
-               auto.key = list(columns = 2,reverse.rows = T,
-                               reverse.rows = T,
+               auto.key = list(columns = 2,reverse.rows = F,
+                               reverse.rows = F,
                                rect= list(col=c("#2271B5", "#6BAED6", "#EFF3FF", "#9ECAE2"),
                                           border = "black")))
 
