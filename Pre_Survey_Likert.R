@@ -21,37 +21,90 @@ webshot::install_phantomjs()
 ####################################################################################################################
 
 
-install.packages("HH")
-install.packages("lattice")
+Pre_Exp <- read_excel("GGEESummer23/Data/GGEE_23_Pre_Survey_Likert.xlsx", sheet = 5)
+Pre_Enj <- read_excel("GGEESummer23/Data/GGEE_23_Pre_Survey_Likert.xlsx", sheet = 6)
 
-library(psych)
-library(likert)
-library(HH)
-library(ggplot2)
+## STACK PRE - EXPERIENCE
+
+ggplot(Pre_Exp, aes(x=Question, y = n, fill = Level, label = round(((n/204)*100), digits=0),'%'))+
+  geom_bar(stat="identity", colour='black', size=.5)+
+  geom_text(size = 5, position = position_stack(vjust = 0.5))+
+  theme_classic()+
+  coord_flip()+
+  ggtitle("Prior Experience in Programming")+
+  scale_fill_brewer(guide = guide_legend("Rating", reverse = FALSE),palette = "GnBu")+
+  theme(axis.text.x = element_text(colour = "black", size = 14),
+        axis.title.x=element_text(size=14,face="bold"))+
+  theme(axis.text.y = element_text(colour = "black", size = 14),
+        axis.title.y=element_text(size=14,face="bold"))+
+  theme(plot.title = element_text(hjust = 0.5, vjust = 0.5, size = 20, face = "bold"))+
+  scale_x_discrete(labels = label_wrap(25)) +
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 210), n.breaks=10)+
+  ylab("Number of Students")+
+  theme(
+        legend.title = element_text(size = 14, face = "bold"),
+        legend.text = element_text(size = 12))
+
+ggsave(
+  filename = "GGEE_23_Summer_Pre_Exp_Stacked.png",
+  plot = last_plot(),
+  device = "png",
+  path = "/Users/kristadulany/Documents/GitHub/GGEESummer23/Graphs/Pre_Survey Responses/",
+  scale = 2,
+  width = 6,
+  height = 4,
+  units = c("in"),
+  dpi = 300,
+  limitsize = TRUE,
+  bg = NULL)
 
 
-pre_survey <- read_excel("Data/GGEE_23_PreSurvey.xlsx", sheet = 1)
 
-graph1<-likert(Item~., pre_survey, ReferenceZero=3, ylab = "Statement", xlab = "Percentage", main = list("End of Day: Student Sentiments", x=unit(.62, "npc")), auto.key = list(columns = 2, reverse.rows = T))
+## STACK PRE - ENJOY
 
-graph1
+ggplot(Pre_Enj, aes(x=Question, y = n, fill = Level, label = round(n, digits=0)))+
+  geom_bar(stat="identity", colour='black', size=.5)+
+  geom_text(size = 5, position = position_stack(vjust = 0.5))+
+  theme_classic()+
+  coord_flip()+
+  ggtitle("Prior Enjoyment of Programming")+
+  scale_fill_brewer(guide = guide_legend("Rating", reverse = FALSE),palette = "GnBu")+
+  theme(axis.text.x = element_text(colour = "black", size = 14),
+        axis.title.x=element_text(size=14,face="bold"))+
+  theme(axis.text.y = element_text(colour = "black", size = 14),
+        axis.title.y=element_text(size=14,face="bold"))+
+  theme(plot.title = element_text(hjust = 0.5, vjust = 0.5, size = 20, face = "bold"))+
+  scale_x_discrete(labels = label_wrap(15)) +
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 210), n.breaks=10)+
+  ylab("Number of Students")+
+  theme(
+    legend.title = element_text(size = 14, face = "bold"),
+    legend.text = element_text(size = 12))
 
-##png("/Users/kristadulany/Documents/GitHub/GGEE/Data/Graph1.png",
-# height=720, width=1080)
-##graph1
-##dev.off()
+ggsave(
+  filename = "GGEE_23_Summer_Pre_Enj_Stacked.png",
+  plot = last_plot(),
+  device = "png",
+  path = "/Users/kristadulany/Documents/GitHub/GGEESummer23/Graphs/Pre_Survey Responses/",
+  scale = 2,
+  width = 6,
+  height = 4,
+  units = c("in"),
+  dpi = 300,
+  limitsize = TRUE,
+  bg = NULL)
+ 
 
-###MAKE DATA FRAME BY HAND
-Item <- c("I felt confident when completeing today's camp activites", "I enjoyed completing today's camp activities", "I find today's camp activties difficult")
 
-Strongly_Disagree <-c(1.42, 1.42, 23.49)
-Somewhat_Disagree <- c(0.71, 1.42, 22.42)
-Neither <- c(4.96, 3.90, 22.06)
-Somewhat_Agree <- c(27.66, 23.05, 25.98)
-Strongly_Agree <- c(65.25, 70.21, 6.05)
 
-df <- data.frame(Item, Strongly_Disagree, Somewhat_Disagree, Neither, Somewhat_Agree, Strongly_Agree)
-view(df)
 
-plot(likert(summary = df), plot.percent.neutral=FALSE, legend.position="right")
+
+
+
+
+
+
+
+
+
 
