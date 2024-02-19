@@ -18,9 +18,11 @@ install.packages("webshot")
 webshot::install_phantomjs()
 
 library(readxl)
-GGEE_23_EndofCamp_Likert <- read_excel("Data/GGEE_23_EndofCamp_Likert.xlsx", sheet=6)
-View(GGEE_23_EndofCamp_Likert)
-graph1<-likert(Item~., GGEE_23_EndofCamp_Likert, ReferenceZero=3, 
+
+####Advanced End of Camp###
+GGEE_23_EndofCampAdv_Likert <- read_excel("Documents/GitHub/GGEESummer23/Data/GGEE_23_EndofCampAdv_Likert.xlsx", sheet=2)
+View(GGEE_23_EndofCampAdv_Likert)
+graph1<-likert(Item~., GGEE_23_EndofCampAdv_Likert, ReferenceZero=3, 
                ylab = "Statement", 
                xlab = "Percentage", 
                main = list("Post Survey Post Camp Coding Skill Level", 
