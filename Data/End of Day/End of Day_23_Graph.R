@@ -83,14 +83,14 @@ ggplot(EoD_FELT) +
   xlab("Question")+
   coord_flip()+
   ggtitle("Student's End of Day Feelings")+
-  scale_fill_brewer(guide = guide_legend("% of Rating", reverse = TRUE),palette = "GnBu")+
+  scale_fill_brewer(guide = guide_legend("Rating", reverse = FALSE),palette = "GnBu")+
   theme(axis.text.x = element_text(colour = "black", size = 14),
         axis.title.x=element_text(size=14,face="bold"))+
   theme(axis.text.y = element_text(colour = "black", size = 14),
         axis.title.y=element_text(size=14,face="bold"))+
   theme(plot.title = element_text(hjust = 0.5, vjust = 0.5, size = 14, face = "bold"))+
   scale_x_discrete(labels = label_wrap(25)) +
-  scale_y_continuous(expand = c(0, 0), limits = c(0, 100), n.breaks=10)+
+  scale_y_continuous(expand = c(0, 0), limits = c(0, 100), n.breaks=3)+
   ylab("Percent of Students")+
   theme(legend.title = element_text(size = 14, face = "bold"),
         legend.text = element_text(size = 12))
