@@ -16,7 +16,7 @@ library(readxl)
 library(textdata)
 library(ggplot2)
 library(scales)
-
+library(stringr)
 
 #Brewers color pallet: https://r-graph-gallery.com/38-rcolorbrewers-palettes.html
 
@@ -26,7 +26,7 @@ library(scales)
 ###CODING EXPERIENCE AND ENJOYMENT###
 ####################################################################################################################
 
-EoD_FELT <- read_excel("End of Day_23_Graph.xlsx", sheet = 8)
+EoD_FELT <- read_excel("Documents/GitHub/GGEESummer23/Data/End of Day/End of Day_23_Graph.xlsx", sheet = 8)
 
 ## STACK PRE - FELT
 
@@ -73,13 +73,12 @@ ggsave(
 
 
 ##clustered bar chart
-ggplot(EoD_FELT) +
+EoD_Felt<-ggplot(EoD_FELT) +
   geom_bar(aes(x = Stage, y = P, fill = Level),
            position = "stack",
            stat = "identity") +
-  facet_wrap(~ Question,nrow = 2,ncol = 1, scales = 'free_y',labeller = "label_both", switch = "both")+
+  facet_wrap(~ Question,ncol = 1, scales = 'free_y',labeller = "label_both", switch = "both")+
   ylab("Percent of Students")+
-  xlab("Question")+
   theme_classic()+
   coord_flip()+
   ggtitle("Student's End of Day Feelings")+
@@ -94,8 +93,6 @@ ggplot(EoD_FELT) +
   ylab("Percent of Students")+
   theme(legend.title = element_text(size = 14, face = "bold"),
         legend.text = element_text(size = 12))
-  
-
 
 
 ggsave(
