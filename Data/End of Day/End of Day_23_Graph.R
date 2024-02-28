@@ -26,8 +26,7 @@ library(scales)
 ###CODING EXPERIENCE AND ENJOYMENT###
 ####################################################################################################################
 
-EoD_FELT <- read_excel("Documents/GitHub/GGEESummer23/Data/End of Day/End of Day_23_Graph.xlsx", sheet = 8)
-
+EoD_FELT <- read_excel("GGEESummer23/Data/End of Day/End of Day_23_Graph.xlsx", sheet = 8)
 
 ## STACK PRE - FELT
 
@@ -55,10 +54,10 @@ ggplot(EoD_FELT, aes(x=Question, y = P, fill = Level, label = round(P, digits=0)
         legend.text = element_text(size = 12))
 
 ggsave(
-  filename = "GGEE_23_Summer_Pre_Exp_Stacked.png",
+  filename = "GGEE_23_Summer_EoD_Stacked_Type1.png",
   plot = last_plot(),
   device = "png",
-  path = "/Users/kristachisholm/Documents/GitHub/GGEESummer23/Graphs/Pre_Survey Responses/",
+  path = "/Users/kristachisholm/Documents/GitHub/GGEESummer23/Graphs/End of Day/",
   scale = 2,
   width = 6,
   height = 4,
@@ -78,9 +77,10 @@ ggplot(EoD_FELT) +
   geom_bar(aes(x = Stage, y = P, fill = Level),
            position = "stack",
            stat = "identity") +
-  facet_wrap(~ Question)+
+  facet_wrap(~ Question, switch = "both")+
   ylab("Percent of Students")+
   xlab("Question")+
+  theme_classic()+
   coord_flip()+
   ggtitle("Student's End of Day Feelings")+
   scale_fill_brewer(guide = guide_legend("Rating", reverse = FALSE),palette = "GnBu")+
@@ -98,7 +98,18 @@ ggplot(EoD_FELT) +
 
 
 
-
+ggsave(
+  filename = "GGEE_23_Summer_EoD_Stacked_Clustered.png",
+  plot = last_plot(),
+  device = "png",
+  path = "/Users/kristachisholm/Documents/GitHub/GGEESummer23/Graphs/End of Day/",
+  scale = 2,
+  width = 6,
+  height = 4,
+  units = c("in"),
+  dpi = 300,
+  limitsize = TRUE,
+  bg = NULL)
 
 
 
