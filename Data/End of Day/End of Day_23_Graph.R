@@ -26,7 +26,7 @@ library(scales)
 ###CODING EXPERIENCE AND ENJOYMENT###
 ####################################################################################################################
 
-EoD_FELT <- read_excel("GGEESummer23/Data/End of Day/End of Day_23_Graph.xlsx", sheet = 8)
+EoD_FELT <- read_excel("End of Day_23_Graph.xlsx", sheet = 8)
 
 ## STACK PRE - FELT
 
@@ -77,7 +77,7 @@ ggplot(EoD_FELT) +
   geom_bar(aes(x = Stage, y = P, fill = Level),
            position = "stack",
            stat = "identity") +
-  facet_wrap(~ Question, switch = "both")+
+  facet_wrap(~ Question,nrow = 2,ncol = 1, scales = 'free_y',labeller = "label_both", switch = "both")+
   ylab("Percent of Students")+
   xlab("Question")+
   theme_classic()+
