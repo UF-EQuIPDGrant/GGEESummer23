@@ -173,11 +173,3 @@ ggplot(EoD_Identity, aes(x=Stage, y=Mean, shape = Question)) +
   theme_classic()+
   theme(legend.position = c(.7, .3))+
   theme(axis.text.x = element_text(colour = "black"))+
-  theme(axis.text.y = element_text(colour = "black"))+
-  ggtitle("Average End of Day Student Identity")+
-  theme(plot.title = element_text(hjust = 0.5))+
-  scale_y_continuous(expand = c(0, 0), limits = c(0, 6), n.breaks=6)+
-  scale_color_brewer(palette = "Set1")+
-  xlab("Activity")+
-  ylab("Average Rating (1-5)")
-
