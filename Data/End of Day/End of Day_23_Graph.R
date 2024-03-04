@@ -17,7 +17,7 @@ library(textdata)
 library(ggplot2)
 library(scales)
 library(stringr)
-
+library(ggrepel)
 #Brewers color pallet: https://r-graph-gallery.com/38-rcolorbrewers-palettes.html
 
 #####STACKED BAR 100%##############
@@ -26,7 +26,7 @@ library(stringr)
 ###CODING EXPERIENCE AND ENJOYMENT###
 ####################################################################################################################
 
-EoD_FELT <- read_excel("Documents/GitHub/GGEESummer23/Data/End of Day/End of Day_23_Graph.xlsx", sheet = 8)
+EoD_FELT <- read_excel("End of Day_23_Graph.xlsx", sheet = 8)
 
 ## STACK PRE - FELT
 
@@ -73,21 +73,28 @@ ggsave(
 
 
 ##clustered bar chart
-EoD_Felt<-ggplot(EoD_FELT) +
+
+stages<- c("Programming Basics", "Micro:bit Pet", "Technical Design Challenge")
+
+ggplot(EoD_FELT)+
   geom_bar(aes(x = Stage, y = P, fill = Level),
-           position = "stack",
-           stat = "identity") +
-  facet_wrap(~ Question,ncol = 1, scales = 'free_y',labeller = "label_both", switch = "both")+
-  ylab("Percent of Students")+
-  theme_classic()+
+           position = position_stack(reverse="True"),
+           stat = "identity")+
+  scale_x_discrete(limits=stages)+
+  ##geom_text(aes(label = paste0(round(P, digits=0),"%"),x=Stage, y=P),size = 3, position = position_stack(vjust = 0.95, reverse=TRUE))+
+  geom_text(aes(label = round(P, digits=0), x=Stage, y = P, group = Level), size = 3, position = position_stack(vjust = 0.5, reverse=TRUE))+
   coord_flip()+
+  theme_classic()+
+  theme(strip.text = element_text(size = 14))+
+  facet_wrap(~ Question, ncol=1, scales = 'free_y', labeller= labeller(group= label_wrap_gen(width= 25)))+
+  ylab("Percent of Students")+
   ggtitle("Student's End of Day Feelings")+
   scale_fill_brewer(guide = guide_legend("Rating", reverse = FALSE),palette = "GnBu")+
   theme(axis.text.x = element_text(colour = "black", size = 14),
         axis.title.x=element_text(size=14,face="bold"))+
-  theme(axis.text.y = element_text(colour = "black", size = 14),
+  theme(axis.text.y = element_text(colour = "black", size = 12),
         axis.title.y=element_text(size=14,face="bold"))+
-  theme(plot.title = element_text(hjust = 0.5, vjust = 0.5, size = 14, face = "bold"))+
+  theme(plot.title = element_text(hjust = 0.5, vjust = 0.5, size = 18, face = "bold"))+
   scale_x_discrete(labels = label_wrap(25)) +
   scale_y_continuous(expand = c(0, 0), limits = c(0, 100), n.breaks=3)+
   ylab("Percent of Students")+
@@ -96,10 +103,10 @@ EoD_Felt<-ggplot(EoD_FELT) +
 
 
 ggsave(
-  filename = "GGEE_23_Summer_EoD_Stacked_Clustered.png",
+  filename = "GGEE_23_Summer_EoD_Stacked_Clustered_0304.png",
   plot = last_plot(),
   device = "png",
-  path = "/Users/kristachisholm/Documents/GitHub/GGEESummer23/Graphs/End of Day/",
+  path = "/Users/oliviarandell/Documents/GitHub/GGEESummer23/Graphs/End of Day/",
   scale = 2,
   width = 6,
   height = 4,
