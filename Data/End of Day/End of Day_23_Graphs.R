@@ -26,7 +26,7 @@ library(ggrepel)
 ###FEELING ###
 ####################################################################################################################
 
-EoD_FELT <- read_excel("End of Day_23_Graph.xlsx", sheet = 8)
+EoD_FELT <- read_excel("~/Documents/GitHub/GGEESummer23/Data/End of Day/End of Day_23_Graph.xlsx", sheet = 8)
 
 ##clustered bar chart
 
@@ -42,7 +42,6 @@ ggplot(EoD_FELT)+
   theme_classic()+
   theme(strip.text = element_text(size = 14), strip.background=element_rect(size=1))+
   facet_wrap(~ Question, ncol=1, scales = 'free_y', labeller= labeller(group= label_wrap_gen(width= 25)))+
-  ggtitle("Student's End of Day Feelings")+
   scale_fill_brewer(guide = guide_legend("Rating", reverse = FALSE),palette = "GnBu")+
   theme(axis.text.x = element_text(colour = "black", size = 14),
         axis.title.x=element_text(size=14,face="bold"))+
@@ -80,7 +79,7 @@ ggsave(
 ###Identity Graph###
 ####################################################################################################################
 
-EoD_Identity <- read_excel("End of Day_23_Graph.xlsx", sheet = 9)
+EoD_Identity <- read_excel("~/Documents/GitHub/GGEESummer23/Data/End of Day/End of Day_23_Graph.xlsx", sheet = 9)
 
 ##clustered bar chart
 
@@ -96,7 +95,6 @@ ggplot(EoD_Identity)+
   theme_classic()+
   theme(strip.text = element_text(size = 14), strip.background=element_rect(size=1))+
   facet_wrap(~ Question, ncol=1, scales = 'free_y', labeller= labeller(group= label_wrap_gen(width= 25)))+
-  ggtitle("Student's End of Day Identity")+
   scale_fill_brewer(guide = guide_legend("Rating", reverse = FALSE),palette = "GnBu")+
   theme(axis.text.x = element_text(colour = "black", size = 14),
         axis.title.x=element_text(size=14,face="bold"))+
@@ -133,7 +131,7 @@ ggsave(
 ####################################################################################################################
 ###Find Graph###
 ###################################################################################################################
-EoD_Find <- read_excel("End of Day_23_Graph.xlsx", sheet = 10)
+EoD_Find <- read_excel("~/Documents/GitHub/GGEESummer23/Data/End of Day/End of Day_23_Graph.xlsx", sheet = 10)
 
 ggplot(EoD_Find)+
   geom_bar(aes(x = Stage, y = P, fill = Level),
@@ -147,7 +145,6 @@ ggplot(EoD_Find)+
   theme_classic()+
   theme(strip.text = element_text(size = 14), strip.background=element_rect(size=1))+
   facet_wrap(~ Question, ncol=1, scales = 'free_y', labeller= labeller(group= label_wrap_gen(width= 25)))+
-  ggtitle("Student's End of Day I Find Statement")+
   scale_fill_brewer(guide = guide_legend("Rating", reverse = FALSE),palette = "GnBu")+
   theme(axis.text.x = element_text(colour = "black", size = 14),
         axis.title.x=element_text(size=14,face="bold"))+
@@ -183,7 +180,7 @@ ggsave(
 ####################################################################################################################
 ###Enjoy Graph###
 ###################################################################################################################
-EoD_Enjoy <- read_excel("End of Day_23_Graph.xlsx", sheet = 11)
+EoD_Enjoy <- read_excel("~/Documents/GitHub/GGEESummer23/Data/End of Day/End of Day_23_Graph.xlsx", sheet = 11)
 
 ggplot(EoD_Enjoy)+
   geom_bar(aes(x = Stage, y = P, fill = Level),
@@ -197,7 +194,6 @@ ggplot(EoD_Enjoy)+
   theme_classic()+
   theme(strip.text = element_text(size = 14), strip.background=element_rect(size=1))+
   facet_wrap(~ Question, ncol=1, scales = 'free_y', labeller= labeller(group= label_wrap_gen(width= 25)))+
-  ggtitle("Student's End of Day Enjoy")+
   scale_fill_brewer(guide = guide_legend("Rating", reverse = FALSE),palette = "GnBu")+
   theme(axis.text.x = element_text(colour = "black", size = 14),
         axis.title.x=element_text(size=14,face="bold"))+
